@@ -1,1 +1,5 @@
-site_name: My Docs
+site_name: WFV
+pages:
+    - Home: index.md
+    - User Guide:
+        - 'Getting Started': start.md
