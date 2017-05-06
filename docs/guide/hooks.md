@@ -1,4 +1,15 @@
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tincidunt iaculis ullamcorper.
+Validation will trigger either a pass or fail action. Hook into them using standard WordPress `add_action()` and process any logic in a callback.
+
+!!! note
+    Actions are named using the alias provided when the instance was created:
+
+    `#!js wfv_create( 'contact_form', $form );`
+
+    `Pass: contact_form`<br>
+    `Fail: contact_form_fail`
+
+The `FormComposite` instance is automatically passed into the callback. Ensure that the first parameter is reserved for this.
+
 
 ### Pass
 
