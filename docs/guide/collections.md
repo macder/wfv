@@ -1,15 +1,15 @@
 ## Methods
 
-### **Contains**
+### **contains()**
 Check if the collection contains a key / value pair
-
-`#!js contains ( $key = null, $value = null )`
+~~~{.js}
+contains ( $key = null, $value = null )
+~~~
 
 Parameter      |  Type  | Default     | Description
 -------------- | ------ | ----------- | -----------
 `#!js $key`    | string | `#!js null` | Key
 `#!js $value`  | string | `#!js null` | Value to look for
-
 `#!py @return bool`
 
 **Examples**
@@ -18,8 +18,10 @@ Basic:
 ~~~~{.php}
 <?php
 
-$my_form->input()->contains( 'email', 'foo@bar.com');  // true
-$my_form->input()->contains( 'email', 'bar@foo.com');  // false
+$input = $form->input();
+
+$input->contains( 'email', 'foo@bar.com');  // true
+$input->contains( 'email', 'bar@foo.com');  // false
 ~~~~
 
 Conditional:
@@ -35,15 +37,15 @@ if ( $input->contains( 'email', 'foo@bar.com') ) {
 
 ---
 
-### **Has**
+### **has()**
 Check if the collection has a given key
-
-`#!js has ( $key = null )`
+~~~{.js}
+has ( $key = null )
+~~~
 
 Parameter      |  Type  | Default     | Description
 -------------- | ------ | ----------- | -----------
 `#!js $key`    | string | `#!js null` | Key to check existence
-
 `#!py @return bool`
 
 **Examples**
@@ -68,21 +70,24 @@ if ( $input->has('email') ) {
 
 ---
 
-### **Is Populated**
+### **is_populated()**
 Checks if the collection has data.
-
-`#!js is_populated()`
+~~~{.js}
+is_populated()
+~~~
 
 `#!py @return bool`
 
 ---
 
-### **Render**
+### **render()**
 Get an escaped value for safe output.
 
 Use this method to output encoded input values, eg. in markup templates
 
-`#!js render( $key, callable $callback = null )`
+~~~{.js}
+render( $key, callable $callback = null )
+~~~
 
 Parameter        |  Type  | Default     | Description
 --------------   | ------ | ----------- | -----------
