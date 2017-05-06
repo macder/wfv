@@ -5,6 +5,8 @@ A simple, fluid, and concise API to manage user input, validation, feedback, and
 
 Let's begin
 
+---
+
 ## Features
 * [32 built-in rules](/guide/rules/#built-in-rules)
 * [Custom rules](guide/rules/#custom-rules)
