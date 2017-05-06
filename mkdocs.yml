@@ -7,7 +7,7 @@ pages:
     - Welcome: index.md
     - Overview: overview.md
     - Installation: install.md
-    - Getting Started: start.md
+    - Get Started: start.md
     - User Guide:
         - 'Hooks': guide/hooks.md
         - 'Create': guide/create.md
