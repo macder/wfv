@@ -18,7 +18,6 @@ pages:
         - 'Errors': guide/errors.md
     - Examples:
         - 'Basic': examples/basic.md
-        - 'sand': sand.md
 
 extra:
   palette:
@@ -27,6 +26,10 @@ extra:
   font:
     text: 'Open Sans'
     code: 'Source Code Pro'
+
+google_analytics:
+  - 'UA-98676146-1'
+  - 'auto'
 
 
 markdown_extensions:

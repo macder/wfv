@@ -8,7 +8,7 @@ Suppose you are creating a custom form and decide to follow the [WordPress way](
 
 Why is this a problem?
 
-The user is no longer on the form. To send them back (i.e a required field was missed), we need to do a HTTP redirect. At this point the `$_POST` with the input is gone... which would have been useful to repopulate the form. In order to persist the users input, it needs to be stored in GET, a session, or a cookie.
+After submitting, the user is no longer on the form. To send them back (i.e a required field was missed), we need to do a HTTP redirect. At this point the `$_POST` with the input is gone... which would have been useful to repopulate the form. In order to persist that input, it needs to be stored in `GET`, or in the browser as a session or cookie.
 
 Neither is elegant, and both are clunky.
 

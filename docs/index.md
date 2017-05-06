@@ -5,6 +5,10 @@ A simple, fluid, and concise API to manage user input, validation, feedback, and
 
 Let's begin
 
+**[Install](/install)**
+
+**[Get Started](/start)**
+
 ---
 
 ### Features
