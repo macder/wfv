@@ -9,7 +9,6 @@ Let's begin
 
 ### Features
 * [32 built-in rules](/guide/rules/#built-in-rules)
-* [32 built-in rules](/guide/rules/#built-in-rules)
 * [Custom rules](guide/rules/#custom-rules)
 * [Custom error messages](/guide/messages/)
 * [Helper methods for safe output](/guide/input/)

@@ -57,10 +57,12 @@ $rules = array(
 
 **Callback:**
 
-!!! important "Enforced convention"
-    Callback function names must start with `wfv__`<br>
+!!! note
+    Callback function names must start with `wfv__` followed by the rule name<br>
 
-Callback must evaluate true or false:
+    This is to prevent naming collisions.
+
+Create a callback that evaluates to true or false:
 ~~~~{.php}
 <?php
 // phone field will validate only if the input is 'hi' ...how cruel
