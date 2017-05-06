@@ -15,6 +15,7 @@ pages:
         - 'Messages': guide/messages.md
         - 'Populate': guide/populate.md
         - 'Input': guide/input.md
+        - 'Errors': guide/errors.md
     - Examples:
         - 'Basic': examples/basic.md
         - 'sand': sand.md
