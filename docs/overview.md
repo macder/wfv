@@ -13,3 +13,57 @@ The user is no longer on the form. To send them back (i.e a required field was m
 Neither is elegant, and both are clunky.
 
 ## How
+
+WFV gives you the ability to declare form validation constraints in way that is similar to many MVC frameworks.
+
+Markup a form in a template and define its constraints in functions.php or a plugin.
+
+You get a simple but powerful API that makes coding forms more pleasant.
+
+---
+
+## WFV is:
+
+**Safe:**<br>
+~~~{.js}
+$form->input()->render('email');
+~~~
+
+**Adaptable:**<br>
+~~~{.js}
+$form->input()->render('email', 'strip_tags')
+~~~
+
+**Flexible:**<br>
+~~~{.js}
+$form->input()->render('email', function( $input ) {
+  return strip_tags( $input );
+});
+~~~
+
+**Aware:**<br>
+~~~{.js}
+$form->input()->contains( 'email', 'foo@bar.com' );
+~~~
+
+**Helpful:**<br>
+~~~{.js}
+$form->errors->first('email');
+~~~
+
+**Pragmatic:**<br>
+~~~{.js}
+$form->selected_if('color', 'green');
+~~~
+
+**Simple:**<br>
+~~~{.js}
+$form->input()->has('email');
+~~~
+
+**Powerful:**<br>
+~~~{.js}
+$form->constrain()->validate();
+~~~
+
+Enjoy.
