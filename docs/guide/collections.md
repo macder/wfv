@@ -93,7 +93,6 @@ Parameter        |  Type  | Default     | Description
 --------------   | ------ | ----------- | -----------
 `#!js $key`      | string |             | Key containing the string
 `#!js $callback` | callable | `#!js esc_html()` | Callback to pass string
-
 `#!py @return string|null`
 
 **Examples**
