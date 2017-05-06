@@ -1,17 +1,21 @@
 site_name: WFV Documentation
 theme_dir: 'mkdocs-material/material'
+repo_name: 'macder/wp-form-validation'
+repo_url: 'https://github.com/macder/wp-form-validation'
+
 pages:
-    - Welcome: index.md
+    - Overview: index.md
     - User Guide:
         - 'Installation': guide/install.md
         - 'Getting Started': guide/start.md
+        - 'Create': guide/create.md
         - 'Rules': guide/rules.md
         - 'Messages': guide/messages.md
         - 'Hooks': guide/hooks.md
-        - 'Input': guide/input.md
-        - 'Collections': guide/collections.md
+        - 'Collection': guide/collections.md
     - Examples:
         - 'Basic': examples/basic.md
+        - 'sand': sand.md
 
 markdown_extensions:
   - admonition
