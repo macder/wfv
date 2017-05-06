@@ -19,7 +19,7 @@
 
     
     <url>
-     <loc>/install/</loc>
+     <loc>/start/</loc>
      <lastmod>2017-05-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -27,7 +27,7 @@
 
     
     <url>
-     <loc>/start/</loc>
+     <loc>/quick-guide/</loc>
      <lastmod>2017-05-06</lastmod>
      <changefreq>daily</changefreq>
     </url>

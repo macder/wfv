@@ -15,7 +15,7 @@
     
     
       
-        <title>Get Started - WFV Documentation</title>
+        <title>Getting Started - WFV Documentation</title>
       
     
     
@@ -76,7 +76,7 @@
             
               
             
-            Get Started
+            Getting Started
           
         </span>
       </div>
@@ -205,18 +205,6 @@
       
       
 
-
-  <li class="md-nav__item">
-    <a href="../install/" title="Installation" class="md-nav__link">
-      Installation
-    </a>
-  </li>
-
-    
-      
-      
-      
-
   
 
 
@@ -226,11 +214,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="toc">
-        Get Started
+        Getting Started
       </label>
     
-    <a href="./" title="Get Started" class="md-nav__link md-nav__link--active">
-      Get Started
+    <a href="./" title="Getting Started" class="md-nav__link md-nav__link--active">
+      Getting Started
     </a>
     
       
@@ -242,44 +230,22 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#define-validation-rules" title="Define Validation Rules" class="md-nav__link">
-    Define Validation Rules
+  <a href="#install" title="Install" class="md-nav__link">
+    Install
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#requirements" title="Requirements" class="md-nav__link">
+    Requirements
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#override-messages" title="Override Messages" class="md-nav__link">
-    Override Messages
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#argument-structure" title="Argument Structure" class="md-nav__link">
-    Argument Structure
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#activate" title="Activate" class="md-nav__link">
-    Activate
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#validation-callbacks" title="Validation Callbacks" class="md-nav__link">
-    Validation Callbacks
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#markup-a-form" title="Markup a Form" class="md-nav__link">
-    Markup a Form
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -289,6 +255,18 @@
   
 </nav>
     
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../quick-guide/" title="Quick Guide" class="md-nav__link">
+      Quick Guide
+    </a>
   </li>
 
     
@@ -455,44 +433,22 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#define-validation-rules" title="Define Validation Rules" class="md-nav__link">
-    Define Validation Rules
+  <a href="#install" title="Install" class="md-nav__link">
+    Install
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#requirements" title="Requirements" class="md-nav__link">
+    Requirements
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#override-messages" title="Override Messages" class="md-nav__link">
-    Override Messages
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#argument-structure" title="Argument Structure" class="md-nav__link">
-    Argument Structure
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#activate" title="Activate" class="md-nav__link">
-    Activate
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#validation-callbacks" title="Validation Callbacks" class="md-nav__link">
-    Validation Callbacks
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#markup-a-form" title="Markup a Form" class="md-nav__link">
-    Markup a Form
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -511,103 +467,25 @@
               
                 
                 
-                  <h1>Get Started</h1>
+                  <h1>Getting Started</h1>
                 
-                <p>WFV takes in an array of arguments to create the object you will interact with.</p>
-<p>This array will contain 2 arrays - rules, and messages.</p>
-<p>Typically, this is defined in a themes <code class="codehilite">functions.php</code>, but it can be anywhere.</p>
-<hr />
-<h3 id="define-validation-rules"><strong>Define Validation Rules</strong><a class="headerlink" href="#define-validation-rules" title="Permanent link">&para;</a></h3>
-<p>The rules array defines the validation rule(s) for each field
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
-
-<span class="nv">$rules</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
-  <span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">&#39;required&#39;</span><span class="p">],</span>
-  <span class="s1">&#39;email&#39;</span><span class="o">=&gt;</span> <span class="p">[</span><span class="s1">&#39;required&#39;</span><span class="p">,</span> <span class="s1">&#39;email&#39;</span><span class="p">],</span>
-<span class="p">)</span>
-</pre></div>
-</td></tr></table>
-Each field holds an array of rules. You can use <a href="../guide/rules/#built-in-rules">built-in</a> ones or <a href="../guide/rules/#custom-rules">create your own</a>.</p>
-<hr />
-<h3 id="override-messages"><strong>Override Messages</strong><a class="headerlink" href="#override-messages" title="Permanent link">&para;</a></h3>
-<p>The messages array overrides an error message for a field's rule. This is optional, if no message is provided, the default will be used.
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6
-7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
-
-<span class="nv">$messages</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
-  <span class="s1">&#39;email&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
-    <span class="s1">&#39;required&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Your email is required so we can reply back&#39;</span>
-  <span class="p">],</span>
-<span class="p">)</span>
-</pre></div>
-</td></tr></table></p>
-<hr />
-<h3 id="argument-structure"><strong>Argument Structure</strong><a class="headerlink" href="#argument-structure" title="Permanent link">&para;</a></h3>
-<p>Define your validation rules and message overrides together in an array structured like this:
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
-
-<span class="nv">$form</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
-  <span class="s1">&#39;rules&#39;</span>  <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
-    <span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">&#39;required&#39;</span><span class="p">],</span>
-    <span class="s1">&#39;email&#39;</span><span class="o">=&gt;</span> <span class="p">[</span><span class="s1">&#39;required&#39;</span><span class="p">,</span> <span class="s1">&#39;email&#39;</span><span class="p">],</span>
-  <span class="p">),</span>
-
-  <span class="s1">&#39;messages&#39;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
-    <span class="s1">&#39;email&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
-      <span class="s1">&#39;required&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Your email is required so we can reply back&#39;</span>
-    <span class="p">],</span>
-  <span class="p">)</span>
-<span class="p">);</span>
-</pre></div>
-</td></tr></table></p>
-<hr />
-<h3 id="activate"><strong>Activate</strong><a class="headerlink" href="#activate" title="Permanent link">&para;</a></h3>
-<p>Pass the array of arguments into the <a href="../guide/create">wfv_create()</a> function to get an instance of <code class="codehilite">WFV\FormComposite</code>.</p>
-<hr />
-<h3 id="validation-callbacks"><strong>Validation Callbacks</strong><a class="headerlink" href="#validation-callbacks" title="Permanent link">&para;</a></h3>
-<p>WFV triggers an <a href="../guide/hooks">action</a> for <a href="../guide/hooks/#pass">pass</a> or <a href="../guide/hooks/#fail">fail</a>. Hook into them and handle any logic inside callbacks</p>
-<hr />
-<h3 id="markup-a-form"><strong>Markup a Form</strong><a class="headerlink" href="#markup-a-form" title="Permanent link">&para;</a></h3>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6
-7
-8</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">form</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;contact_form&quot;</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;post&quot;</span><span class="p">&gt;</span>
-  <span class="p">&lt;</span><span class="nt">input</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;name&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span><span class="p">&gt;</span>
-  <span class="p">&lt;</span><span class="nt">input</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;email&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span><span class="p">&gt;</span>
-  <span class="p">&lt;</span><span class="nt">textarea</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;msg&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">textarea</span><span class="p">&gt;</span>
-
-  <span class="cp">&lt;?php $my_form-&gt;get_token_fields(); ?&gt;</span>
-  <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;Submit&quot;</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
-</pre></div>
-</td></tr></table>
+                <h2 id="install">Install<a class="headerlink" href="#install" title="Permanent link">&para;</a></h2>
+<h3 id="requirements">Requirements<a class="headerlink" href="#requirements" title="Permanent link">&para;</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Minimum</p>
+<ul>
+<li>WordPress 3.7</li>
+<li>PHP 5.4</li>
+</ul>
+</div>
+<div class="admonition success">
+<p class="admonition-title">Recommended</p>
+<ul>
+<li>WordPress 4.7.x</li>
+<li>PHP 7.0</li>
+</ul>
+</div>
+<p><em>PHP 7.0 only with WordPress 4.0+</em></p>
                 
                   
                 
@@ -626,7 +504,7 @@ Each field holds an array of rules. You can use <a href="../guide/rules/#built-i
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../install/" title="Installation" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../overview/" title="Overview" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -635,19 +513,19 @@ Each field holds an array of rules. You can use <a href="../guide/rules/#built-i
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Installation
+                Overview
               </span>
             </div>
           </a>
         
         
-          <a href="../guide/hooks/" title="Hooks" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../quick-guide/" title="Quick Guide" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Hooks
+                Quick Guide
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
