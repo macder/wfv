@@ -83,8 +83,6 @@ is_populated()
 ### **render()**
 Get an escaped value for safe output.
 
-Use this method to output encoded input values, eg. in markup templates
-
 ~~~{.js}
 render( $key, callable $callback = null )
 ~~~
@@ -94,6 +92,7 @@ Parameter        |  Type  | Default     | Description
 `#!js $key`      | string |             | Key containing the string
 `#!js $callback` | callable | `#!js esc_html()` | Callback to pass string
 `#!py @return string|null`
+
 
 **Examples**
 
@@ -110,6 +109,9 @@ Callback:
 
 echo $form->input()->render('name', 'strip_tags');  // Bar
 ~~~~
+
+!!! note
+    Make sure to use a callable that is appropriate to the output context.
 
 Custom callback:
 ~~~~{.php}
