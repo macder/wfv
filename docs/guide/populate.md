@@ -85,8 +85,8 @@ Select:
 Multi-select:
 ~~~~{.html}
 <select name="color[]" multiple>
-  <option value="red"<?= $my_form->selected_if('color', 'red'); ?>>Red</option>
-  <option value="blue"<?= $my_form->selected_if('color', 'blue'); ?>>Blue</option>
-  <option value="green"<?= $my_form->selected_if('color', 'green'); ?>>Green</option>
+  <option value="red"<?= $form->selected_if('color', 'red'); ?>>Red</option>
+  <option value="blue"<?= $form->selected_if('color', 'blue'); ?>>Blue</option>
+  <option value="green"<?= $form->selected_if('color', 'green'); ?>>Green</option>
 </select>
 ~~~~
