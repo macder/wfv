@@ -9,36 +9,63 @@ $rules = array(
 )
 ~~~~
 
+## Built-in Rules
+Rule            | Description       
+--------------- | ----------------
+`required`      | Required field
+`equals`        | Field must equal value from another field (eg. new password confirm)
+`different`     | Field value must be different than another field
+`accepted`      | Checkbox or Radio must be accepted
+`numeric`       | Must be numeric
+`integer`       | Must be integer number
+`boolean`       | Must be bool
+`array`         | Must be array
+`length`        | Character count must equal given length
+`lengthBetween` | Character count must be within given lengths
+`lengthMin`     | Character count must be greater
+`lengthMax`     | Character count must be less
+`min`           | Minimum
+`max`           | Maximum
+`in`            | Performs in_array check on given array values
+`ip`            | Valip IP address
+`url`           | Valid URL
+`urlActive`     | Valid URL with active DNS record
+`alpha`         | Only alphabetic characters
+`alphaNum`      | Only alphabetic and numeric characters
+`slug`          | URL slug characters (a-z, 0-9, -, _ )
+`regex`         | Must match given regular expression pattern
+`date`          | Valid date
+`dateFormat`    | Valid date in the given format
+`dateBefore`    | Valid date before given date
+`dateAfter`     | Valid date after given date
+`contains`      | Field is a string that contains given string
+`creditCard`    | Valid credit card number
+`instanceOf`    | Instance of given class
+`optional`      | Value does not need to be included in data array. If it is however, it must pass validation
 
-Rule    | Description
-------- | ---------------- |
-`required` | Required field |
-`equals` | Field must equal value from another field (eg. new password confirm) |
-`different` | Field value must be different than another field |
-`accepted` | Checkbox or Radio must be accepted |
-`numeric` | Must be numeric |
-`integer` | Must be integer number |
-`boolean` | Must be bool |
-`array` | Must be array |
-`length` | Must be array |
-`lengthBetween` | Must be array |
-`lengthMin` | Must be array |
-`lengthMax` | Must be array |
-`min` | Must be array |
-`max` | Must be array |
-`in` | Must be array |
-`ip` | Must be array |
-`url` | Must be array |
-`urlActive` | Must be array |
-`alpha` | Must be array |
-`alphaNum` | Must be array |
-`slug` | Must be array |
-`regex` | Must be array |
-`date` | Must be array |
-`dateFormat` | Must be array |
-`dateBefore` | Must be array |
-`dateAfter` | Must be array |
-`contains` | Must be array |
-`creditCard` | Must be array |
-`instanceOf` | Must be array |
-`optional` | Must be array |
+## Custom Rules
+Custom rules can be defined and validated with a callback function.
+
+**Define:**
+~~~~{.php}
+<?php
+
+$rules = array(
+  'phone' => ['required', 'custom:phone'],
+);
+~~~~
+
+**Callback:**
+
+!!! important "Enforced convention"
+    Callback function names must start with `wfv__`<br>
+
+Callback must evaluate true or false:
+~~~~{.php}
+<?php
+// phone field will validate only if the input is 'hi' ...how cruel
+
+function wfv__phone( $value ) {
+  return ( 'hi' === $value ) ? true : false;
+}
+~~~~
