@@ -649,7 +649,6 @@
 <hr />
 <h3 id="render"><strong>render()</strong><a class="headerlink" href="#render" title="Permanent link">&para;</a></h3>
 <p>Get an escaped value for safe output.</p>
-<p>Use this method to output encoded input values, eg. in markup templates</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nx">render</span><span class="p">(</span> <span class="nx">$key</span><span class="p">,</span> <span class="nx">callable</span> <span class="nx">$callback</span> <span class="o">=</span> <span class="kc">null</span> <span class="p">)</span>
 </pre></div>
 </td></tr></table>
@@ -701,6 +700,10 @@
 <span class="k">echo</span> <span class="nv">$form</span><span class="o">-&gt;</span><span class="na">input</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">render</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;strip_tags&#39;</span><span class="p">);</span>  <span class="c1">// Bar</span>
 </pre></div>
 </td></tr></table></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Make sure to use a callable that is appropriate to the output context.</p>
+</div>
 <p>Custom callback:
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
