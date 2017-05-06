@@ -5,13 +5,13 @@ repo_url: 'https://github.com/macder/wp-form-validation'
 
 pages:
     - Overview: index.md
+    - Installation: guide/install.md
+    - Getting Started: guide/start.md
     - User Guide:
-        - 'Installation': guide/install.md
-        - 'Getting Started': guide/start.md
+        - 'Hooks': guide/hooks.md
         - 'Create': guide/create.md
         - 'Rules': guide/rules.md
         - 'Messages': guide/messages.md
-        - 'Hooks': guide/hooks.md
         - 'Collection': guide/collections.md
     - Examples:
         - 'Basic': examples/basic.md
