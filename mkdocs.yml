@@ -1,5 +1,22 @@
-site_name: WFV
+site_name: WFV Documentation
+theme_dir: 'mkdocs-material/material'
 pages:
-    - Home: index.md
+    - Welcome: index.md
     - User Guide:
-        - 'Getting Started': start.md
+        - 'Installation': guide/install.md
+        - 'Getting Started': guide/start.md
+        - 'Rules': guide/rules.md
+        - 'Messages': guide/messages.md
+        - 'Hooks': guide/hooks.md
+        - 'Input': guide/input.md
+        - 'Collections': guide/collections.md
+    - Examples:
+        - 'Basic': examples/basic.md
+
+markdown_extensions:
+  - admonition
+  - codehilite(linenums=true)
+  - toc(permalink=true)
+  - pymdownx.superfences
+  - pymdownx.snippets
+  - pymdownx.inlinehilite
