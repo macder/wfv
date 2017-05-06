@@ -6,36 +6,33 @@
 
 // declare the rules
 $my_form = array(
-  'rules'   => array(
-    'first_name' => ['required'],
-    'email'      => ['required', 'email']
-  )
+    'rules' => array(
+        'name'  => ['required'],
+        'email' => ['required', 'email']
+    )
 );
 
-// validation pass
 function my_form_valid( $form ) {
-    $name = $form->input()->render('name');
-    echo 'Hello '. $name;
+    echo 'Passed';
 }
 add_action( 'contact_form', 'my_form_valid' );
 
 
-// validation fail
 function my_form_invalid( $form ) {
-    // do something...
+    echo 'Failed';
 }
 add_action( 'contact_form_fail', 'my_form_invalid' );
 
 // create the instance
 wfv_create( 'contact_form', $my_form );
-
-// $my_form is now an instance of WFV\Composite\Form:
-
 ```
 
 `some_template.php`
 ```html
 <form method="post">
+
+    <input name="name" type="text"
+        value="<?php echo $my_form->input()->render('name'); ?>">
 
     <input name="email" type="text">
     <?php $my_form->token_fields(); ?>
