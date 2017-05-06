@@ -1,6 +1,6 @@
 # Basic example
 
-`functions.php` or wherever:
+`functions.php`
 ```php
 <?php
 
@@ -13,16 +13,18 @@ $my_form = array(
 );
 
 // validation pass
-add_action( 'contact_form', 'my_form_valid' );
 function my_form_valid( $form ) {
-  // do something...
+    $name = $form->input()->render('name');
+    echo 'Hello '. $name;
 }
+add_action( 'contact_form', 'my_form_valid' );
+
 
 // validation fail
-add_action( 'contact_form_fail', 'my_form_invalid' );
 function my_form_invalid( $form ) {
-  // do something...
+    // do something...
 }
+add_action( 'contact_form_fail', 'my_form_invalid' );
 
 // create the instance
 wfv_create( 'contact_form', $my_form );
@@ -31,11 +33,13 @@ wfv_create( 'contact_form', $my_form );
 
 ```
 
-Theme template:
-```php
+`some_template.php`
+```html
 <form method="post">
-  <input name="email" type="text">
-  <?php $my_form->get_token_fields(); ?>
-  <input type="submit" value="Send">
+
+    <input name="email" type="text">
+    <?php $my_form->token_fields(); ?>
+    <input type="submit" value="Send">
+
 </form>
 ```
