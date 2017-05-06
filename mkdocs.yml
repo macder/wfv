@@ -14,10 +14,19 @@ pages:
         - 'Rules': guide/rules.md
         - 'Messages': guide/messages.md
         - 'Populate': guide/populate.md
-        - 'Collection': guide/collections.md
+        - 'Input': guide/input.md
     - Examples:
         - 'Basic': examples/basic.md
         - 'sand': sand.md
+
+extra:
+  palette:
+    primary: 'blue'
+    accent: 'blue'
+  font:
+    text: 'Open Sans'
+    code: 'Source Code Pro'
+
 
 markdown_extensions:
   - admonition
