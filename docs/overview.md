@@ -1,4 +1,6 @@
-## What
+description: A simple, fluid, and concise API to manage user input, validation, feedback, and safe output.
+
+## Problem
 
 Working with custom forms in WordPress involves either using some rich WYSIWYG plugin, or writing custom code.
 
@@ -12,7 +14,7 @@ After submitting, the user is no longer on the form. To send them back (i.e a re
 
 Neither is elegant, and both are clunky.
 
-## How
+## Solution
 
 WFV gives you the ability to declare form validation constraints in way that is similar to many MVC frameworks.
 
@@ -22,7 +24,7 @@ You get a simple but powerful API that makes coding forms more pleasant.
 
 ---
 
-## WFV is:
+## WFV - WordPress Form Validation
 
 **Safe:**<br>
 ~~~{.js}
