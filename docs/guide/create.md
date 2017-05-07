@@ -22,7 +22,3 @@ Parameter      |  Type  | Default     | Description
 wfv_create( 'contact_form', $form );
 ~~~~
 `$form` is now an instance of `WFV\FormComposite`
-
----
-
-## FormComposite
