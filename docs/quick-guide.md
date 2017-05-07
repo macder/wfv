@@ -4,7 +4,7 @@ WFV takes an array of arguments that define the rules and messages for a form.
 
 Typically, this is defined in a themes `functions.php`, but it can be anywhere.
 
-Call `wfv_create( 'my_form', $form_array )` to get an instance of `FormComposite` as described by the array of arguments.
+This array is then passed into `wfv_create( 'my_form', $form_array )` which creates an instance of `FormComposite`.
 
 The `FormComposite` encapsulates all the parts and features of the API. It will do a lot of work for you :)
 
@@ -20,7 +20,7 @@ $rules = array(
   'email'=> ['required', 'email'],
 )
 ~~~~
-Each field holds an array of rules. You can use [built-in](/guide/rules/#built-in-rules) ones or [create your own](/guide/rules/#custom-rules).
+Each field holds an array of rules. You can use [built-in](/guide/rules/#built-in-rules) ones and [create your own](/guide/rules/#custom-rules).
 
 ---
 
@@ -61,6 +61,32 @@ $form = array(
 
 ### **Activate**
 Pass the array of arguments into the [wfv_create()](/guide/create) function to get an instance of `WFV\FormComposite`.
+
+This will magically turn that boring array into a rich composite object.
+
+Example:
+~~~~{.php}
+<?php
+
+$form = array( $rules, $messages );
+wfv_create( 'contact_form', $form );
+
+// $form is now an instance of FormComposite
+
+$form->input()->contains('email', 'foo@bar.com');  // false
+$form->input()->is_populated(); // false
+$form->display('email');
+// ...
+~~~~
+
+!!! note
+    The instance is passed by reference to the array of arguments.
+
+    ~~~
+    wfv_create( 'form_name', array $form ) 
+    ~~~
+
+For available methods, see [input](/guide/input/), [populate](/guide/populate/), and [errors](/guide/errors/)
 
 ---
 
