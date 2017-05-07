@@ -12,7 +12,6 @@ A simple, fluid, and concise API to manage user input, validation, feedback, and
     Documentation is a work in progress.
 
 !!! attention
-    WFV is in early alpha testing, and has not yet approached a public release.<br>
     Assume the risk of pre-release alpha software in your decision to use.
 
 ### Features
