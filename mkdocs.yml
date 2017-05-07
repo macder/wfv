@@ -10,10 +10,10 @@ pages:
     - Quick Guide: quick-guide.md
     - User Guide:
         - 'Configure': guide/configure.md
-        - 'Hooks': guide/hooks.md
-        - 'Create': guide/create.md
         - 'Rules': guide/rules.md
         - 'Messages': guide/messages.md
+        - 'Hooks': guide/hooks.md
+        - 'Create': guide/create.md
         - 'Populate': guide/populate.md
         - 'Input': guide/input.md
         - 'Errors': guide/errors.md
