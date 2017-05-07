@@ -32,7 +32,7 @@
         }, 
         {
             "location": "/start/", 
-            "text": "Install\n\n\nRequirements\n\n\n\n\nMinimum\n\n\n\n\nWordPress 3.7\n\n\nPHP 5.4\n\n\n\n\n\n\n\n\nRecommended\n\n\n\n\nWordPress 4.7.x\n\n\nPHP 7.0\n\n\n\n\n\n\nPHP 7.0 only with WordPress 4.0+\n\n\nPre-release\n\n\n\n\nNote\n\n\nUntil a public release is packaged, install as development\n\n\n\n\n$\n \ngit\n \nclone\n or download \nmaster\n to \n./wp-content/plugins\n\n\n$ composer install\n\n\nActivate in plugins dashboard", 
+            "text": "Install\n\n\nRequirements\n\n\n\n\nMinimum\n\n\n\n\nWordPress 3.7\n\n\nPHP 5.4\n\n\n\n\n\n\n\n\nRecommended\n\n\n\n\nWordPress 4.7.x\n\n\nPHP 7.0\n\n\n\n\n\n\nPHP 7.0 only with WordPress 4.0+\n\n\nPre-release\n\n\n\n\nNote\n\n\nUntil a public release is packaged, install as development\n\n\n\n\nHave a working instance of WordPress\n\n\n1\n2\n3\n4\n5\n6\n7\n$ \ncd\n ./wp-content/plugins\n\n$ git clone https://github.com/macder/wp-form-validation.git\n\n$ \ncd\n wp-form-validation\n\n$ composer install\n\n\n\n\n\n\nActivate the plugin in the admin dashboard", 
             "title": "Getting Started"
         }, 
         {
@@ -47,7 +47,7 @@
         }, 
         {
             "location": "/start/#pre-release", 
-            "text": "Note  Until a public release is packaged, install as development   $   git   clone  or download  master  to  ./wp-content/plugins  $ composer install  Activate in plugins dashboard", 
+            "text": "Note  Until a public release is packaged, install as development   Have a working instance of WordPress  1\n2\n3\n4\n5\n6\n7 $  cd  ./wp-content/plugins\n\n$ git clone https://github.com/macder/wp-form-validation.git\n\n$  cd  wp-form-validation\n\n$ composer install   Activate the plugin in the admin dashboard", 
             "title": "Pre-release"
         }, 
         {
