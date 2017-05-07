@@ -1,13 +1,17 @@
-WFV takes in an array of arguments to create the object you will interact with.
 
-This array will contain 2 arrays - rules, and messages.
+
+WFV takes an array of arguments that define the rules and messages for a form.
 
 Typically, this is defined in a themes `functions.php`, but it can be anywhere.
+
+Call `wfv_create( 'my_form', $form_array )` to get an instance of `FormComposite` as described by the array of arguments.
+
+The `FormComposite` encapsulates all the parts and features of the API. It will do a lot of work for you :)
 
 ---
 
 ### **Define Validation Rules**
-The rules array defines the validation rule(s) for each field
+The [rules](/guide/rules/) array defines the validation rule(s) for each field
 ~~~~{.php}
 <?php
 
@@ -21,7 +25,7 @@ Each field holds an array of rules. You can use [built-in](/guide/rules/#built-i
 ---
 
 ### **Override Messages**
-The messages array overrides an error message for a field's rule. This is optional, if no message is provided, the default will be used.
+The [messages](/guide/messages/) array overrides an error message for a field's rule. This is optional, if no message is provided, the default will be used.
 ~~~~{.php}
 <?php
 
@@ -34,8 +38,8 @@ $messages = array(
 
 ---
 
-### **Argument Structure**
-Define your validation rules and message overrides together in an array structured like this:
+### **Configuration Array**
+[Configure](/guide/configure/) the validation rules, and any message overrides in an array structured like this:
 ~~~~{.php}
 <?php
 
@@ -70,11 +74,11 @@ WFV triggers an [action](/guide/hooks) for [pass](/guide/hooks/#pass) or [fail](
 
 ~~~~.html
 <form name="contact_form" method="post">
-  <input name="name" type="text">
-  <input name="email" type="text">
-  <textarea name="msg"></textarea>
+    <input name="name" type="text">
+    <input name="email" type="text">
+    <textarea name="msg"></textarea>
 
-  <?php $form->token_fields(); ?>
-  <input type="submit" value="Submit">
+    <?php $form->token_fields(); ?>
+    <input type="submit" value="Submit">
 </form>
 ~~~~
