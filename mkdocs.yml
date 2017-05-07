@@ -9,6 +9,7 @@ pages:
     - Getting Started: start.md
     - Quick Guide: quick-guide.md
     - User Guide:
+        - 'Configure': guide/configure.md
         - 'Hooks': guide/hooks.md
         - 'Create': guide/create.md
         - 'Rules': guide/rules.md
