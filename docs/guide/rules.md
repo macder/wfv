@@ -35,12 +35,12 @@ Rule            | Description
 `integer`       | Must be integer number
 `boolean`       | Must be bool
 `array`         | Must be array
-`length`        | Character count must equal given length
-`lengthBetween` | Character count must be within given lengths
-`lengthMin`     | Character count must be greater
-`lengthMax`     | Character count must be less
-`min`           | Minimum
-`max`           | Maximum
+[`#!js length`](#rules-with-parameters)        | Character count must equal given length
+[`#!js lengthBetween`](#rules-with-parameters) | Character count must be within given lengths
+[`#!js lengthMin`](#rules-with-parameters)     | Character count must be greater
+[`#!js lengthMax`](#rules-with-parameters)      | Character count must be less
+[`#!js min`](#rules-with-parameters)            | Minimum number
+[`#!js max`](#rules-with-parameters)             | Maximum number
 `in`            | Performs in_array check on given array values
 `ip`            | Valip IP address
 `url`           | Valid URL
@@ -48,7 +48,7 @@ Rule            | Description
 `alpha`         | Only alphabetic characters
 `alphaNum`      | Only alphabetic and numeric characters
 `slug`          | URL slug characters (a-z, 0-9, -, _ )
-`regex`         | Must match given regular expression pattern
+[`#!js regex`](#rules-with-parameters)          | Must match given regular expression pattern
 `date`          | Valid date
 `dateFormat`    | Valid date in the given format
 `dateBefore`    | Valid date before given date
@@ -58,6 +58,27 @@ Rule            | Description
 `instanceOf`    | Instance of given class
 `optional`      | Value does not need to be included in data array. If it is however, it must pass validation
 
+---
+
+## Rules with Parameters
+Use an array to pass a rule with parameters.
+
+The first leaf is the rule name. Each additional leaf is a parameter.
+~~~
+<? array( 'rule_name', 'arg1', 'arg2', 'arg3' );
+~~~
+
+Example:
+~~~~{.php}
+<?php // lengthMax rule takes a Parameter
+
+$rules = array(
+    'name' => ['required', ['lengthMax', 20] ]
+);
+~~~~
+
+---
+
 ## Custom Rules
 Custom rules can be defined and validated with a callback function.
 
@@ -66,7 +87,7 @@ Custom rules can be defined and validated with a callback function.
 <?php
 
 $rules = array(
-  'phone' => ['required', 'custom:phone'],
+    'phone' => ['required', 'custom:phone'],
 );
 ~~~~
 
@@ -83,6 +104,6 @@ Create a callback that evaluates to true or false:
 // phone field will validate only if the input is 'hi' ...how cruel
 
 function wfv__phone( $value ) {
-  return ( 'hi' === $value ) ? true : false;
+    return ( 'hi' === $value ) ? true : false;
 }
 ~~~~
