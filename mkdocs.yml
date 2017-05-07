@@ -35,6 +35,7 @@ google_analytics:
 markdown_extensions:
   - admonition
   - codehilite(linenums=true)
+  - meta
   - toc(permalink=true)
   - pymdownx.superfences
   - pymdownx.snippets
