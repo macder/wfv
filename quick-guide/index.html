@@ -256,8 +256,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#argument-structure" title="Argument Structure" class="md-nav__link">
-    Argument Structure
+  <a href="#configuration-array" title="Configuration Array" class="md-nav__link">
+    Configuration Array
   </a>
   
 </li>
@@ -310,6 +310,18 @@
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../guide/configure/" title="Configure" class="md-nav__link">
+      Configure
+    </a>
+  </li>
+
         
           
           
@@ -469,8 +481,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#argument-structure" title="Argument Structure" class="md-nav__link">
-    Argument Structure
+  <a href="#configuration-array" title="Configuration Array" class="md-nav__link">
+    Configuration Array
   </a>
   
 </li>
@@ -513,12 +525,13 @@
                 
                   <h1>Quick Guide</h1>
                 
-                <p>WFV takes in an array of arguments to create the object you will interact with.</p>
-<p>This array will contain 2 arrays - rules, and messages.</p>
+                <p>WFV takes an array of arguments that define the rules and messages for a form.</p>
 <p>Typically, this is defined in a themes <code class="codehilite">functions.php</code>, but it can be anywhere.</p>
+<p>Call <code class="codehilite">wfv_create( &#39;my_form&#39;, $form_array )</code> to get an instance of <code class="codehilite">FormComposite</code> as described by the array of arguments.</p>
+<p>The <code class="codehilite">FormComposite</code> encapsulates all the parts and features of the API. It will do a lot of work for you :)</p>
 <hr />
 <h3 id="define-validation-rules"><strong>Define Validation Rules</strong><a class="headerlink" href="#define-validation-rules" title="Permanent link">&para;</a></h3>
-<p>The rules array defines the validation rule(s) for each field
+<p>The <a href="../guide/rules/">rules</a> array defines the validation rule(s) for each field
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
@@ -535,7 +548,7 @@
 Each field holds an array of rules. You can use <a href="../guide/rules/#built-in-rules">built-in</a> ones or <a href="../guide/rules/#custom-rules">create your own</a>.</p>
 <hr />
 <h3 id="override-messages"><strong>Override Messages</strong><a class="headerlink" href="#override-messages" title="Permanent link">&para;</a></h3>
-<p>The messages array overrides an error message for a field's rule. This is optional, if no message is provided, the default will be used.
+<p>The <a href="../guide/messages/">messages</a> array overrides an error message for a field's rule. This is optional, if no message is provided, the default will be used.
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
@@ -552,8 +565,8 @@ Each field holds an array of rules. You can use <a href="../guide/rules/#built-i
 </pre></div>
 </td></tr></table></p>
 <hr />
-<h3 id="argument-structure"><strong>Argument Structure</strong><a class="headerlink" href="#argument-structure" title="Permanent link">&para;</a></h3>
-<p>Define your validation rules and message overrides together in an array structured like this:
+<h3 id="configuration-array"><strong>Configuration Array</strong><a class="headerlink" href="#configuration-array" title="Permanent link">&para;</a></h3>
+<p><a href="../guide/configure/">Configure</a> the validation rules, and any message overrides in an array structured like this:
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
@@ -599,12 +612,12 @@ Each field holds an array of rules. You can use <a href="../guide/rules/#built-i
 6
 7
 8</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">form</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;contact_form&quot;</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;post&quot;</span><span class="p">&gt;</span>
-  <span class="p">&lt;</span><span class="nt">input</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;name&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span><span class="p">&gt;</span>
-  <span class="p">&lt;</span><span class="nt">input</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;email&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span><span class="p">&gt;</span>
-  <span class="p">&lt;</span><span class="nt">textarea</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;msg&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">textarea</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;name&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;email&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">textarea</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;msg&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">textarea</span><span class="p">&gt;</span>
 
-  <span class="cp">&lt;?php $form-&gt;token_fields(); ?&gt;</span>
-  <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;Submit&quot;</span><span class="p">&gt;</span>
+    <span class="cp">&lt;?php $form-&gt;token_fields(); ?&gt;</span>
+    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;Submit&quot;</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
 </pre></div>
 </td></tr></table>
@@ -641,13 +654,13 @@ Each field holds an array of rules. You can use <a href="../guide/rules/#built-i
           </a>
         
         
-          <a href="../guide/hooks/" title="Hooks" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../guide/configure/" title="Configure" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Hooks
+                Configure
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

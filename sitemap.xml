@@ -36,6 +36,12 @@
     
         
     <url>
+     <loc>/guide/configure/</loc>
+     <lastmod>2017-05-07</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
      <loc>/guide/hooks/</loc>
      <lastmod>2017-05-07</lastmod>
      <changefreq>daily</changefreq>

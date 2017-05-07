@@ -256,6 +256,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../configure/" title="Configure" class="md-nav__link">
+      Configure
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../hooks/" title="Hooks" class="md-nav__link">
       Hooks
     </a>
@@ -298,9 +310,34 @@
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
     
     
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Messages
+      </label>
+    
     <a href="./" title="Messages" class="md-nav__link md-nav__link--active">
       Messages
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#configure" title="Configure" class="md-nav__link">
+    Configure
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -397,6 +434,20 @@
   
   
   
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#configure" title="Configure" class="md-nav__link">
+    Configure
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -410,7 +461,25 @@
                 
                   <h1>Messages</h1>
                 
-                <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+                <h2 id="configure">Configure<a class="headerlink" href="#configure" title="Permanent link">&para;</a></h2>
+<p>Override error messages using an array structured like so:
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
+
+<span class="k">array</span><span class="p">(</span>
+    <span class="s1">&#39;field_name&#39;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">&#39;rule&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;message&#39;</span>
+    <span class="p">),</span>
+<span class="p">);</span>
+</pre></div>
+</td></tr></table></p>
+<p>For example, override the <code class="codehilite">required</code> error message for the <code class="codehilite">email</code> field:
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
 4
@@ -424,7 +493,7 @@
   <span class="p">],</span>
 <span class="p">);</span>
 </pre></div>
-</td></tr></table>
+</td></tr></table></p>
                 
                   
                 

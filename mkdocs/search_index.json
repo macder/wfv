@@ -52,23 +52,23 @@
         }, 
         {
             "location": "/quick-guide/", 
-            "text": "WFV takes in an array of arguments to create the object you will interact with.\n\n\nThis array will contain 2 arrays - rules, and messages.\n\n\nTypically, this is defined in a themes \nfunctions.php\n, but it can be anywhere.\n\n\n\n\nDefine Validation Rules\n\n\nThe rules array defines the validation rule(s) for each field\n\n1\n2\n3\n4\n5\n6\n?php\n\n\n\n$rules\n \n=\n \narray\n(\n\n  \nname\n \n=\n \n[\nrequired\n],\n\n  \nemail\n=\n \n[\nrequired\n,\n \nemail\n],\n\n\n)\n\n\n\n\n\nEach field holds an array of rules. You can use \nbuilt-in\n ones or \ncreate your own\n.\n\n\n\n\nOverride Messages\n\n\nThe messages array overrides an error message for a field's rule. This is optional, if no message is provided, the default will be used.\n\n1\n2\n3\n4\n5\n6\n7\n?php\n\n\n\n$messages\n \n=\n \narray\n(\n\n  \nemail\n \n=\n \n[\n\n    \nrequired\n \n=\n \nYour email is required so we can reply back\n\n  \n],\n\n\n)\n\n\n\n\n\n\n\n\nArgument Structure\n\n\nDefine your validation rules and message overrides together in an array structured like this:\n\n 1\n 2\n 3\n 4\n 5\n 6\n 7\n 8\n 9\n10\n11\n12\n13\n14\n?php\n\n\n\n$form\n \n=\n \narray\n(\n\n  \nrules\n  \n=\n \narray\n(\n\n    \nname\n \n=\n \n[\nrequired\n],\n\n    \nemail\n=\n \n[\nrequired\n,\n \nemail\n],\n\n  \n),\n\n\n  \nmessages\n \n=\n \narray\n(\n\n    \nemail\n \n=\n \n[\n\n      \nrequired\n \n=\n \nYour email is required so we can reply back\n\n    \n],\n\n  \n)\n\n\n);\n\n\n\n\n\n\n\n\nActivate\n\n\nPass the array of arguments into the \nwfv_create()\n function to get an instance of \nWFV\\FormComposite\n.\n\n\n\n\nValidation Callbacks\n\n\nWFV triggers an \naction\n for \npass\n or \nfail\n. Hook into them and handle any logic inside callbacks\n\n\n\n\nMarkup a Form\n\n\n1\n2\n3\n4\n5\n6\n7\n8\nform\n \nname\n=\ncontact_form\n \nmethod\n=\npost\n\n  \ninput\n \nname\n=\nname\n \ntype\n=\ntext\n\n  \ninput\n \nname\n=\nemail\n \ntype\n=\ntext\n\n  \ntextarea\n \nname\n=\nmsg\n/\ntextarea\n\n\n  \n?php $form-\ntoken_fields(); ?\n\n  \ninput\n \ntype\n=\nsubmit\n \nvalue\n=\nSubmit\n\n\n/\nform", 
+            "text": "WFV takes an array of arguments that define the rules and messages for a form.\n\n\nTypically, this is defined in a themes \nfunctions.php\n, but it can be anywhere.\n\n\nCall \nwfv_create( \nmy_form\n, $form_array )\n to get an instance of \nFormComposite\n as described by the array of arguments.\n\n\nThe \nFormComposite\n encapsulates all the parts and features of the API. It will do a lot of work for you :)\n\n\n\n\nDefine Validation Rules\n\n\nThe \nrules\n array defines the validation rule(s) for each field\n\n1\n2\n3\n4\n5\n6\n?php\n\n\n\n$rules\n \n=\n \narray\n(\n\n  \nname\n \n=\n \n[\nrequired\n],\n\n  \nemail\n=\n \n[\nrequired\n,\n \nemail\n],\n\n\n)\n\n\n\n\n\nEach field holds an array of rules. You can use \nbuilt-in\n ones or \ncreate your own\n.\n\n\n\n\nOverride Messages\n\n\nThe \nmessages\n array overrides an error message for a field's rule. This is optional, if no message is provided, the default will be used.\n\n1\n2\n3\n4\n5\n6\n7\n?php\n\n\n\n$messages\n \n=\n \narray\n(\n\n  \nemail\n \n=\n \n[\n\n    \nrequired\n \n=\n \nYour email is required so we can reply back\n\n  \n],\n\n\n)\n\n\n\n\n\n\n\n\nConfiguration Array\n\n\nConfigure\n the validation rules, and any message overrides in an array structured like this:\n\n 1\n 2\n 3\n 4\n 5\n 6\n 7\n 8\n 9\n10\n11\n12\n13\n14\n?php\n\n\n\n$form\n \n=\n \narray\n(\n\n  \nrules\n  \n=\n \narray\n(\n\n    \nname\n \n=\n \n[\nrequired\n],\n\n    \nemail\n=\n \n[\nrequired\n,\n \nemail\n],\n\n  \n),\n\n\n  \nmessages\n \n=\n \narray\n(\n\n    \nemail\n \n=\n \n[\n\n      \nrequired\n \n=\n \nYour email is required so we can reply back\n\n    \n],\n\n  \n)\n\n\n);\n\n\n\n\n\n\n\n\nActivate\n\n\nPass the array of arguments into the \nwfv_create()\n function to get an instance of \nWFV\\FormComposite\n.\n\n\n\n\nValidation Callbacks\n\n\nWFV triggers an \naction\n for \npass\n or \nfail\n. Hook into them and handle any logic inside callbacks\n\n\n\n\nMarkup a Form\n\n\n1\n2\n3\n4\n5\n6\n7\n8\nform\n \nname\n=\ncontact_form\n \nmethod\n=\npost\n\n    \ninput\n \nname\n=\nname\n \ntype\n=\ntext\n\n    \ninput\n \nname\n=\nemail\n \ntype\n=\ntext\n\n    \ntextarea\n \nname\n=\nmsg\n/\ntextarea\n\n\n    \n?php $form-\ntoken_fields(); ?\n\n    \ninput\n \ntype\n=\nsubmit\n \nvalue\n=\nSubmit\n\n\n/\nform", 
             "title": "Quick Guide"
         }, 
         {
             "location": "/quick-guide/#define-validation-rules", 
-            "text": "The rules array defines the validation rule(s) for each field 1\n2\n3\n4\n5\n6 ?php  $rules   =   array ( \n   name   =   [ required ], \n   email =   [ required ,   email ],  )   \nEach field holds an array of rules. You can use  built-in  ones or  create your own .", 
+            "text": "The  rules  array defines the validation rule(s) for each field 1\n2\n3\n4\n5\n6 ?php  $rules   =   array ( \n   name   =   [ required ], \n   email =   [ required ,   email ],  )   \nEach field holds an array of rules. You can use  built-in  ones or  create your own .", 
             "title": "Define Validation Rules"
         }, 
         {
             "location": "/quick-guide/#override-messages", 
-            "text": "The messages array overrides an error message for a field's rule. This is optional, if no message is provided, the default will be used. 1\n2\n3\n4\n5\n6\n7 ?php  $messages   =   array ( \n   email   =   [ \n     required   =   Your email is required so we can reply back \n   ],  )", 
+            "text": "The  messages  array overrides an error message for a field's rule. This is optional, if no message is provided, the default will be used. 1\n2\n3\n4\n5\n6\n7 ?php  $messages   =   array ( \n   email   =   [ \n     required   =   Your email is required so we can reply back \n   ],  )", 
             "title": "Override Messages"
         }, 
         {
-            "location": "/quick-guide/#argument-structure", 
-            "text": "Define your validation rules and message overrides together in an array structured like this:  1\n 2\n 3\n 4\n 5\n 6\n 7\n 8\n 9\n10\n11\n12\n13\n14 ?php  $form   =   array ( \n   rules    =   array ( \n     name   =   [ required ], \n     email =   [ required ,   email ], \n   ), \n\n   messages   =   array ( \n     email   =   [ \n       required   =   Your email is required so we can reply back \n     ], \n   )  );", 
-            "title": "Argument Structure"
+            "location": "/quick-guide/#configuration-array", 
+            "text": "Configure  the validation rules, and any message overrides in an array structured like this:  1\n 2\n 3\n 4\n 5\n 6\n 7\n 8\n 9\n10\n11\n12\n13\n14 ?php  $form   =   array ( \n   rules    =   array ( \n     name   =   [ required ], \n     email =   [ required ,   email ], \n   ), \n\n   messages   =   array ( \n     email   =   [ \n       required   =   Your email is required so we can reply back \n     ], \n   )  );", 
+            "title": "Configuration Array"
         }, 
         {
             "location": "/quick-guide/#activate", 
@@ -82,8 +82,13 @@
         }, 
         {
             "location": "/quick-guide/#markup-a-form", 
-            "text": "1\n2\n3\n4\n5\n6\n7\n8 form   name = contact_form   method = post \n   input   name = name   type = text \n   input   name = email   type = text \n   textarea   name = msg / textarea \n\n   ?php $form- token_fields(); ? \n   input   type = submit   value = Submit  / form", 
+            "text": "1\n2\n3\n4\n5\n6\n7\n8 form   name = contact_form   method = post \n     input   name = name   type = text \n     input   name = email   type = text \n     textarea   name = msg / textarea \n\n     ?php $form- token_fields(); ? \n     input   type = submit   value = Submit  / form", 
             "title": "Markup a Form"
+        }, 
+        {
+            "location": "/guide/configure/", 
+            "text": "", 
+            "title": "Configure"
         }, 
         {
             "location": "/guide/hooks/", 
@@ -137,8 +142,13 @@
         }, 
         {
             "location": "/guide/messages/", 
-            "text": "1\n2\n3\n4\n5\n6\n7\n?php\n\n\n\n$messages\n \n=\n \narray\n(\n\n  \nemail\n \n=\n \n[\n\n    \nrequired\n \n=\n \nYour email is required so we can reply back\n\n  \n],\n\n\n);", 
+            "text": "Configure\n\n\nOverride error messages using an array structured like so:\n\n1\n2\n3\n4\n5\n6\n7\n?php\n\n\n\narray\n(\n\n    \nfield_name\n \n=\n \narray\n(\n\n        \nrule\n \n=\n \nmessage\n\n    \n),\n\n\n);\n\n\n\n\n\n\nFor example, override the \nrequired\n error message for the \nemail\n field:\n\n1\n2\n3\n4\n5\n6\n7\n?php\n\n\n\n$messages\n \n=\n \narray\n(\n\n  \nemail\n \n=\n \n[\n\n    \nrequired\n \n=\n \nYour email is required so we can reply back\n\n  \n],\n\n\n);", 
             "title": "Messages"
+        }, 
+        {
+            "location": "/guide/messages/#configure", 
+            "text": "Override error messages using an array structured like so: 1\n2\n3\n4\n5\n6\n7 ?php  array ( \n     field_name   =   array ( \n         rule   =   message \n     ),  );    For example, override the  required  error message for the  email  field: 1\n2\n3\n4\n5\n6\n7 ?php  $messages   =   array ( \n   email   =   [ \n     required   =   Your email is required so we can reply back \n   ],  );", 
+            "title": "Configure"
         }, 
         {
             "location": "/guide/populate/", 
