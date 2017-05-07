@@ -329,30 +329,6 @@
 
 
   <li class="md-nav__item">
-    <a href="../guide/hooks/" title="Hooks" class="md-nav__link">
-      Hooks
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../guide/create/" title="Create" class="md-nav__link">
-      Create
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
     <a href="../guide/rules/" title="Rules" class="md-nav__link">
       Rules
     </a>
@@ -367,6 +343,30 @@
   <li class="md-nav__item">
     <a href="../guide/messages/" title="Messages" class="md-nav__link">
       Messages
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../guide/hooks/" title="Hooks" class="md-nav__link">
+      Hooks
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../guide/create/" title="Create" class="md-nav__link">
+      Create
     </a>
   </li>
 
@@ -527,7 +527,7 @@
                 
                 <p>WFV takes an array of arguments that define the rules and messages for a form.</p>
 <p>Typically, this is defined in a themes <code class="codehilite">functions.php</code>, but it can be anywhere.</p>
-<p>Call <code class="codehilite">wfv_create( &#39;my_form&#39;, $form_array )</code> to get an instance of <code class="codehilite">FormComposite</code> as described by the array of arguments.</p>
+<p>This array is then passed into <code class="codehilite">wfv_create( &#39;my_form&#39;, $form_array )</code> which creates an instance of <code class="codehilite">FormComposite</code>.</p>
 <p>The <code class="codehilite">FormComposite</code> encapsulates all the parts and features of the API. It will do a lot of work for you :)</p>
 <hr />
 <h3 id="define-validation-rules"><strong>Define Validation Rules</strong><a class="headerlink" href="#define-validation-rules" title="Permanent link">&para;</a></h3>
@@ -545,7 +545,7 @@
 <span class="p">)</span>
 </pre></div>
 </td></tr></table>
-Each field holds an array of rules. You can use <a href="../guide/rules/#built-in-rules">built-in</a> ones or <a href="../guide/rules/#custom-rules">create your own</a>.</p>
+Each field holds an array of rules. You can use <a href="../guide/rules/#built-in-rules">built-in</a> ones and <a href="../guide/rules/#custom-rules">create your own</a>.</p>
 <hr />
 <h3 id="override-messages"><strong>Override Messages</strong><a class="headerlink" href="#override-messages" title="Permanent link">&para;</a></h3>
 <p>The <a href="../guide/messages/">messages</a> array overrides an error message for a field's rule. This is optional, if no message is provided, the default will be used.
@@ -599,6 +599,40 @@ Each field holds an array of rules. You can use <a href="../guide/rules/#built-i
 <hr />
 <h3 id="activate"><strong>Activate</strong><a class="headerlink" href="#activate" title="Permanent link">&para;</a></h3>
 <p>Pass the array of arguments into the <a href="../guide/create">wfv_create()</a> function to get an instance of <code class="codehilite">WFV\FormComposite</code>.</p>
+<p>This will magically turn that boring array into a rich composite object.</p>
+<p>Example:
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
+
+<span class="nv">$form</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span> <span class="nv">$rules</span><span class="p">,</span> <span class="nv">$messages</span> <span class="p">);</span>
+<span class="nx">wfv_create</span><span class="p">(</span> <span class="s1">&#39;contact_form&#39;</span><span class="p">,</span> <span class="nv">$form</span> <span class="p">);</span>
+
+<span class="c1">// $form is now an instance of FormComposite</span>
+
+<span class="nv">$form</span><span class="o">-&gt;</span><span class="na">input</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">contains</span><span class="p">(</span><span class="s1">&#39;email&#39;</span><span class="p">,</span> <span class="s1">&#39;foo@bar.com&#39;</span><span class="p">);</span>  <span class="c1">// false</span>
+<span class="nv">$form</span><span class="o">-&gt;</span><span class="na">input</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">is_populated</span><span class="p">();</span> <span class="c1">// false</span>
+<span class="nv">$form</span><span class="o">-&gt;</span><span class="na">display</span><span class="p">(</span><span class="s1">&#39;email&#39;</span><span class="p">);</span>
+<span class="c1">// ...</span>
+</pre></div>
+</td></tr></table></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The instance is passed by reference to the array of arguments.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>wfv_create( &#39;form_name&#39;, array $form ) 
+</pre></div>
+</td></tr></table>
+
+</div>
+<p>For available methods, see <a href="../guide/input/">input</a>, <a href="../guide/populate/">populate</a>, and <a href="../guide/errors/">errors</a></p>
 <hr />
 <h3 id="validation-callbacks"><strong>Validation Callbacks</strong><a class="headerlink" href="#validation-callbacks" title="Permanent link">&para;</a></h3>
 <p>WFV triggers an <a href="../guide/hooks">action</a> for <a href="../guide/hooks/#pass">pass</a> or <a href="../guide/hooks/#fail">fail</a>. Hook into them and handle any logic inside callbacks</p>

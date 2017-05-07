@@ -42,18 +42,6 @@
     </url>
         
     <url>
-     <loc>/guide/hooks/</loc>
-     <lastmod>2017-05-07</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>/guide/create/</loc>
-     <lastmod>2017-05-07</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
      <loc>/guide/rules/</loc>
      <lastmod>2017-05-07</lastmod>
      <changefreq>daily</changefreq>
@@ -61,6 +49,18 @@
         
     <url>
      <loc>/guide/messages/</loc>
+     <lastmod>2017-05-07</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/guide/hooks/</loc>
+     <lastmod>2017-05-07</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/guide/create/</loc>
      <lastmod>2017-05-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
