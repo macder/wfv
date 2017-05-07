@@ -1,11 +1,26 @@
 ## Configure
+Rules are defined using an array structured like so:
+~~~
+<?php
 
+array(
+    'field_name' => ['rule', 'rule']
+);
+~~~
+
+The `field_name` corresponds to the `name` attribute of a field:
+~~~~{.html}
+<input name="name" type="text">
+<input name="email" type="text">
+~~~~
+
+Example:
 ~~~~{.php}
 <?php
 
 $rules = array(
-  'name' => ['required'],
-  'email'=> ['required', 'email'],
+    'name' => ['required'],
+    'email'=> ['required', 'email'],
 )
 ~~~~
 
