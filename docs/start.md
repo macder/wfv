@@ -17,8 +17,16 @@
 !!! note
     Until a public release is packaged, install as development
 
-[`#!js $ git clone`](https://github.com/macder/wp-form-validation.git) or download [`#!js master`](https://github.com/macder/wp-form-validation/archive/master.zip) to `./wp-content/plugins`
+Have a working instance of WordPress
 
-`$ composer install`
+```sh
+$ cd ./wp-content/plugins
 
-Activate in plugins dashboard
+$ git clone https://github.com/macder/wp-form-validation.git
+
+$ cd wp-form-validation
+
+$ composer install
+```
+
+Activate the plugin in the admin dashboard
