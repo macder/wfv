@@ -2,7 +2,7 @@
     "docs": [
         {
             "location": "/", 
-            "text": "WFV is an elegant way to work with custom forms in WordPress.\n\n\nA simple, fluid, and concise API to manage user input, validation, feedback, and safe output.\n\n\nLet's begin\n\n\n\n\n\n\nNote\n\n\nDocumentation is a work in progress.\n\n\n\n\n\n\nAttention\n\n\nAssume the risk of pre-release alpha software in your decision to use.\n\n\n\n\nFeatures\n\n\n\n\n32 built-in rules\n\n\nCustom rules\n\n\nCustom error messages\n\n\nHelper methods for safe output\n\n\nAuto populate\n\n\nMultiple forms\n\n\nValidation Hooks\n\n\nSelf POST - no redirects, no GET vars, no sessions, no cookies\n\n\nLightweight - Only one dependency (WordPress aside)\n\n\nUnit tested core\n - More stable, quicker fixes, less bugs, more happy\n\n\nNo rendered markup\n\n\nDeveloper freedom", 
+            "text": "WFV is an elegant way to work with custom forms in WordPress.\n\n\nA simple fluid and concise API to manage user input, validation, feedback, and safe output.\n\n\nLet's begin\n\n\n\n\n\n\nNote\n\n\nDocumentation is a work in progress.\n\n\n\n\n\n\nAttention\n\n\nAssume the risk of pre-release alpha software in your decision to use.\n\n\n\n\nFeatures\n\n\n\n\n32 built-in rules\n\n\nCustom rules\n\n\nCustom error messages\n\n\nHelper methods for safe output\n\n\nAuto populate\n\n\nMultiple forms\n\n\nValidation Hooks\n\n\nSelf POST - no redirects, no GET vars, no sessions, no cookies\n\n\nLightweight - Only one dependency (WordPress aside)\n\n\nUnit tested core\n - More stable, quicker fixes, less bugs, more happy\n\n\nNo rendered markup\n\n\nDeveloper freedom", 
             "title": "Welcome"
         }, 
         {
