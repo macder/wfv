@@ -7,6 +7,13 @@ A simple, fluid, and concise API to manage user input, validation, feedback, and
 
 ---
 
+!!! note
+    Documentation is a work in progress.
+
+!!! attention
+    WFV is in early alpha testing, and has not yet approached a public release.<br>
+    Assume the risk of pre-release alpha software in your decision to use.
+
 ### Features
 * [32 built-in rules](/guide/rules/#built-in-rules)
 * [Custom rules](guide/rules/#custom-rules)
