@@ -12,7 +12,7 @@ A simple fluid and concise API to manage user input, validation, feedback, and s
     Documentation is a work in progress.
 
 !!! attention
-    Assume the risk of pre-release alpha software in your decision to use.
+    Assume the risk of pre-release alpha software.
 
 ### Features
 * [32 built-in rules](/guide/rules/#built-in-rules)
