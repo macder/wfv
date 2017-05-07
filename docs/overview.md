@@ -28,17 +28,17 @@ You get a simple but powerful API that makes coding forms more pleasant.
 
 **Safe:**<br>
 ~~~{.js}
-$form->input()->render('email');
+$form->escape('email');
 ~~~
 
 **Adaptable:**<br>
 ~~~{.js}
-$form->input()->render('email', 'strip_tags')
+$form->display('email', 'strip_tags')
 ~~~
 
 **Flexible:**<br>
 ~~~{.js}
-$form->input()->render('email', function( $input ) {
+$form->escape('email', function( $input ) {
   return strip_tags( $input );
 });
 ~~~
@@ -50,7 +50,7 @@ $form->input()->contains( 'email', 'foo@bar.com' );
 
 **Helpful:**<br>
 ~~~{.js}
-$form->errors->first('email');
+$form->errors()->first('email');
 ~~~
 
 **Pragmatic:**<br>
