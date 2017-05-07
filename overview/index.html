@@ -6,6 +6,8 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
+        <meta name="description" content="A simple, fluid, and concise API to manage user input, validation, feedback, and safe output.">
+      
       
       
       
@@ -218,22 +220,22 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#what" title="What" class="md-nav__link">
-    What
+  <a href="#problem" title="Problem" class="md-nav__link">
+    Problem
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#how" title="How" class="md-nav__link">
-    How
+  <a href="#solution" title="Solution" class="md-nav__link">
+    Solution
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#wfv-is" title="WFV is:" class="md-nav__link">
-    WFV is:
+  <a href="#wfv-wordpress-form-validation" title="WFV - WordPress Form Validation" class="md-nav__link">
+    WFV - WordPress Form Validation
   </a>
   
 </li>
@@ -434,22 +436,22 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#what" title="What" class="md-nav__link">
-    What
+  <a href="#problem" title="Problem" class="md-nav__link">
+    Problem
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#how" title="How" class="md-nav__link">
-    How
+  <a href="#solution" title="Solution" class="md-nav__link">
+    Solution
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#wfv-is" title="WFV is:" class="md-nav__link">
-    WFV is:
+  <a href="#wfv-wordpress-form-validation" title="WFV - WordPress Form Validation" class="md-nav__link">
+    WFV - WordPress Form Validation
   </a>
   
 </li>
@@ -471,19 +473,19 @@
                 
                   <h1>Overview</h1>
                 
-                <h2 id="what">What<a class="headerlink" href="#what" title="Permanent link">&para;</a></h2>
+                <h2 id="problem">Problem<a class="headerlink" href="#problem" title="Permanent link">&para;</a></h2>
 <p>Working with custom forms in WordPress involves either using some rich WYSIWYG plugin, or writing custom code.</p>
 <p>Neither approach is wrong, but sometimes less overhead or no awkward code blocks is more ideal.</p>
 <p>Suppose you are creating a custom form and decide to follow the <a href="https://codex.wordpress.org/Plugin_API/Action_Reference/admin_post_%28action%29">WordPress way</a> as a best practice. You create an action that triggers after a http request to /wp-admin/admin-post.php. So far so good, but that form is posting to <code class="codehilite">http://yoursite.com/wp-admin/admin-post.php</code></p>
 <p>Why is this a problem?</p>
 <p>After submitting, the user is no longer on the form. To send them back (i.e a required field was missed), we need to do a HTTP redirect. At this point the <code class="codehilite">$_POST</code> with the input is gone... which would have been useful to repopulate the form. In order to persist that input, it needs to be stored in <code class="codehilite">GET</code>, or in the browser as a session or cookie.</p>
 <p>Neither is elegant, and both are clunky.</p>
-<h2 id="how">How<a class="headerlink" href="#how" title="Permanent link">&para;</a></h2>
+<h2 id="solution">Solution<a class="headerlink" href="#solution" title="Permanent link">&para;</a></h2>
 <p>WFV gives you the ability to declare form validation constraints in way that is similar to many MVC frameworks.</p>
 <p>Markup a form in a template and define its constraints in functions.php or a plugin.</p>
 <p>You get a simple but powerful API that makes coding forms more pleasant.</p>
 <hr />
-<h2 id="wfv-is">WFV is:<a class="headerlink" href="#wfv-is" title="Permanent link">&para;</a></h2>
+<h2 id="wfv-wordpress-form-validation">WFV - WordPress Form Validation<a class="headerlink" href="#wfv-wordpress-form-validation" title="Permanent link">&para;</a></h2>
 <p><strong>Safe:</strong><br>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nx">$form</span><span class="o">-&gt;</span><span class="nx">input</span><span class="p">()</span><span class="o">-&gt;</span><span class="nx">render</span><span class="p">(</span><span class="s1">&#39;email&#39;</span><span class="p">);</span>
 </pre></div>
