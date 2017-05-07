@@ -74,7 +74,7 @@ WFV triggers an [action](/guide/hooks) for [pass](/guide/hooks/#pass) or [fail](
   <input name="email" type="text">
   <textarea name="msg"></textarea>
 
-  <?php $my_form->get_token_fields(); ?>
+  <?php $form->token_fields(); ?>
   <input type="submit" value="Submit">
 </form>
 ~~~~
