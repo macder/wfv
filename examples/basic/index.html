@@ -474,12 +474,12 @@
 10</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">form</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;post&quot;</span><span class="p">&gt;</span>
 
     <span class="p">&lt;</span><span class="nt">input</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;name&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span>
-        <span class="na">value</span><span class="o">=</span><span class="s">&quot;&lt;?php echo $my_form-&gt;input()-&gt;render(&#39;name&#39;); ?&gt;&quot;</span><span class="p">&gt;</span>
+      <span class="na">value</span><span class="o">=</span><span class="s">&quot;&lt;?php $my_form-&gt;display(&#39;name&#39;); ?&gt;&quot;</span><span class="p">&gt;</span>
 
     <span class="p">&lt;</span><span class="nt">input</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;email&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span><span class="p">&gt;</span>
-    <span class="cp">&lt;?php $my_form-&gt;token_fields(); ?&gt;</span>
     <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;Send&quot;</span><span class="p">&gt;</span>
 
+    <span class="cp">&lt;?php $my_form-&gt;token_fields(); ?&gt;</span>
 <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
 </pre></div>
 </td></tr></table></p>
