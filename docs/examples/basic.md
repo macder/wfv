@@ -32,11 +32,11 @@ wfv_create( 'contact_form', $my_form );
 <form method="post">
 
     <input name="name" type="text"
-        value="<?php echo $my_form->input()->render('name'); ?>">
+      value="<?php $my_form->display('name'); ?>">
 
     <input name="email" type="text">
-    <?php $my_form->token_fields(); ?>
     <input type="submit" value="Send">
 
+    <?php $my_form->token_fields(); ?>
 </form>
 ```
