@@ -487,17 +487,17 @@
 <hr />
 <h2 id="wfv-wordpress-form-validation">WFV - WordPress Form Validation<a class="headerlink" href="#wfv-wordpress-form-validation" title="Permanent link">&para;</a></h2>
 <p><strong>Safe:</strong><br>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nx">$form</span><span class="o">-&gt;</span><span class="nx">input</span><span class="p">()</span><span class="o">-&gt;</span><span class="nx">render</span><span class="p">(</span><span class="s1">&#39;email&#39;</span><span class="p">);</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nx">$form</span><span class="o">-&gt;</span><span class="nx">escape</span><span class="p">(</span><span class="s1">&#39;email&#39;</span><span class="p">);</span>
 </pre></div>
 </td></tr></table></p>
 <p><strong>Adaptable:</strong><br>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nx">$form</span><span class="o">-&gt;</span><span class="nx">input</span><span class="p">()</span><span class="o">-&gt;</span><span class="nx">render</span><span class="p">(</span><span class="s1">&#39;email&#39;</span><span class="p">,</span> <span class="s1">&#39;strip_tags&#39;</span><span class="p">)</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nx">$form</span><span class="o">-&gt;</span><span class="nx">display</span><span class="p">(</span><span class="s1">&#39;email&#39;</span><span class="p">,</span> <span class="s1">&#39;strip_tags&#39;</span><span class="p">)</span>
 </pre></div>
 </td></tr></table></p>
 <p><strong>Flexible:</strong><br>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
-3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nx">$form</span><span class="o">-&gt;</span><span class="nx">input</span><span class="p">()</span><span class="o">-&gt;</span><span class="nx">render</span><span class="p">(</span><span class="s1">&#39;email&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span> <span class="nx">$input</span> <span class="p">)</span> <span class="p">{</span>
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nx">$form</span><span class="o">-&gt;</span><span class="nx">escape</span><span class="p">(</span><span class="s1">&#39;email&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span> <span class="nx">$input</span> <span class="p">)</span> <span class="p">{</span>
   <span class="k">return</span> <span class="nx">strip_tags</span><span class="p">(</span> <span class="nx">$input</span> <span class="p">);</span>
 <span class="p">});</span>
 </pre></div>
@@ -507,7 +507,7 @@
 </pre></div>
 </td></tr></table></p>
 <p><strong>Helpful:</strong><br>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nx">$form</span><span class="o">-&gt;</span><span class="nx">errors</span><span class="o">-&gt;</span><span class="nx">first</span><span class="p">(</span><span class="s1">&#39;email&#39;</span><span class="p">);</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nx">$form</span><span class="o">-&gt;</span><span class="nx">errors</span><span class="p">()</span><span class="o">-&gt;</span><span class="nx">first</span><span class="p">(</span><span class="s1">&#39;email&#39;</span><span class="p">);</span>
 </pre></div>
 </td></tr></table></p>
 <p><strong>Pragmatic:</strong><br>

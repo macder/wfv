@@ -479,13 +479,14 @@
                 
                 <h2 id="text-fields">Text Fields<a class="headerlink" href="#text-fields" title="Permanent link">&para;</a></h2>
 <p>If validation fails, these fields would populate using the submitted values:
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">input</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;name&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;&lt;?= $form-&gt;input()-&gt;render(&#39;name&#39;) ?&gt;&quot;</span><span class="p">&gt;</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">input</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;name&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;&lt;?php $form-&gt;display(&#39;name&#39;); ?&gt;&quot;</span><span class="p">&gt;</span>
 </pre></div>
 </td></tr></table></p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">textarea</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;msg&quot;</span><span class="p">&gt;</span><span class="cp">&lt;?= $form-&gt;input()-&gt;render(&#39;msg&#39;) ?&gt;</span><span class="p">&lt;/</span><span class="nt">textarea</span><span class="p">&gt;</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">textarea</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;msg&quot;</span><span class="p">&gt;</span><span class="cp">&lt;?php $form-&gt;display(&#39;msg&#39;); ?&gt;</span><span class="p">&lt;/</span><span class="nt">textarea</span><span class="p">&gt;</span>
 </pre></div>
 </td></tr></table>
 
+<p><a href="../../guide/input/#display">More options using <code class="codehilite">display()</code></a></p>
 <hr />
 <h2 id="checkboxes-and-radio">Checkboxes and Radio<a class="headerlink" href="#checkboxes-and-radio" title="Permanent link">&para;</a></h2>
 <p>Convenience method to repopulate checkbox input
