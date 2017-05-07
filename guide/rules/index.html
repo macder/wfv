@@ -317,6 +317,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#rules-with-parameters" title="Rules with Parameters" class="md-nav__link">
+    Rules with Parameters
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#custom-rules" title="Custom Rules" class="md-nav__link">
     Custom Rules
   </a>
@@ -454,6 +461,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#rules-with-parameters" title="Rules with Parameters" class="md-nav__link">
+    Rules with Parameters
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#custom-rules" title="Custom Rules" class="md-nav__link">
     Custom Rules
   </a>
@@ -478,6 +492,25 @@
                   <h1>Rules</h1>
                 
                 <h2 id="configure">Configure<a class="headerlink" href="#configure" title="Permanent link">&para;</a></h2>
+<p>Rules are defined using an array structured like so:
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
+
+<span class="k">array</span><span class="p">(</span>
+    <span class="s1">&#39;field_name&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">&#39;rule&#39;</span><span class="p">,</span> <span class="s1">&#39;rule&#39;</span><span class="p">]</span>
+<span class="p">);</span>
+</pre></div>
+</td></tr></table></p>
+<p>The <code class="codehilite">field_name</code> corresponds to the <code class="codehilite">name</code> attribute of a field:
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">input</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;name&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">input</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;email&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span><span class="p">&gt;</span>
+</pre></div>
+</td></tr></table></p>
+<p>Example:
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
@@ -486,12 +519,11 @@
 6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 
 <span class="nv">$rules</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
-  <span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">&#39;required&#39;</span><span class="p">],</span>
-  <span class="s1">&#39;email&#39;</span><span class="o">=&gt;</span> <span class="p">[</span><span class="s1">&#39;required&#39;</span><span class="p">,</span> <span class="s1">&#39;email&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">&#39;required&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;email&#39;</span><span class="o">=&gt;</span> <span class="p">[</span><span class="s1">&#39;required&#39;</span><span class="p">,</span> <span class="s1">&#39;email&#39;</span><span class="p">],</span>
 <span class="p">)</span>
 </pre></div>
-</td></tr></table>
-
+</td></tr></table></p>
 <h2 id="built-in-rules">Built-in Rules<a class="headerlink" href="#built-in-rules" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -534,28 +566,28 @@
 <td>Must be array</td>
 </tr>
 <tr>
-<td><code class="codehilite">length</code></td>
+<td><a href="#rules-with-parameters"><code class="codehilite"><span class="nx">length</span></code></a></td>
 <td>Character count must equal given length</td>
 </tr>
 <tr>
-<td><code class="codehilite">lengthBetween</code></td>
+<td><a href="#rules-with-parameters"><code class="codehilite"><span class="nx">lengthBetween</span></code></a></td>
 <td>Character count must be within given lengths</td>
 </tr>
 <tr>
-<td><code class="codehilite">lengthMin</code></td>
+<td><a href="#rules-with-parameters"><code class="codehilite"><span class="nx">lengthMin</span></code></a></td>
 <td>Character count must be greater</td>
 </tr>
 <tr>
-<td><code class="codehilite">lengthMax</code></td>
+<td><a href="#rules-with-parameters"><code class="codehilite"><span class="nx">lengthMax</span></code></a></td>
 <td>Character count must be less</td>
 </tr>
 <tr>
-<td><code class="codehilite">min</code></td>
-<td>Minimum</td>
+<td><a href="#rules-with-parameters"><code class="codehilite"><span class="nx">min</span></code></a></td>
+<td>Minimum number</td>
 </tr>
 <tr>
-<td><code class="codehilite">max</code></td>
-<td>Maximum</td>
+<td><a href="#rules-with-parameters"><code class="codehilite"><span class="nx">max</span></code></a></td>
+<td>Maximum number</td>
 </tr>
 <tr>
 <td><code class="codehilite">in</code></td>
@@ -586,7 +618,7 @@
 <td>URL slug characters (a-z, 0-9, -, _ )</td>
 </tr>
 <tr>
-<td><code class="codehilite">regex</code></td>
+<td><a href="#rules-with-parameters"><code class="codehilite"><span class="nx">regex</span></code></a></td>
 <td>Must match given regular expression pattern</td>
 </tr>
 <tr>
@@ -623,6 +655,26 @@
 </tr>
 </tbody>
 </table>
+<hr />
+<h2 id="rules-with-parameters">Rules with Parameters<a class="headerlink" href="#rules-with-parameters" title="Permanent link">&para;</a></h2>
+<p>Use an array to pass a rule with parameters.</p>
+<p>The first leaf is the rule name. Each additional leaf is a parameter.
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">&lt;?</span> <span class="k">array</span><span class="p">(</span> <span class="s1">&#39;rule_name&#39;</span><span class="p">,</span> <span class="s1">&#39;arg1&#39;</span><span class="p">,</span> <span class="s1">&#39;arg2&#39;</span><span class="p">,</span> <span class="s1">&#39;arg3&#39;</span> <span class="p">);</span>
+</pre></div>
+</td></tr></table></p>
+<p>Example:
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span> <span class="c1">// lengthMax rule takes a Parameter</span>
+
+<span class="nv">$rules</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">&#39;required&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;lengthMax&#39;</span><span class="p">,</span> <span class="mi">20</span><span class="p">]</span> <span class="p">]</span>
+<span class="p">);</span>
+</pre></div>
+</td></tr></table></p>
+<hr />
 <h2 id="custom-rules">Custom Rules<a class="headerlink" href="#custom-rules" title="Permanent link">&para;</a></h2>
 <p>Custom rules can be defined and validated with a callback function.</p>
 <p><strong>Define:</strong>
@@ -633,7 +685,7 @@
 5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 
 <span class="nv">$rules</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
-  <span class="s1">&#39;phone&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">&#39;required&#39;</span><span class="p">,</span> <span class="s1">&#39;custom:phone&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;phone&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">&#39;required&#39;</span><span class="p">,</span> <span class="s1">&#39;custom:phone&#39;</span><span class="p">],</span>
 <span class="p">);</span>
 </pre></div>
 </td></tr></table></p>
@@ -653,7 +705,7 @@
 <span class="c1">// phone field will validate only if the input is &#39;hi&#39; ...how cruel</span>
 
 <span class="k">function</span> <span class="nf">wfv__phone</span><span class="p">(</span> <span class="nv">$value</span> <span class="p">)</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="p">(</span> <span class="s1">&#39;hi&#39;</span> <span class="o">===</span> <span class="nv">$value</span> <span class="p">)</span> <span class="o">?</span> <span class="k">true</span> <span class="o">:</span> <span class="k">false</span><span class="p">;</span>
+    <span class="k">return</span> <span class="p">(</span> <span class="s1">&#39;hi&#39;</span> <span class="o">===</span> <span class="nv">$value</span> <span class="p">)</span> <span class="o">?</span> <span class="k">true</span> <span class="o">:</span> <span class="k">false</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
 </td></tr></table></p>
