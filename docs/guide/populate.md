@@ -2,12 +2,14 @@
 
 If validation fails, these fields would populate using the submitted values:
 ```html
-<input name="name" type="text" value="<?= $form->input()->render('name') ?>">
+<input name="name" type="text" value="<?php $form->display('name'); ?>">
 ```
 
 ```html
-<textarea name="msg"><?= $form->input()->render('msg') ?></textarea>
+<textarea name="msg"><?php $form->display('msg'); ?></textarea>
 ```
+
+[More options using `display()`](/guide/input/#display)
 
 ---
 
