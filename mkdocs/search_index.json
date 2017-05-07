@@ -97,18 +97,13 @@
         }, 
         {
             "location": "/guide/create/", 
-            "text": "wfv_create\n\n\nThis method will pass by reference an instance of \nFormComposite\n as described by the $array arguments.\n\n\nYou must call this method to actualize a validation. It takes the boring array of arguments and gives you a rich composite.\n\n1\nwfv_create\n(\n \nstring\n \n$action\n,\n \narray\n \n$form\n \n)\n\n\n\n\n\n\n\n\n\n\n\n\nParameter\n\n\nType\n\n\nDefault\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\n$action\n\n\nstring\n\n\n\n\n\n\n\n\n\n\n$form\n\n\narray\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWarning\n\n\nWhen using validation hooks, this method must be called after they have been registered.\n\n\nPlace \nwfv_create()\n below the hooks.\n\n\n\n\n1\n2\n?php\n\n\nwfv_create\n(\n \ncontact_form\n,\n \n$form\n \n);\n\n\n\n\n\n\n$form\n is now an instance of \nWFV\\FormComposite\n\n\n\n\nFormComposite", 
+            "text": "wfv_create\n\n\nThis method will pass by reference an instance of \nFormComposite\n as described by the $array arguments.\n\n\nYou must call this method to actualize a validation. It takes the boring array of arguments and gives you a rich composite.\n\n1\nwfv_create\n(\n \nstring\n \n$action\n,\n \narray\n \n$form\n \n)\n\n\n\n\n\n\n\n\n\n\n\n\nParameter\n\n\nType\n\n\nDefault\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\n$action\n\n\nstring\n\n\n\n\n\n\n\n\n\n\n$form\n\n\narray\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWarning\n\n\nWhen using validation hooks, this method must be called after they have been registered.\n\n\nPlace \nwfv_create()\n below the hooks.\n\n\n\n\n1\n2\n?php\n\n\nwfv_create\n(\n \ncontact_form\n,\n \n$form\n \n);\n\n\n\n\n\n\n$form\n is now an instance of \nWFV\\FormComposite", 
             "title": "Create"
         }, 
         {
             "location": "/guide/create/#wfv_create", 
             "text": "This method will pass by reference an instance of  FormComposite  as described by the $array arguments.  You must call this method to actualize a validation. It takes the boring array of arguments and gives you a rich composite. 1 wfv_create (   string   $action ,   array   $form   )       Parameter  Type  Default  Description      $action  string      $form  array        Warning  When using validation hooks, this method must be called after they have been registered.  Place  wfv_create()  below the hooks.   1\n2 ?php  wfv_create (   contact_form ,   $form   );    $form  is now an instance of  WFV\\FormComposite", 
             "title": "wfv_create"
-        }, 
-        {
-            "location": "/guide/create/#formcomposite", 
-            "text": "", 
-            "title": "FormComposite"
         }, 
         {
             "location": "/guide/rules/", 
