@@ -11,8 +11,9 @@ A simple fluid and concise API to manage user input, validation, feedback, and s
 !!! note
     Documentation is a work in progress.
 
-!!! success "Alpha"
-    WFV has approached alpha testing; anticipate lowered risk of breaking changes.
+!!! attention
+    Alpha stage - Moderate risk of change.
+
 
 ### Features
 * [32 built-in rules](/guide/rules/#built-in-rules)
