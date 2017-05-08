@@ -1,4 +1,4 @@
-## Configure
+## Define
 Rules are defined using an array structured like so:
 ~~~
 <?php
@@ -24,7 +24,9 @@ $rules = array(
 )
 ~~~~
 
-## Built-in Rules
+---
+
+## Built-in
 Rule            | Description       
 --------------- | ----------------
 `required`      | Required field
@@ -60,7 +62,7 @@ Rule            | Description
 
 ---
 
-## Rules with Parameters
+### With Parameters
 Use an array to pass a rule with parameters.
 
 The first leaf is the rule name. Each additional leaf is a parameter.
@@ -79,7 +81,7 @@ $rules = array(
 
 ---
 
-## Custom Rules
+## Custom
 Custom rules can be defined and validated with a callback function.
 
 **Define:**
@@ -105,5 +107,28 @@ Create a callback that evaluates to true or false:
 
 function wfv__phone( $value ) {
     return ( 'hi' === $value ) ? true : false;
+}
+~~~~
+
+---
+
+### With Parameters
+
+Example:
+~~~~{.php}
+<?php
+
+$rules = array(
+    'passwd' => ['required'],
+    'confirm' => [ ['custom:required_with', 'passwd'] ]
+);
+~~~~
+
+~~~~{.php}
+<?php
+
+function wfv__required_with( $value, $params ) {
+  print_r($params);
+  return ( ) ? true : false;
 }
 ~~~~
