@@ -56,6 +56,19 @@ Basic:
 <?php // eg. user entered <h1>Bar</h1>
 
 $form->display('name');
+
+$form->display('input', 'name');
+
+$form->input()->display('name');
+
+$form->display()->input('name');
+
+$form->display()->input('name', 'strip_tags');
+
+$name = $form->encode()->input('name');
+
+$name = $form->escape()->input('name');
+
 ~~~~
 &lt;h1&gt;Bar&lt;/h1&gt;
 

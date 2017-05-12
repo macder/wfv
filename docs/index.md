@@ -12,12 +12,12 @@ A simple fluid and concise API to manage user input, validation, feedback, and s
     Documentation is a work in progress.
 
 !!! attention
-    Alpha stage - Moderate risk of change.
+    Pre-alpha stage - Moderate risk of change.
 
 
 ### Features
-* [32 built-in rules](/guide/rules/#built-in-rules)
-* [Custom rules](guide/rules/#custom-rules)
+* [Built-in rules](/guide/rules/#built-in)
+* [Custom rules](guide/rules/#custom)
 * [Custom error messages](/guide/messages/)
 * [Helper methods for safe output](/guide/input/)
 * [Auto populate](/guide/populate/)

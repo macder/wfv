@@ -4,13 +4,13 @@ Rules are defined using an array structured like so:
 <?php
 
 array(
-    'field_name' => ['rule', 'rule']
+    'first_name' => 'required|max:100'
 );
 ~~~
 
 The `field_name` corresponds to the `name` attribute of a field:
 ~~~~{.html}
-<input name="name" type="text">
+<input name="first_name" type="text">
 <input name="email" type="text">
 ~~~~
 
@@ -19,65 +19,74 @@ Example:
 <?php
 
 $rules = array(
-    'name' => ['required'],
-    'email'=> ['required', 'email'],
+    'first_name' => 'required',
+    'email'      => 'required|email',
 )
 ~~~~
 
 ---
 
 ## Built-in
-Rule            | Description       
---------------- | ----------------
-`required`      | Required field
-`equals`        | Field must equal value from another field (eg. new password confirm)
-`different`     | Field value must be different than another field
-`accepted`      | Checkbox or Radio must be accepted
-`numeric`       | Must be numeric
-`integer`       | Must be integer number
-`boolean`       | Must be bool
-`array`         | Must be array
-[`#!js length`](#rules-with-parameters)        | Character count must equal given length
-[`#!js lengthBetween`](#rules-with-parameters) | Character count must be within given lengths
-[`#!js lengthMin`](#rules-with-parameters)     | Character count must be greater
-[`#!js lengthMax`](#rules-with-parameters)      | Character count must be less
-[`#!js min`](#rules-with-parameters)            | Minimum number
-[`#!js max`](#rules-with-parameters)             | Maximum number
-`in`            | Performs in_array check on given array values
-`ip`            | Valip IP address
-`url`           | Valid URL
-`urlActive`     | Valid URL with active DNS record
-`alpha`         | Only alphabetic characters
-`alphaNum`      | Only alphabetic and numeric characters
-`slug`          | URL slug characters (a-z, 0-9, -, _ )
-[`#!js regex`](#rules-with-parameters)          | Must match given regular expression pattern
-`date`          | Valid date
-`dateFormat`    | Valid date in the given format
-`dateBefore`    | Valid date before given date
-`dateAfter`     | Valid date after given date
-`contains`      | Field is a string that contains given string
-`creditCard`    | Valid credit card number
-`instanceOf`    | Instance of given class
-`optional`      | Value does not need to be included in data array. If it is however, it must pass validation
+Rules          |                |              |             |
+---------------| ---------------|--------------|-------------|
+`lorem`        | `lorem`        | `lorem`      | `lorem`     | `lorem`  
+`lorem`        | `lorem`        | `lorem`      | `lorem`     | `lorem`
+`lorem`        | `lorem`        | `lorem`      | `lorem`     | `lorem`
+`lorem`        | `lorem`        | `lorem`      | `lorem`     | `lorem`
+
+### **alpha**
+Input value must only contain alphabetic characters.
+
+`#!js 'field' => 'alpha'`
 
 ---
 
-### With Parameters
-Use an array to pass a rule with parameters.
+### **alpha_dash**
+Input value must only contain alpha-numeric characters, dashes, and underscores.
 
-The first leaf is the rule name. Each additional leaf is a parameter.
-~~~
-<? array( 'rule_name', 'arg1', 'arg2', 'arg3' );
-~~~
+`#!js 'field' => 'alpha_dash'`
 
-Example:
-~~~~{.php}
-<?php // lengthMax rule takes a Parameter
+---
 
-$rules = array(
-    'name' => ['required', ['lengthMax', 20] ]
-);
-~~~~
+### **alpha_num**
+Input value must only contain alphabetic and numeric characters.
+
+`#!js 'field' => 'alpha_num'`
+
+---
+
+### **email**
+Input value must be formatted like an email address.
+
+`#!js 'field' => 'email'`
+
+---
+
+### **numeric**
+Input value must be numeric.
+
+`#!js 'field' => 'numeric'`
+
+---
+
+### **required**
+The field is required and must not be empty.
+
+`#!js 'field' => 'required'`
+
+---
+
+### **required_if**
+The field is required only if another field has a specific value.
+
+`#!js 'field' => 'required_if:other_field,value'`
+
+---
+
+### **required_with**
+The field is required only if another field is not empty.
+
+`#!js 'field' => 'required_with:other_field'`
 
 ---
 
@@ -89,16 +98,11 @@ Custom rules can be defined and validated with a callback function.
 <?php
 
 $rules = array(
-    'phone' => ['required', 'custom:phone'],
+    'phone' => ['required', 'callback:wfv__phone'],
 );
 ~~~~
 
 **Callback:**
-
-!!! note
-    Callback function names must start with `wfv__` followed by the rule name<br>
-
-    This is to prevent naming collisions.
 
 Create a callback that evaluates to true or false:
 ~~~~{.php}
@@ -110,25 +114,7 @@ function wfv__phone( $value ) {
 }
 ~~~~
 
+!!! note
+    To prevent name collisions, it is advised to prefix the function name and/or wrap the function in a `function_exists()` conditional.
+
 ---
-
-### With Parameters
-
-Example:
-~~~~{.php}
-<?php
-
-$rules = array(
-    'passwd' => ['required'],
-    'confirm' => [ ['custom:required_with', 'passwd'] ]
-);
-~~~~
-
-~~~~{.php}
-<?php
-
-function wfv__required_with( $value, $params ) {
-  print_r($params);
-  return ( ) ? true : false;
-}
-~~~~

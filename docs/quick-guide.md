@@ -16,11 +16,11 @@ The [rules](/guide/rules/) array defines the validation rule(s) for each field
 <?php
 
 $rules = array(
-  'name' => ['required'],
-  'email'=> ['required', 'email'],
-)
+    'name'  => 'required',
+    'email' => 'required|email',
+);
 ~~~~
-Each field holds an array of rules. You can use [built-in](/guide/rules/#built-in-rules) ones and [create your own](/guide/rules/#custom-rules).
+You can use [built-in](/guide/rules/#built-in-rules) ones and [create your own](/guide/rules/#custom-rules).
 
 ---
 
@@ -30,10 +30,10 @@ The [messages](/guide/messages/) array overrides an error message for a field's 
 <?php
 
 $messages = array(
-  'email' => [
-    'required' => 'Your email is required so we can reply back'
-  ],
-)
+    'email' => [
+        'required' => 'Your email is required so we can reply back'
+    ],
+);
 ~~~~
 
 ---
@@ -44,16 +44,16 @@ $messages = array(
 <?php
 
 $form = array(
-  'rules'  => array(
-    'name' => ['required'],
-    'email'=> ['required', 'email'],
-  ),
+    'rules'  => array(
+        'name' => 'required',
+        'email'=> 'required|email',
+    ),
 
-  'messages' => array(
-    'email' => [
-      'required' => 'Your email is required so we can reply back'
-    ],
-  )
+    'messages' => array(
+        'email' => [
+            'required' => 'Your email is required so we can reply back'
+        ],
+    )
 );
 ~~~~
 
@@ -83,7 +83,7 @@ $form->display('email');
     The instance is passed by reference to the array of arguments.
 
     ~~~
-    wfv_create( 'form_name', array $form ) 
+    wfv_create( 'form_name', array $form )
     ~~~
 
 For available methods, see [input](/guide/input/), [populate](/guide/populate/), and [errors](/guide/errors/)

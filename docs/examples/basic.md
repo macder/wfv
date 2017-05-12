@@ -7,8 +7,8 @@
 // declare the rules
 $my_form = array(
     'rules' => array(
-        'name'  => ['required'],
-        'email' => ['required', 'email']
+        'name'  => 'required',
+        'email' => 'required|email'
     )
 );
 
