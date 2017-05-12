@@ -98,7 +98,7 @@ Custom rules can be defined and validated with a callback function.
 <?php
 
 $rules = array(
-    'phone' => ['required', 'callback:wfv__phone'],
+    'phone' => 'required|callback:wfv__phone',
 );
 ~~~~
 
