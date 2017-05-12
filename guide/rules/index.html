@@ -306,8 +306,57 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#with-parameters" title="With Parameters" class="md-nav__link">
-    With Parameters
+  <a href="#alpha" title="alpha" class="md-nav__link">
+    alpha
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alpha_dash" title="alpha_dash" class="md-nav__link">
+    alpha_dash
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alpha_num" title="alpha_num" class="md-nav__link">
+    alpha_num
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#email" title="email" class="md-nav__link">
+    email
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#numeric" title="numeric" class="md-nav__link">
+    numeric
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#required" title="required" class="md-nav__link">
+    required
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#required_if" title="required_if" class="md-nav__link">
+    required_if
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#required_with" title="required_with" class="md-nav__link">
+    required_with
   </a>
   
 </li>
@@ -321,19 +370,6 @@
   <a href="#custom" title="Custom" class="md-nav__link">
     Custom
   </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#with-parameters_1" title="With Parameters" class="md-nav__link">
-    With Parameters
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -493,8 +529,57 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#with-parameters" title="With Parameters" class="md-nav__link">
-    With Parameters
+  <a href="#alpha" title="alpha" class="md-nav__link">
+    alpha
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alpha_dash" title="alpha_dash" class="md-nav__link">
+    alpha_dash
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alpha_num" title="alpha_num" class="md-nav__link">
+    alpha_num
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#email" title="email" class="md-nav__link">
+    email
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#numeric" title="numeric" class="md-nav__link">
+    numeric
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#required" title="required" class="md-nav__link">
+    required
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#required_if" title="required_if" class="md-nav__link">
+    required_if
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#required_with" title="required_with" class="md-nav__link">
+    required_with
   </a>
   
 </li>
@@ -508,19 +593,6 @@
   <a href="#custom" title="Custom" class="md-nav__link">
     Custom
   </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#with-parameters_1" title="With Parameters" class="md-nav__link">
-    With Parameters
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -550,13 +622,13 @@
 5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 
 <span class="k">array</span><span class="p">(</span>
-    <span class="s1">&#39;field_name&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">&#39;rule&#39;</span><span class="p">,</span> <span class="s1">&#39;rule&#39;</span><span class="p">]</span>
+    <span class="s1">&#39;first_name&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;required|max:100&#39;</span>
 <span class="p">);</span>
 </pre></div>
 </td></tr></table></p>
 <p>The <code class="codehilite">field_name</code> corresponds to the <code class="codehilite">name</code> attribute of a field:
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">input</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;name&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span><span class="p">&gt;</span>
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">input</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;first_name&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span><span class="p">&gt;</span>
 <span class="p">&lt;</span><span class="nt">input</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;email&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span><span class="p">&gt;</span>
 </pre></div>
 </td></tr></table></p>
@@ -569,8 +641,8 @@
 6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 
 <span class="nv">$rules</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
-    <span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">&#39;required&#39;</span><span class="p">],</span>
-    <span class="s1">&#39;email&#39;</span><span class="o">=&gt;</span> <span class="p">[</span><span class="s1">&#39;required&#39;</span><span class="p">,</span> <span class="s1">&#39;email&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;first_name&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;required&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;email&#39;</span>      <span class="o">=&gt;</span> <span class="s1">&#39;required|email&#39;</span><span class="p">,</span>
 <span class="p">)</span>
 </pre></div>
 </td></tr></table></p>
@@ -579,152 +651,75 @@
 <table>
 <thead>
 <tr>
-<th>Rule</th>
-<th>Description</th>
+<th>Rules</th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code class="codehilite">required</code></td>
-<td>Required field</td>
+<td><code class="codehilite">lorem</code></td>
+<td><code class="codehilite">lorem</code></td>
+<td><code class="codehilite">lorem</code></td>
+<td><code class="codehilite">lorem</code></td>
+<td><code class="codehilite">lorem</code></td>
 </tr>
 <tr>
-<td><code class="codehilite">equals</code></td>
-<td>Field must equal value from another field (eg. new password confirm)</td>
+<td><code class="codehilite">lorem</code></td>
+<td><code class="codehilite">lorem</code></td>
+<td><code class="codehilite">lorem</code></td>
+<td><code class="codehilite">lorem</code></td>
+<td><code class="codehilite">lorem</code></td>
 </tr>
 <tr>
-<td><code class="codehilite">different</code></td>
-<td>Field value must be different than another field</td>
+<td><code class="codehilite">lorem</code></td>
+<td><code class="codehilite">lorem</code></td>
+<td><code class="codehilite">lorem</code></td>
+<td><code class="codehilite">lorem</code></td>
+<td><code class="codehilite">lorem</code></td>
 </tr>
 <tr>
-<td><code class="codehilite">accepted</code></td>
-<td>Checkbox or Radio must be accepted</td>
-</tr>
-<tr>
-<td><code class="codehilite">numeric</code></td>
-<td>Must be numeric</td>
-</tr>
-<tr>
-<td><code class="codehilite">integer</code></td>
-<td>Must be integer number</td>
-</tr>
-<tr>
-<td><code class="codehilite">boolean</code></td>
-<td>Must be bool</td>
-</tr>
-<tr>
-<td><code class="codehilite">array</code></td>
-<td>Must be array</td>
-</tr>
-<tr>
-<td><a href="#rules-with-parameters"><code class="codehilite"><span class="nx">length</span></code></a></td>
-<td>Character count must equal given length</td>
-</tr>
-<tr>
-<td><a href="#rules-with-parameters"><code class="codehilite"><span class="nx">lengthBetween</span></code></a></td>
-<td>Character count must be within given lengths</td>
-</tr>
-<tr>
-<td><a href="#rules-with-parameters"><code class="codehilite"><span class="nx">lengthMin</span></code></a></td>
-<td>Character count must be greater</td>
-</tr>
-<tr>
-<td><a href="#rules-with-parameters"><code class="codehilite"><span class="nx">lengthMax</span></code></a></td>
-<td>Character count must be less</td>
-</tr>
-<tr>
-<td><a href="#rules-with-parameters"><code class="codehilite"><span class="nx">min</span></code></a></td>
-<td>Minimum number</td>
-</tr>
-<tr>
-<td><a href="#rules-with-parameters"><code class="codehilite"><span class="nx">max</span></code></a></td>
-<td>Maximum number</td>
-</tr>
-<tr>
-<td><code class="codehilite">in</code></td>
-<td>Performs in_array check on given array values</td>
-</tr>
-<tr>
-<td><code class="codehilite">ip</code></td>
-<td>Valip IP address</td>
-</tr>
-<tr>
-<td><code class="codehilite">url</code></td>
-<td>Valid URL</td>
-</tr>
-<tr>
-<td><code class="codehilite">urlActive</code></td>
-<td>Valid URL with active DNS record</td>
-</tr>
-<tr>
-<td><code class="codehilite">alpha</code></td>
-<td>Only alphabetic characters</td>
-</tr>
-<tr>
-<td><code class="codehilite">alphaNum</code></td>
-<td>Only alphabetic and numeric characters</td>
-</tr>
-<tr>
-<td><code class="codehilite">slug</code></td>
-<td>URL slug characters (a-z, 0-9, -, _ )</td>
-</tr>
-<tr>
-<td><a href="#rules-with-parameters"><code class="codehilite"><span class="nx">regex</span></code></a></td>
-<td>Must match given regular expression pattern</td>
-</tr>
-<tr>
-<td><code class="codehilite">date</code></td>
-<td>Valid date</td>
-</tr>
-<tr>
-<td><code class="codehilite">dateFormat</code></td>
-<td>Valid date in the given format</td>
-</tr>
-<tr>
-<td><code class="codehilite">dateBefore</code></td>
-<td>Valid date before given date</td>
-</tr>
-<tr>
-<td><code class="codehilite">dateAfter</code></td>
-<td>Valid date after given date</td>
-</tr>
-<tr>
-<td><code class="codehilite">contains</code></td>
-<td>Field is a string that contains given string</td>
-</tr>
-<tr>
-<td><code class="codehilite">creditCard</code></td>
-<td>Valid credit card number</td>
-</tr>
-<tr>
-<td><code class="codehilite">instanceOf</code></td>
-<td>Instance of given class</td>
-</tr>
-<tr>
-<td><code class="codehilite">optional</code></td>
-<td>Value does not need to be included in data array. If it is however, it must pass validation</td>
+<td><code class="codehilite">lorem</code></td>
+<td><code class="codehilite">lorem</code></td>
+<td><code class="codehilite">lorem</code></td>
+<td><code class="codehilite">lorem</code></td>
+<td><code class="codehilite">lorem</code></td>
 </tr>
 </tbody>
 </table>
+<h3 id="alpha"><strong>alpha</strong><a class="headerlink" href="#alpha" title="Permanent link">&para;</a></h3>
+<p>Input value must only contain alphabetic characters.</p>
+<p><code class="codehilite"><span class="s1">&#39;field&#39;</span> <span class="p">=&gt;</span> <span class="s1">&#39;alpha&#39;</span></code></p>
 <hr />
-<h3 id="with-parameters">With Parameters<a class="headerlink" href="#with-parameters" title="Permanent link">&para;</a></h3>
-<p>Use an array to pass a rule with parameters.</p>
-<p>The first leaf is the rule name. Each additional leaf is a parameter.
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">&lt;?</span> <span class="k">array</span><span class="p">(</span> <span class="s1">&#39;rule_name&#39;</span><span class="p">,</span> <span class="s1">&#39;arg1&#39;</span><span class="p">,</span> <span class="s1">&#39;arg2&#39;</span><span class="p">,</span> <span class="s1">&#39;arg3&#39;</span> <span class="p">);</span>
-</pre></div>
-</td></tr></table></p>
-<p>Example:
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span> <span class="c1">// lengthMax rule takes a Parameter</span>
-
-<span class="nv">$rules</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
-    <span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">&#39;required&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;lengthMax&#39;</span><span class="p">,</span> <span class="mi">20</span><span class="p">]</span> <span class="p">]</span>
-<span class="p">);</span>
-</pre></div>
-</td></tr></table></p>
+<h3 id="alpha_dash"><strong>alpha_dash</strong><a class="headerlink" href="#alpha_dash" title="Permanent link">&para;</a></h3>
+<p>Input value must only contain alpha-numeric characters, dashes, and underscores.</p>
+<p><code class="codehilite"><span class="s1">&#39;field&#39;</span> <span class="p">=&gt;</span> <span class="s1">&#39;alpha_dash&#39;</span></code></p>
+<hr />
+<h3 id="alpha_num"><strong>alpha_num</strong><a class="headerlink" href="#alpha_num" title="Permanent link">&para;</a></h3>
+<p>Input value must only contain alphabetic and numeric characters.</p>
+<p><code class="codehilite"><span class="s1">&#39;field&#39;</span> <span class="p">=&gt;</span> <span class="s1">&#39;alpha_num&#39;</span></code></p>
+<hr />
+<h3 id="email"><strong>email</strong><a class="headerlink" href="#email" title="Permanent link">&para;</a></h3>
+<p>Input value must be formatted like an email address.</p>
+<p><code class="codehilite"><span class="s1">&#39;field&#39;</span> <span class="p">=&gt;</span> <span class="s1">&#39;email&#39;</span></code></p>
+<hr />
+<h3 id="numeric"><strong>numeric</strong><a class="headerlink" href="#numeric" title="Permanent link">&para;</a></h3>
+<p>Input value must be numeric.</p>
+<p><code class="codehilite"><span class="s1">&#39;field&#39;</span> <span class="p">=&gt;</span> <span class="s1">&#39;numeric&#39;</span></code></p>
+<hr />
+<h3 id="required"><strong>required</strong><a class="headerlink" href="#required" title="Permanent link">&para;</a></h3>
+<p>The field is required and must not be empty.</p>
+<p><code class="codehilite"><span class="s1">&#39;field&#39;</span> <span class="p">=&gt;</span> <span class="s1">&#39;required&#39;</span></code></p>
+<hr />
+<h3 id="required_if"><strong>required_if</strong><a class="headerlink" href="#required_if" title="Permanent link">&para;</a></h3>
+<p>The field is required only if another field has a specific value.</p>
+<p><code class="codehilite"><span class="s1">&#39;field&#39;</span> <span class="p">=&gt;</span> <span class="s1">&#39;required_if:other_field,value&#39;</span></code></p>
+<hr />
+<h3 id="required_with"><strong>required_with</strong><a class="headerlink" href="#required_with" title="Permanent link">&para;</a></h3>
+<p>The field is required only if another field is not empty.</p>
+<p><code class="codehilite"><span class="s1">&#39;field&#39;</span> <span class="p">=&gt;</span> <span class="s1">&#39;required_with:other_field&#39;</span></code></p>
 <hr />
 <h2 id="custom">Custom<a class="headerlink" href="#custom" title="Permanent link">&para;</a></h2>
 <p>Custom rules can be defined and validated with a callback function.</p>
@@ -736,16 +731,11 @@
 5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 
 <span class="nv">$rules</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
-    <span class="s1">&#39;phone&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">&#39;required&#39;</span><span class="p">,</span> <span class="s1">&#39;custom:phone&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;phone&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">&#39;required&#39;</span><span class="p">,</span> <span class="s1">&#39;callback:wfv__phone&#39;</span><span class="p">],</span>
 <span class="p">);</span>
 </pre></div>
 </td></tr></table></p>
 <p><strong>Callback:</strong></p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Callback function names must start with <code class="codehilite">wfv__</code> followed by the rule name<br></p>
-<p>This is to prevent naming collisions.</p>
-</div>
 <p>Create a callback that evaluates to true or false:
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
@@ -760,35 +750,11 @@
 <span class="p">}</span>
 </pre></div>
 </td></tr></table></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To prevent name collisions, it is advised to prefix the function name and/or wrap the function in a <code class="codehilite">function_exists()</code> conditional.</p>
+</div>
 <hr />
-<h3 id="with-parameters_1">With Parameters<a class="headerlink" href="#with-parameters_1" title="Permanent link">&para;</a></h3>
-<p>Example:
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
-
-<span class="nv">$rules</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
-    <span class="s1">&#39;passwd&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">&#39;required&#39;</span><span class="p">],</span>
-    <span class="s1">&#39;confirm&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span> <span class="p">[</span><span class="s1">&#39;custom:required_with&#39;</span><span class="p">,</span> <span class="s1">&#39;passwd&#39;</span><span class="p">]</span> <span class="p">]</span>
-<span class="p">);</span>
-</pre></div>
-</td></tr></table></p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
-
-<span class="k">function</span> <span class="nf">wfv__required_with</span><span class="p">(</span> <span class="nv">$value</span><span class="p">,</span> <span class="nv">$params</span> <span class="p">)</span> <span class="p">{</span>
-  <span class="nb">print_r</span><span class="p">(</span><span class="nv">$params</span><span class="p">);</span>
-  <span class="k">return</span> <span class="p">(</span> <span class="p">)</span> <span class="o">?</span> <span class="k">true</span> <span class="o">:</span> <span class="k">false</span><span class="p">;</span>
-<span class="p">}</span>
-</pre></div>
-</td></tr></table>
                 
                   
                 

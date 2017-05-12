@@ -540,12 +540,12 @@
 6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 
 <span class="nv">$rules</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
-  <span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">&#39;required&#39;</span><span class="p">],</span>
-  <span class="s1">&#39;email&#39;</span><span class="o">=&gt;</span> <span class="p">[</span><span class="s1">&#39;required&#39;</span><span class="p">,</span> <span class="s1">&#39;email&#39;</span><span class="p">],</span>
-<span class="p">)</span>
+    <span class="s1">&#39;name&#39;</span>  <span class="o">=&gt;</span> <span class="s1">&#39;required&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;email&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;required|email&#39;</span><span class="p">,</span>
+<span class="p">);</span>
 </pre></div>
 </td></tr></table>
-Each field holds an array of rules. You can use <a href="../guide/rules/#built-in-rules">built-in</a> ones and <a href="../guide/rules/#custom-rules">create your own</a>.</p>
+You can use <a href="../guide/rules/#built-in-rules">built-in</a> ones and <a href="../guide/rules/#custom-rules">create your own</a>.</p>
 <hr />
 <h3 id="override-messages"><strong>Override Messages</strong><a class="headerlink" href="#override-messages" title="Permanent link">&para;</a></h3>
 <p>The <a href="../guide/messages/">messages</a> array overrides an error message for a field's rule. This is optional, if no message is provided, the default will be used.
@@ -558,10 +558,10 @@ Each field holds an array of rules. You can use <a href="../guide/rules/#built-i
 7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 
 <span class="nv">$messages</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
-  <span class="s1">&#39;email&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
-    <span class="s1">&#39;required&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Your email is required so we can reply back&#39;</span>
-  <span class="p">],</span>
-<span class="p">)</span>
+    <span class="s1">&#39;email&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
+        <span class="s1">&#39;required&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Your email is required so we can reply back&#39;</span>
+    <span class="p">],</span>
+<span class="p">);</span>
 </pre></div>
 </td></tr></table></p>
 <hr />
@@ -583,16 +583,16 @@ Each field holds an array of rules. You can use <a href="../guide/rules/#built-i
 14</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 
 <span class="nv">$form</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
-  <span class="s1">&#39;rules&#39;</span>  <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
-    <span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">&#39;required&#39;</span><span class="p">],</span>
-    <span class="s1">&#39;email&#39;</span><span class="o">=&gt;</span> <span class="p">[</span><span class="s1">&#39;required&#39;</span><span class="p">,</span> <span class="s1">&#39;email&#39;</span><span class="p">],</span>
-  <span class="p">),</span>
+    <span class="s1">&#39;rules&#39;</span>  <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;required&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;email&#39;</span><span class="o">=&gt;</span> <span class="s1">&#39;required|email&#39;</span><span class="p">,</span>
+    <span class="p">),</span>
 
-  <span class="s1">&#39;messages&#39;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
-    <span class="s1">&#39;email&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
-      <span class="s1">&#39;required&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Your email is required so we can reply back&#39;</span>
-    <span class="p">],</span>
-  <span class="p">)</span>
+    <span class="s1">&#39;messages&#39;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">&#39;email&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
+            <span class="s1">&#39;required&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Your email is required so we can reply back&#39;</span>
+        <span class="p">],</span>
+    <span class="p">)</span>
 <span class="p">);</span>
 </pre></div>
 </td></tr></table></p>
@@ -627,7 +627,7 @@ Each field holds an array of rules. You can use <a href="../guide/rules/#built-i
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The instance is passed by reference to the array of arguments.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>wfv_create( &#39;form_name&#39;, array $form ) 
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>wfv_create( &#39;form_name&#39;, array $form )
 </pre></div>
 </td></tr></table>
 
