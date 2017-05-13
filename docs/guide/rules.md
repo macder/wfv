@@ -73,6 +73,12 @@ Input value must only contain alphabetic and numeric characters.
 
 ---
 
+### **callback**
+
+`#!js 'field' => ''`
+
+---
+
 ### **date**
 Input value must be a date.
 
@@ -96,6 +102,36 @@ Input value must be a date.
 Input value must be formatted like an email address.
 
 `#!js 'field' => 'email'`
+
+---
+
+### **equals**
+
+`#!js 'field' => ''`
+
+---
+
+### **integer**
+
+`#!js 'field' => ''`
+
+---
+
+### **ip**
+
+`#!js 'field' => ''`
+
+---
+
+### **max**
+
+`#!js 'field' => ''`
+
+---
+
+### **min**
+
+`#!js 'field' => ''`
 
 ---
 
