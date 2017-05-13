@@ -92,7 +92,7 @@
         }, 
         {
             "location": "/guide/rules/", 
-            "text": "Define\n\n\nRules are defined using an array structured like so:\n\n1\n2\n3\n4\n5\n?php\n\n\n\narray\n(\n\n    \nfirst_name\n \n=\n \nrequired|max:100\n\n\n);\n\n\n\n\n\n\nThe \nfield_name\n corresponds to the \nname\n attribute of a field:\n\n1\n2\ninput\n \nname\n=\nfirst_name\n \ntype\n=\ntext\n\n\ninput\n \nname\n=\nemail\n \ntype\n=\ntext\n\n\n\n\n\n\nExample:\n\n1\n2\n3\n4\n5\n6\n?php\n\n\n\n$rules\n \n=\n \narray\n(\n\n    \nfirst_name\n \n=\n \nrequired\n,\n\n    \nemail\n      \n=\n \nrequired|email\n,\n\n\n)\n\n\n\n\n\n\n\n\nBuilt-in\n\n\n\n\n\n\n\n\nRules\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nlorem\n\n\nlorem\n\n\nlorem\n\n\nlorem\n\n\nlorem\n\n\n\n\n\n\nlorem\n\n\nlorem\n\n\nlorem\n\n\nlorem\n\n\nlorem\n\n\n\n\n\n\nlorem\n\n\nlorem\n\n\nlorem\n\n\nlorem\n\n\nlorem\n\n\n\n\n\n\nlorem\n\n\nlorem\n\n\nlorem\n\n\nlorem\n\n\nlorem\n\n\n\n\n\n\n\n\nalpha\n\n\nInput value must only contain alphabetic characters.\n\n\nfield\n \n=\n \nalpha\n\n\n\n\nalpha_dash\n\n\nInput value must only contain alpha-numeric characters, dashes, and underscores.\n\n\nfield\n \n=\n \nalpha_dash\n\n\n\n\nalpha_num\n\n\nInput value must only contain alphabetic and numeric characters.\n\n\nfield\n \n=\n \nalpha_num\n\n\n\n\nemail\n\n\nInput value must be formatted like an email address.\n\n\nfield\n \n=\n \nemail\n\n\n\n\nnumeric\n\n\nInput value must be numeric.\n\n\nfield\n \n=\n \nnumeric\n\n\n\n\nrequired\n\n\nThe field is required and must not be empty.\n\n\nfield\n \n=\n \nrequired\n\n\n\n\nrequired_if\n\n\nThe field is required only if another field has a specific value.\n\n\nfield\n \n=\n \nrequired_if:other_field,value\n\n\n\n\nrequired_with\n\n\nThe field is required only if another field is not empty.\n\n\nfield\n \n=\n \nrequired_with:other_field\n\n\n\n\nCustom\n\n\nCustom rules can be defined and validated with a callback function.\n\n\nDefine:\n\n\n1\n2\n3\n4\n5\n?php\n\n\n\n$rules\n \n=\n \narray\n(\n\n    \nphone\n \n=\n \nrequired|callback:wfv__phone\n,\n\n\n);\n\n\n\n\n\n\nCallback:\n\n\nCreate a callback that evaluates to true or false:\n\n1\n2\n3\n4\n5\n6\n?php\n\n\n// phone field will validate only if the input is \nhi\n ...how cruel\n\n\n\nfunction\n \nwfv__phone\n(\n \n$value\n \n)\n \n{\n\n    \nreturn\n \n(\n \nhi\n \n===\n \n$value\n \n)\n \n?\n \ntrue\n \n:\n \nfalse\n;\n\n\n}\n\n\n\n\n\n\n\n\nNote\n\n\nTo prevent name collisions, it is advised to prefix the function name and/or wrap the function in a \nfunction_exists()\n conditional.", 
+            "text": "Define\n\n\nRules are defined using an array structured like so:\n\n1\n2\n3\n4\n5\n?php\n\n\n\narray\n(\n\n    \nfirst_name\n \n=\n \nrequired|max:100\n\n\n);\n\n\n\n\n\n\nThe \nfield_name\n corresponds to the \nname\n attribute of a field:\n\n1\n2\ninput\n \nname\n=\nfirst_name\n \ntype\n=\ntext\n\n\ninput\n \nname\n=\nemail\n \ntype\n=\ntext\n\n\n\n\n\n\nExample:\n\n1\n2\n3\n4\n5\n6\n?php\n\n\n\n$rules\n \n=\n \narray\n(\n\n    \nfirst_name\n \n=\n \nrequired\n,\n\n    \nemail\n      \n=\n \nrequired|email\n,\n\n\n)\n\n\n\n\n\n\n\n\nBuilt-in\n\n\n\n\n\n\n\n\nRules\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nalpha\n\n\nlorem\n\n\nlorem\n\n\nlorem\n\n\nlorem\n\n\n\n\n\n\nalpha_dash\n\n\nlorem\n\n\nlorem\n\n\nlorem\n\n\nlorem\n\n\n\n\n\n\nalpha_num\n\n\nlorem\n\n\nlorem\n\n\nlorem\n\n\nlorem\n\n\n\n\n\n\nlorem\n\n\nlorem\n\n\nlorem\n\n\nlorem\n\n\nlorem\n\n\n\n\n\n\n\n\nalpha\n\n\nInput value must only contain alphabetic characters.\n\n\nfield\n \n=\n \nalpha\n\n\n\n\nalpha_dash\n\n\nInput value must only contain alpha-numeric characters, dashes, and underscores.\n\n\nfield\n \n=\n \nalpha_dash\n\n\n\n\nalpha_num\n\n\nInput value must only contain alphabetic and numeric characters.\n\n\nfield\n \n=\n \nalpha_num\n\n\n\n\narray\n\n\nfield\n \n=\n \n\n\n\n\nbetween\n\n\nfield\n \n=\n \n\n\n\n\nboolean\n\n\nfield\n \n=\n \n\n\n\n\ndate\n\n\nInput value must be a date.\n\n\nfield\n \n=\n \n\n\n\n\ndifferent\n\n\nfield\n \n=\n \n\n\n\n\ndigits\n\n\nfield\n \n=\n \n\n\n\n\nemail\n\n\nInput value must be formatted like an email address.\n\n\nfield\n \n=\n \nemail\n\n\n\n\nnumeric\n\n\nInput value must be numeric.\n\n\nfield\n \n=\n \nnumeric\n\n\n\n\nrequired\n\n\nThe field is required and must not be empty.\n\n\nfield\n \n=\n \nrequired\n\n\n\n\nrequired_if\n\n\nThe field is required only if another field has a specific value.\n\n\nfield\n \n=\n \nrequired_if:other_field,value\n\n\n\n\nrequired_with\n\n\nThe field is required only if another field is not empty.\n\n\nfield\n \n=\n \nrequired_with:other_field\n\n\n\n\nCustom\n\n\nCustom rules can be defined and validated with a callback function.\n\n\nDefine:\n\n\n1\n2\n3\n4\n5\n?php\n\n\n\n$rules\n \n=\n \narray\n(\n\n    \nphone\n \n=\n \nrequired|callback:wfv__phone\n,\n\n\n);\n\n\n\n\n\n\nCallback:\n\n\nCreate a callback that evaluates to true or false:\n\n1\n2\n3\n4\n5\n6\n?php\n\n\n// phone field will validate only if the input is \nhi\n ...how cruel\n\n\n\nfunction\n \nwfv__phone\n(\n \n$value\n \n)\n \n{\n\n    \nreturn\n \n(\n \nhi\n \n===\n \n$value\n \n)\n \n?\n \ntrue\n \n:\n \nfalse\n;\n\n\n}\n\n\n\n\n\n\n\n\nNote\n\n\nTo prevent name collisions, it is advised to prefix the function name and/or wrap the function in a \nfunction_exists()\n conditional.", 
             "title": "Rules"
         }, 
         {
@@ -102,7 +102,7 @@
         }, 
         {
             "location": "/guide/rules/#built-in", 
-            "text": "Rules          lorem  lorem  lorem  lorem  lorem    lorem  lorem  lorem  lorem  lorem    lorem  lorem  lorem  lorem  lorem    lorem  lorem  lorem  lorem  lorem", 
+            "text": "Rules          alpha  lorem  lorem  lorem  lorem    alpha_dash  lorem  lorem  lorem  lorem    alpha_num  lorem  lorem  lorem  lorem    lorem  lorem  lorem  lorem  lorem", 
             "title": "Built-in"
         }, 
         {
@@ -119,6 +119,36 @@
             "location": "/guide/rules/#alpha_num", 
             "text": "Input value must only contain alphabetic and numeric characters.  field   =   alpha_num", 
             "title": "alpha_num"
+        }, 
+        {
+            "location": "/guide/rules/#array", 
+            "text": "field   =", 
+            "title": "array"
+        }, 
+        {
+            "location": "/guide/rules/#between", 
+            "text": "field   =", 
+            "title": "between"
+        }, 
+        {
+            "location": "/guide/rules/#boolean", 
+            "text": "field   =", 
+            "title": "boolean"
+        }, 
+        {
+            "location": "/guide/rules/#date", 
+            "text": "Input value must be a date.  field   =", 
+            "title": "date"
+        }, 
+        {
+            "location": "/guide/rules/#different", 
+            "text": "field   =", 
+            "title": "different"
+        }, 
+        {
+            "location": "/guide/rules/#digits", 
+            "text": "field   =", 
+            "title": "digits"
         }, 
         {
             "location": "/guide/rules/#email", 
