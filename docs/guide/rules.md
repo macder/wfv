@@ -29,10 +29,10 @@ $rules = array(
 ## Built-in
 Rules          |                |              |             |
 ---------------| ---------------|--------------|-------------|
-`lorem`        | `lorem`        | `lorem`      | `lorem`     | `lorem`  
-`lorem`        | `lorem`        | `lorem`      | `lorem`     | `lorem`
-`lorem`        | `lorem`        | `lorem`      | `lorem`     | `lorem`
-`lorem`        | `lorem`        | `lorem`      | `lorem`     | `lorem`
+[`#!js alpha`](#alpha)       | [`#!js lorem`](#)       | [`#!js lorem`](#)      | [`#!js lorem`](#)     | [`#!js lorem`](#)  
+[`#!js alpha_dash`](#alpha_dash)       | [`#!js lorem`](#)        | [`#!js lorem`](#)      | [`#!js lorem`](#)     | [`#!js lorem`](#)
+[`#!js alpha_num`](#alpha_num)        | [`#!js lorem`](#)        | [`#!js lorem`](#)      | [`#!js lorem`](#)     | [`#!js lorem`](#)
+[`#!js lorem`](#)        | [`#!js lorem`](#)       | [`#!js lorem`](#)      | [`#!js lorem`](#)     | [`#!js lorem`](#)
 
 ### **alpha**
 Input value must only contain alphabetic characters.
@@ -52,6 +52,43 @@ Input value must only contain alpha-numeric characters, dashes, and underscores.
 Input value must only contain alphabetic and numeric characters.
 
 `#!js 'field' => 'alpha_num'`
+
+---
+
+### **array**
+
+`#!js 'field' => ''`
+
+---
+
+### **between**
+
+`#!js 'field' => ''`
+
+---
+
+### **boolean**
+
+`#!js 'field' => ''`
+
+---
+
+### **date**
+Input value must be a date.
+
+`#!js 'field' => ''`
+
+---
+
+### **different**
+
+`#!js 'field' => ''`
+
+---
+
+### **digits**
+
+`#!js 'field' => ''`
 
 ---
 
