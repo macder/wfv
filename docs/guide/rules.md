@@ -1,28 +1,50 @@
 ## Define
-Rules are defined using an array structured like so:
+Rules are defined in a field's rules attribute in the config array:
 ~~~
 <?php
 
 array(
-    'first_name' => 'required|max:100'
+    'first_name' => [
+        'label' => 'First Name',
+        'rules' => 'required|max:30'
+    ]
 );
 ~~~
 
 The `field_name` corresponds to the `name` attribute of a field:
 ~~~~{.html}
 <input name="first_name" type="text">
-<input name="email" type="text">
 ~~~~
 
-Example:
-~~~~{.php}
+---
+
+## Optional Fields
+Unless a field is specified as optional, it must pass all the defined validation rules.
+
+For example, in this config, an empty email field would NOT be a valid email and would fail validation:
+~~~
 <?php
 
-$rules = array(
-    'first_name' => 'required',
-    'email'      => 'required|email',
-)
-~~~~
+array(
+    'email' => [
+        'label' => 'Email',
+        'rules' => 'email'
+    ]
+);
+~~~
+
+To make the field optional, so that it validates when empty, add the `optional` rule:
+~~~
+<?php
+
+array(
+    'email' => [
+        'label' => 'Email',
+        'rules' => 'optional|email'
+    ]
+);
+~~~
+In this case, validation will only verify the rules for the field if it is not empty.
 
 ---
 
@@ -37,129 +59,136 @@ Rules          |                |              |             |
 ### **alpha**
 Input value must only contain alphabetic characters.
 
-`#!js 'field' => 'alpha'`
+`#!js 'alpha'`
 
 ---
 
 ### **alpha_dash**
 Input value must only contain alpha-numeric characters, dashes, and underscores.
 
-`#!js 'field' => 'alpha_dash'`
+`#!js 'alpha_dash'`
 
 ---
 
 ### **alpha_num**
 Input value must only contain alphabetic and numeric characters.
 
-`#!js 'field' => 'alpha_num'`
+`#!js 'alpha_num'`
 
 ---
 
 ### **array**
 
-`#!js 'field' => ''`
+`#!js 'array'`
 
 ---
 
 ### **between**
 
-`#!js 'field' => ''`
+`#!js 'between:10,20'`
 
 ---
 
 ### **boolean**
 
-`#!js 'field' => ''`
+`#!js 'boolean'`
 
 ---
 
 ### **callback**
 
-`#!js 'field' => ''`
+`#!js 'callback:my_function'`
 
 ---
 
 ### **date**
 Input value must be a date.
 
-`#!js 'field' => ''`
+`#!js 'date'`
 
 ---
 
 ### **different**
 
-`#!js 'field' => ''`
+`#!js 'different'`
 
 ---
 
 ### **digits**
 
-`#!js 'field' => ''`
+`#!js 'digits'`
 
 ---
 
 ### **email**
 Input value must be formatted like an email address.
 
-`#!js 'field' => 'email'`
+`#!js 'email'`
 
 ---
 
 ### **equals**
 
-`#!js 'field' => ''`
+`#!js 'equals'`
 
 ---
 
 ### **integer**
 
-`#!js 'field' => ''`
+`#!js 'integer'`
 
 ---
 
 ### **ip**
 
-`#!js 'field' => ''`
+`#!js 'ip'`
 
 ---
 
 ### **max**
 
-`#!js 'field' => ''`
+`#!js 'max:20'`
 
 ---
 
 ### **min**
 
-`#!js 'field' => ''`
+`#!js 'min:5'`
 
 ---
 
 ### **numeric**
 Input value must be numeric.
 
-`#!js 'field' => 'numeric'`
+`#!js 'numeric'`
+
+---
+
+### **optional**
+The field is optional. Any other defined rules will only be validated if field is not empty.
+
+`#!js 'optional'`
 
 ---
 
 ### **required**
 The field is required and must not be empty.
 
-`#!js 'field' => 'required'`
+`#!js 'required'`
 
 ---
 
 ### **required_if**
 The field is required only if another field has a specific value.
 
-`#!js 'field' => 'required_if:other_field,value'`
+`#!js 'required_if:other_field,value'`
 
 ---
 
 ### **required_with**
 The field is required only if another field is not empty.
 
-`#!js 'field' => 'required_with:other_field'`
+`#!js 'required_with:other_field'`
 
 ---
 
@@ -170,8 +199,11 @@ Custom rules can be defined and validated with a callback function.
 ~~~~{.php}
 <?php
 
-$rules = array(
-    'phone' => 'required|callback:wfv__phone',
+$my_form = array(
+    'phone' => [
+        'label' => 'Phone',
+        'rules' => 'required|callback:wfv__phone'
+    ],
 );
 ~~~~
 
@@ -189,5 +221,3 @@ function wfv__phone( $value ) {
 
 !!! note
     To prevent name collisions, it is advised to prefix the function name and/or wrap the function in a `function_exists()` conditional.
-
----
