@@ -254,18 +254,6 @@
           
           
 
-
-  <li class="md-nav__item">
-    <a href="../configure/" title="Configure" class="md-nav__link">
-      Configure
-    </a>
-  </li>
-
-        
-          
-          
-          
-
   
 
 
@@ -293,6 +281,13 @@
         <li class="md-nav__item">
   <a href="#define" title="Define" class="md-nav__link">
     Define
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#optional-fields" title="Optional Fields" class="md-nav__link">
+    Optional Fields
   </a>
   
 </li>
@@ -348,6 +343,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#callback" title="callback" class="md-nav__link">
+    callback
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#date" title="date" class="md-nav__link">
     date
   </a>
@@ -376,8 +378,50 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#equals" title="equals" class="md-nav__link">
+    equals
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#integer" title="integer" class="md-nav__link">
+    integer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ip" title="ip" class="md-nav__link">
+    ip
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#max" title="max" class="md-nav__link">
+    max
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#min" title="min" class="md-nav__link">
+    min
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#numeric" title="numeric" class="md-nav__link">
     numeric
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optional" title="optional" class="md-nav__link">
+    optional
   </a>
   
 </li>
@@ -563,6 +607,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#optional-fields" title="Optional Fields" class="md-nav__link">
+    Optional Fields
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#built-in" title="Built-in" class="md-nav__link">
     Built-in
   </a>
@@ -613,6 +664,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#callback" title="callback" class="md-nav__link">
+    callback
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#date" title="date" class="md-nav__link">
     date
   </a>
@@ -641,8 +699,50 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#equals" title="equals" class="md-nav__link">
+    equals
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#integer" title="integer" class="md-nav__link">
+    integer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ip" title="ip" class="md-nav__link">
+    ip
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#max" title="max" class="md-nav__link">
+    max
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#min" title="min" class="md-nav__link">
+    min
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#numeric" title="numeric" class="md-nav__link">
     numeric
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optional" title="optional" class="md-nav__link">
+    optional
   </a>
   
 </li>
@@ -698,38 +798,68 @@
                   <h1>Rules</h1>
                 
                 <h2 id="define">Define<a class="headerlink" href="#define" title="Permanent link">&para;</a></h2>
-<p>Rules are defined using an array structured like so:
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
-
-<span class="k">array</span><span class="p">(</span>
-    <span class="s1">&#39;first_name&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;required|max:100&#39;</span>
-<span class="p">);</span>
-</pre></div>
-</td></tr></table></p>
-<p>The <code class="codehilite">field_name</code> corresponds to the <code class="codehilite">name</code> attribute of a field:
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">input</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;first_name&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">input</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;email&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span><span class="p">&gt;</span>
-</pre></div>
-</td></tr></table></p>
-<p>Example:
+<p>Rules are defined in a field's rules attribute in the config array:
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
 4
 5
-6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
+6
+7
+8</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 
-<span class="nv">$rules</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
-    <span class="s1">&#39;first_name&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;required&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;email&#39;</span>      <span class="o">=&gt;</span> <span class="s1">&#39;required|email&#39;</span><span class="p">,</span>
-<span class="p">)</span>
+<span class="k">array</span><span class="p">(</span>
+    <span class="s1">&#39;first_name&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
+        <span class="s1">&#39;label&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;First Name&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;rules&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;required|max:30&#39;</span>
+    <span class="p">]</span>
+<span class="p">);</span>
 </pre></div>
 </td></tr></table></p>
+<p>The <code class="codehilite">field_name</code> corresponds to the <code class="codehilite">name</code> attribute of a field:
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">input</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;first_name&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span><span class="p">&gt;</span>
+</pre></div>
+</td></tr></table></p>
+<hr />
+<h2 id="optional-fields">Optional Fields<a class="headerlink" href="#optional-fields" title="Permanent link">&para;</a></h2>
+<p>Unless a field is specified as optional, it must pass all the defined validation rules.</p>
+<p>For example, in this config, an empty email field would NOT be a valid email and would fail validation:
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
+
+<span class="k">array</span><span class="p">(</span>
+    <span class="s1">&#39;email&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
+        <span class="s1">&#39;label&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Email&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;rules&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;email&#39;</span>
+    <span class="p">]</span>
+<span class="p">);</span>
+</pre></div>
+</td></tr></table></p>
+<p>To make the field optional, so that it validates when empty, add the <code class="codehilite">optional</code> rule:
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
+
+<span class="k">array</span><span class="p">(</span>
+    <span class="s1">&#39;email&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
+        <span class="s1">&#39;label&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Email&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;rules&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;optional|email&#39;</span>
+    <span class="p">]</span>
+<span class="p">);</span>
+</pre></div>
+</td></tr></table>
+In this case, validation will only verify the rules for the field if it is not empty.</p>
 <hr />
 <h2 id="built-in">Built-in<a class="headerlink" href="#built-in" title="Permanent link">&para;</a></h2>
 <table>
@@ -775,54 +905,76 @@
 </table>
 <h3 id="alpha"><strong>alpha</strong><a class="headerlink" href="#alpha" title="Permanent link">&para;</a></h3>
 <p>Input value must only contain alphabetic characters.</p>
-<p><code class="codehilite"><span class="s1">&#39;field&#39;</span> <span class="p">=&gt;</span> <span class="s1">&#39;alpha&#39;</span></code></p>
+<p><code class="codehilite"><span class="s1">&#39;alpha&#39;</span></code></p>
 <hr />
 <h3 id="alpha_dash"><strong>alpha_dash</strong><a class="headerlink" href="#alpha_dash" title="Permanent link">&para;</a></h3>
 <p>Input value must only contain alpha-numeric characters, dashes, and underscores.</p>
-<p><code class="codehilite"><span class="s1">&#39;field&#39;</span> <span class="p">=&gt;</span> <span class="s1">&#39;alpha_dash&#39;</span></code></p>
+<p><code class="codehilite"><span class="s1">&#39;alpha_dash&#39;</span></code></p>
 <hr />
 <h3 id="alpha_num"><strong>alpha_num</strong><a class="headerlink" href="#alpha_num" title="Permanent link">&para;</a></h3>
 <p>Input value must only contain alphabetic and numeric characters.</p>
-<p><code class="codehilite"><span class="s1">&#39;field&#39;</span> <span class="p">=&gt;</span> <span class="s1">&#39;alpha_num&#39;</span></code></p>
+<p><code class="codehilite"><span class="s1">&#39;alpha_num&#39;</span></code></p>
 <hr />
 <h3 id="array"><strong>array</strong><a class="headerlink" href="#array" title="Permanent link">&para;</a></h3>
-<p><code class="codehilite"><span class="s1">&#39;field&#39;</span> <span class="p">=&gt;</span> <span class="s1">&#39;&#39;</span></code></p>
+<p><code class="codehilite"><span class="s1">&#39;array&#39;</span></code></p>
 <hr />
 <h3 id="between"><strong>between</strong><a class="headerlink" href="#between" title="Permanent link">&para;</a></h3>
-<p><code class="codehilite"><span class="s1">&#39;field&#39;</span> <span class="p">=&gt;</span> <span class="s1">&#39;&#39;</span></code></p>
+<p><code class="codehilite"><span class="s1">&#39;between:10,20&#39;</span></code></p>
 <hr />
 <h3 id="boolean"><strong>boolean</strong><a class="headerlink" href="#boolean" title="Permanent link">&para;</a></h3>
-<p><code class="codehilite"><span class="s1">&#39;field&#39;</span> <span class="p">=&gt;</span> <span class="s1">&#39;&#39;</span></code></p>
+<p><code class="codehilite"><span class="s1">&#39;boolean&#39;</span></code></p>
+<hr />
+<h3 id="callback"><strong>callback</strong><a class="headerlink" href="#callback" title="Permanent link">&para;</a></h3>
+<p><code class="codehilite"><span class="s1">&#39;callback:my_function&#39;</span></code></p>
 <hr />
 <h3 id="date"><strong>date</strong><a class="headerlink" href="#date" title="Permanent link">&para;</a></h3>
 <p>Input value must be a date.</p>
-<p><code class="codehilite"><span class="s1">&#39;field&#39;</span> <span class="p">=&gt;</span> <span class="s1">&#39;&#39;</span></code></p>
+<p><code class="codehilite"><span class="s1">&#39;date&#39;</span></code></p>
 <hr />
 <h3 id="different"><strong>different</strong><a class="headerlink" href="#different" title="Permanent link">&para;</a></h3>
-<p><code class="codehilite"><span class="s1">&#39;field&#39;</span> <span class="p">=&gt;</span> <span class="s1">&#39;&#39;</span></code></p>
+<p><code class="codehilite"><span class="s1">&#39;different&#39;</span></code></p>
 <hr />
 <h3 id="digits"><strong>digits</strong><a class="headerlink" href="#digits" title="Permanent link">&para;</a></h3>
-<p><code class="codehilite"><span class="s1">&#39;field&#39;</span> <span class="p">=&gt;</span> <span class="s1">&#39;&#39;</span></code></p>
+<p><code class="codehilite"><span class="s1">&#39;digits&#39;</span></code></p>
 <hr />
 <h3 id="email"><strong>email</strong><a class="headerlink" href="#email" title="Permanent link">&para;</a></h3>
 <p>Input value must be formatted like an email address.</p>
-<p><code class="codehilite"><span class="s1">&#39;field&#39;</span> <span class="p">=&gt;</span> <span class="s1">&#39;email&#39;</span></code></p>
+<p><code class="codehilite"><span class="s1">&#39;email&#39;</span></code></p>
+<hr />
+<h3 id="equals"><strong>equals</strong><a class="headerlink" href="#equals" title="Permanent link">&para;</a></h3>
+<p><code class="codehilite"><span class="s1">&#39;equals&#39;</span></code></p>
+<hr />
+<h3 id="integer"><strong>integer</strong><a class="headerlink" href="#integer" title="Permanent link">&para;</a></h3>
+<p><code class="codehilite"><span class="s1">&#39;integer&#39;</span></code></p>
+<hr />
+<h3 id="ip"><strong>ip</strong><a class="headerlink" href="#ip" title="Permanent link">&para;</a></h3>
+<p><code class="codehilite"><span class="s1">&#39;ip&#39;</span></code></p>
+<hr />
+<h3 id="max"><strong>max</strong><a class="headerlink" href="#max" title="Permanent link">&para;</a></h3>
+<p><code class="codehilite"><span class="s1">&#39;max:20&#39;</span></code></p>
+<hr />
+<h3 id="min"><strong>min</strong><a class="headerlink" href="#min" title="Permanent link">&para;</a></h3>
+<p><code class="codehilite"><span class="s1">&#39;min:5&#39;</span></code></p>
 <hr />
 <h3 id="numeric"><strong>numeric</strong><a class="headerlink" href="#numeric" title="Permanent link">&para;</a></h3>
 <p>Input value must be numeric.</p>
-<p><code class="codehilite"><span class="s1">&#39;field&#39;</span> <span class="p">=&gt;</span> <span class="s1">&#39;numeric&#39;</span></code></p>
+<p><code class="codehilite"><span class="s1">&#39;numeric&#39;</span></code></p>
+<hr />
+<h3 id="optional"><strong>optional</strong><a class="headerlink" href="#optional" title="Permanent link">&para;</a></h3>
+<p>The field is optional. Any other defined rules will only be validated if field is not empty.</p>
+<p><code class="codehilite"><span class="s1">&#39;optional&#39;</span></code></p>
 <hr />
 <h3 id="required"><strong>required</strong><a class="headerlink" href="#required" title="Permanent link">&para;</a></h3>
 <p>The field is required and must not be empty.</p>
-<p><code class="codehilite"><span class="s1">&#39;field&#39;</span> <span class="p">=&gt;</span> <span class="s1">&#39;required&#39;</span></code></p>
+<p><code class="codehilite"><span class="s1">&#39;required&#39;</span></code></p>
 <hr />
 <h3 id="required_if"><strong>required_if</strong><a class="headerlink" href="#required_if" title="Permanent link">&para;</a></h3>
 <p>The field is required only if another field has a specific value.</p>
-<p><code class="codehilite"><span class="s1">&#39;field&#39;</span> <span class="p">=&gt;</span> <span class="s1">&#39;required_if:other_field,value&#39;</span></code></p>
+<p><code class="codehilite"><span class="s1">&#39;required_if:other_field,value&#39;</span></code></p>
 <hr />
 <h3 id="required_with"><strong>required_with</strong><a class="headerlink" href="#required_with" title="Permanent link">&para;</a></h3>
 <p>The field is required only if another field is not empty.</p>
-<p><code class="codehilite"><span class="s1">&#39;field&#39;</span> <span class="p">=&gt;</span> <span class="s1">&#39;required_with:other_field&#39;</span></code></p>
+<p><code class="codehilite"><span class="s1">&#39;required_with:other_field&#39;</span></code></p>
 <hr />
 <h2 id="custom">Custom<a class="headerlink" href="#custom" title="Permanent link">&para;</a></h2>
 <p>Custom rules can be defined and validated with a callback function.</p>
@@ -831,10 +983,16 @@
 2
 3
 4
-5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
+5
+6
+7
+8</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 
-<span class="nv">$rules</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
-    <span class="s1">&#39;phone&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;required|callback:wfv__phone&#39;</span><span class="p">,</span>
+<span class="nv">$my_form</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">&#39;phone&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
+        <span class="s1">&#39;label&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Phone&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;rules&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;required|callback:wfv__phone&#39;</span>
+    <span class="p">],</span>
 <span class="p">);</span>
 </pre></div>
 </td></tr></table></p>
@@ -857,7 +1015,6 @@
 <p class="admonition-title">Note</p>
 <p>To prevent name collisions, it is advised to prefix the function name and/or wrap the function in a <code class="codehilite">function_exists()</code> conditional.</p>
 </div>
-<hr />
                 
                   
                 
@@ -876,7 +1033,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../configure/" title="Configure" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../../quick-guide/" title="Quick Guide" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -885,7 +1042,7 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Configure
+                Quick Guide
               </span>
             </div>
           </a>

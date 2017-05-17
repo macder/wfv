@@ -256,18 +256,6 @@
 
 
   <li class="md-nav__item">
-    <a href="../configure/" title="Configure" class="md-nav__link">
-      Configure
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
     <a href="../rules/" title="Rules" class="md-nav__link">
       Rules
     </a>
@@ -462,38 +450,6 @@
                   <h1>Messages</h1>
                 
                 <h2 id="configure">Configure<a class="headerlink" href="#configure" title="Permanent link">&para;</a></h2>
-<p>Override error messages using an array structured like so:
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6
-7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
-
-<span class="k">array</span><span class="p">(</span>
-    <span class="s1">&#39;field_name&#39;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
-        <span class="s1">&#39;rule&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;message&#39;</span>
-    <span class="p">),</span>
-<span class="p">);</span>
-</pre></div>
-</td></tr></table></p>
-<p>For example, override the <code class="codehilite">required</code> error message for the <code class="codehilite">email</code> field:
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6
-7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
-
-<span class="nv">$messages</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
-  <span class="s1">&#39;email&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
-    <span class="s1">&#39;required&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Your email is required so we can reply back&#39;</span>
-  <span class="p">],</span>
-<span class="p">);</span>
-</pre></div>
-</td></tr></table></p>
                 
                   
                 

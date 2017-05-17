@@ -242,22 +242,22 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#define-validation-rules" title="Define Validation Rules" class="md-nav__link">
-    Define Validation Rules
+  <a href="#config-structure" title="Config Structure" class="md-nav__link">
+    Config Structure
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#override-messages" title="Override Messages" class="md-nav__link">
-    Override Messages
+  <a href="#validation-rules" title="Validation Rules" class="md-nav__link">
+    Validation Rules
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#configuration-array" title="Configuration Array" class="md-nav__link">
-    Configuration Array
+  <a href="#error-messages" title="Error Messages" class="md-nav__link">
+    Error Messages
   </a>
   
 </li>
@@ -310,18 +310,6 @@
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../guide/configure/" title="Configure" class="md-nav__link">
-      Configure
-    </a>
-  </li>
-
         
           
           
@@ -467,22 +455,22 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#define-validation-rules" title="Define Validation Rules" class="md-nav__link">
-    Define Validation Rules
+  <a href="#config-structure" title="Config Structure" class="md-nav__link">
+    Config Structure
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#override-messages" title="Override Messages" class="md-nav__link">
-    Override Messages
+  <a href="#validation-rules" title="Validation Rules" class="md-nav__link">
+    Validation Rules
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#configuration-array" title="Configuration Array" class="md-nav__link">
-    Configuration Array
+  <a href="#error-messages" title="Error Messages" class="md-nav__link">
+    Error Messages
   </a>
   
 </li>
@@ -525,48 +513,13 @@
                 
                   <h1>Quick Guide</h1>
                 
-                <p>WFV takes an array of arguments that define the rules and messages for a form.</p>
+                <p>WFV takes an array of arguments that define the rules and error messages for each field in a form.</p>
 <p>Typically, this is defined in a themes <code class="codehilite">functions.php</code>, but it can be anywhere.</p>
 <p>This array is then passed into <code class="codehilite">wfv_create( &#39;my_form&#39;, $form_array )</code> which creates an instance of <code class="codehilite">FormComposite</code>.</p>
 <p>The <code class="codehilite">FormComposite</code> encapsulates all the parts and features of the API. It will do a lot of work for you :)</p>
 <hr />
-<h3 id="define-validation-rules"><strong>Define Validation Rules</strong><a class="headerlink" href="#define-validation-rules" title="Permanent link">&para;</a></h3>
-<p>The <a href="../guide/rules/">rules</a> array defines the validation rule(s) for each field
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
-
-<span class="nv">$rules</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
-    <span class="s1">&#39;name&#39;</span>  <span class="o">=&gt;</span> <span class="s1">&#39;required&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;email&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;required|email&#39;</span><span class="p">,</span>
-<span class="p">);</span>
-</pre></div>
-</td></tr></table>
-You can use <a href="../guide/rules/#built-in-rules">built-in</a> ones and <a href="../guide/rules/#custom-rules">create your own</a>.</p>
-<hr />
-<h3 id="override-messages"><strong>Override Messages</strong><a class="headerlink" href="#override-messages" title="Permanent link">&para;</a></h3>
-<p>The <a href="../guide/messages/">messages</a> array overrides an error message for a field's rule. This is optional, if no message is provided, the default will be used.
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6
-7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
-
-<span class="nv">$messages</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
-    <span class="s1">&#39;email&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
-        <span class="s1">&#39;required&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Your email is required so we can reply back&#39;</span>
-    <span class="p">],</span>
-<span class="p">);</span>
-</pre></div>
-</td></tr></table></p>
-<hr />
-<h3 id="configuration-array"><strong>Configuration Array</strong><a class="headerlink" href="#configuration-array" title="Permanent link">&para;</a></h3>
-<p><a href="../guide/configure/">Configure</a> the validation rules, and any message overrides in an array structured like this:
+<h3 id="config-structure"><strong>Config Structure</strong><a class="headerlink" href="#config-structure" title="Permanent link">&para;</a></h3>
+<p>Basic example:
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
@@ -578,24 +531,79 @@ You can use <a href="../guide/rules/#built-in-rules">built-in</a> ones and <a hr
  9
 10
 11
-12
-13
-14</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
+12</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 
-<span class="nv">$form</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
-    <span class="s1">&#39;rules&#39;</span>  <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
-        <span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;required&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;email&#39;</span><span class="o">=&gt;</span> <span class="s1">&#39;required|email&#39;</span><span class="p">,</span>
-    <span class="p">),</span>
-
-    <span class="s1">&#39;messages&#39;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
-        <span class="s1">&#39;email&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
-            <span class="s1">&#39;required&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Your email is required so we can reply back&#39;</span>
-        <span class="p">],</span>
-    <span class="p">)</span>
+<span class="nv">$my_form</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">&#39;first_name&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
+        <span class="s1">&#39;label&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;First Name&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;rules&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;required&#39;</span>
+    <span class="p">],</span>
+    <span class="s1">&#39;last_name&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
+        <span class="s1">&#39;label&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Last Name&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;rules&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;required&#39;</span>
+    <span class="p">],</span>
 <span class="p">);</span>
 </pre></div>
 </td></tr></table></p>
+<hr />
+<h3 id="validation-rules"><strong>Validation Rules</strong><a class="headerlink" href="#validation-rules" title="Permanent link">&para;</a></h3>
+<p>The <a href="../guide/rules/">rules</a> attribute defines the constraint(s) for a field.</p>
+<p>You can define multiple rules for a single field by separating each field with a pipe character.
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
+
+<span class="nv">$my_form</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">&#39;first_name&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
+        <span class="s1">&#39;label&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;First Name&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;rules&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;required|alpha_dash|max:30&#39;</span>
+    <span class="p">],</span>
+    <span class="s1">&#39;email&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
+        <span class="s1">&#39;label&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Email&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;rules&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;required|email&#39;</span>
+    <span class="p">],</span>
+<span class="p">);</span>
+</pre></div>
+</td></tr></table>
+You can use <a href="../guide/rules/#built-in-rules">built-in</a> ones and <a href="../guide/rules/#custom-rules">create your own</a>.</p>
+<hr />
+<h3 id="error-messages"><strong>Error Messages</strong><a class="headerlink" href="#error-messages" title="Permanent link">&para;</a></h3>
+<p>Each rule has a default error message, but you may override them with custom ones.
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
+
+<span class="nv">$my_form</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">&#39;first_name&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
+        <span class="s1">&#39;label&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;First Name&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;rules&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;required|alpha_dash|max:30&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;messages&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
+            <span class="s1">&#39;required&#39;</span>      <span class="o">=&gt;</span> <span class="s1">&#39;Please enter your first name&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;alpha_dash&#39;</span>    <span class="o">=&gt;</span> <span class="s1">&#39;First name can only contain alphabetic characters, dashes, and underscores&#39;</span><span class="p">,</span>
+        <span class="p">]</span>
+    <span class="p">]</span>
+<span class="p">);</span>
+</pre></div>
+</td></tr></table>
+More details about <a href="">error messages</a>.</p>
 <hr />
 <h3 id="activate"><strong>Activate</strong><a class="headerlink" href="#activate" title="Permanent link">&para;</a></h3>
 <p>Pass the array of arguments into the <a href="../guide/create">wfv_create()</a> function to get an instance of <code class="codehilite">WFV\FormComposite</code>.</p>
@@ -614,23 +622,23 @@ You can use <a href="../guide/rules/#built-in-rules">built-in</a> ones and <a hr
 11</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 
 <span class="nv">$form</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span> <span class="nv">$rules</span><span class="p">,</span> <span class="nv">$messages</span> <span class="p">);</span>
-<span class="nx">wfv_create</span><span class="p">(</span> <span class="s1">&#39;contact_form&#39;</span><span class="p">,</span> <span class="nv">$form</span> <span class="p">);</span>
+<span class="nx">wfv_create</span><span class="p">(</span> <span class="s1">&#39;my_form&#39;</span><span class="p">,</span> <span class="nv">$my_form</span> <span class="p">);</span>
 
-<span class="c1">// $form is now an instance of FormComposite</span>
+<span class="c1">// $my_form is now an instance of FormComposite</span>
 
-<span class="nv">$form</span><span class="o">-&gt;</span><span class="na">input</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">contains</span><span class="p">(</span><span class="s1">&#39;email&#39;</span><span class="p">,</span> <span class="s1">&#39;foo@bar.com&#39;</span><span class="p">);</span>  <span class="c1">// false</span>
-<span class="nv">$form</span><span class="o">-&gt;</span><span class="na">input</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">is_populated</span><span class="p">();</span> <span class="c1">// false</span>
-<span class="nv">$form</span><span class="o">-&gt;</span><span class="na">display</span><span class="p">(</span><span class="s1">&#39;email&#39;</span><span class="p">);</span>
+<span class="nv">$my_form</span><span class="o">-&gt;</span><span class="na">input</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">contains</span><span class="p">(</span><span class="s1">&#39;email&#39;</span><span class="p">,</span> <span class="s1">&#39;foo@bar.com&#39;</span><span class="p">);</span>  <span class="c1">// false</span>
+<span class="nv">$my_form</span><span class="o">-&gt;</span><span class="na">input</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">is_populated</span><span class="p">();</span> <span class="c1">// false</span>
+<span class="nv">$my_form</span><span class="o">-&gt;</span><span class="na">display</span><span class="p">(</span><span class="s1">&#39;email&#39;</span><span class="p">);</span>
 <span class="c1">// ...</span>
 </pre></div>
 </td></tr></table></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The instance is passed by reference to the array of arguments.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>wfv_create( &#39;form_name&#39;, array $form )
+<p>The instance is passed by reference to the array of arguments. You do not need to assign it to a variable.</p>
+<p><code class="codehilite">$my_form</code> becomes an instance of FormComposite:
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>wfv_create( &#39;form_name&#39;, array $my_form )
 </pre></div>
-</td></tr></table>
-
+</td></tr></table></p>
 </div>
 <p>For available methods, see <a href="../guide/input/">input</a>, <a href="../guide/populate/">populate</a>, and <a href="../guide/errors/">errors</a></p>
 <hr />
@@ -688,13 +696,13 @@ You can use <a href="../guide/rules/#built-in-rules">built-in</a> ones and <a hr
           </a>
         
         
-          <a href="../guide/configure/" title="Configure" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../guide/rules/" title="Rules" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Configure
+                Rules
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
