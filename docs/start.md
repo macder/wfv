@@ -12,6 +12,9 @@
 
 *PHP 7.0 only with WordPress 4.0+*
 
+*WordPress 4.7+ required for front-end API endpoint*
+
+
 ### Pre-release
 
 !!! note

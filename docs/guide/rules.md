@@ -64,7 +64,7 @@ Input value must only contain alphabetic characters.
 ---
 
 ### **alpha_dash**
-Input value must only contain alpha-numeric characters, dashes, and underscores.
+Input value must only contain alphabetic characters, dashes, and underscores.
 
 `#!js 'alpha_dash'`
 
@@ -74,6 +74,13 @@ Input value must only contain alpha-numeric characters, dashes, and underscores.
 Input value must only contain alphabetic and numeric characters.
 
 `#!js 'alpha_num'`
+
+---
+
+### **alpha_num_dash**
+Input value must only contain alphabetic and numeric characters, dashes, and underscores.
+
+`#!js 'alpha_num_dash'`
 
 ---
 
