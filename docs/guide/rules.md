@@ -77,35 +77,62 @@ Input value must only contain alphabetic and numeric characters.
 
 ---
 
-### **alpha_num_dash**
-Input value must only contain alphabetic and numeric characters, dashes, and underscores.
+### **array_type**
+Input value must be a PHP array.
 
-`#!js 'alpha_num_dash'`
-
----
-
-### **array**
-
-`#!js 'array'`
+`#!js 'array_type'`
 
 ---
 
 ### **between**
+Input value must be between a range.
 
-`#!js 'between:10,20'`
+Accepted ranges:
+
+* Numeric `#!js 'between:10,20'`
+* Alphabetic `#!js 'between:a,f'`
+* Date `#!js 'between:2010-01-01,2017-01-01'`
+* strtotime `#!js 'between:yesterday,tomorrow'`
+
+`#!js 'between:<start>,<end>'`
 
 ---
 
 ### **boolean**
+Input value must be a boolean.
+
+Accepted values:
+
+* `true`
+* `false`
+* `'true'`
+* `'false'`
+* `0`
+* `1`
+* `'0'`
+* `'1'`
+* `'on'`
+* `'off'`
+* `'yes'`
+* `'no'`
 
 `#!js 'boolean'`
 
 ---
 
 ### **callback**
+Validate the input value using a callback.
 
-`#!js 'callback:my_function'`
+The callback must return boolean.
 
+`#!js 'callback:some_function'`
+~~~~{.php}
+<?php
+
+function some_function( $input ) {
+    return ( 'whatever' === $input ) ? true : false;
+}
+~~~~
 ---
 
 ### **date**
@@ -121,9 +148,9 @@ Input value must be a date.
 
 ---
 
-### **digits**
+### **digit**
 
-`#!js 'digits'`
+`#!js 'digit'`
 
 ---
 
@@ -147,6 +174,7 @@ Input value must be formatted like an email address.
 ---
 
 ### **ip**
+Input value must be an IP address.
 
 `#!js 'ip'`
 
