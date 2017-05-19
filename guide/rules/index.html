@@ -322,15 +322,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#alpha_num_dash" title="alpha_num_dash" class="md-nav__link">
-    alpha_num_dash
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#array" title="array" class="md-nav__link">
-    array
+  <a href="#array_type" title="array_type" class="md-nav__link">
+    array_type
   </a>
   
 </li>
@@ -371,8 +364,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#digits" title="digits" class="md-nav__link">
-    digits
+  <a href="#digit" title="digit" class="md-nav__link">
+    digit
   </a>
   
 </li>
@@ -650,15 +643,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#alpha_num_dash" title="alpha_num_dash" class="md-nav__link">
-    alpha_num_dash
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#array" title="array" class="md-nav__link">
-    array
+  <a href="#array_type" title="array_type" class="md-nav__link">
+    array_type
   </a>
   
 </li>
@@ -699,8 +685,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#digits" title="digits" class="md-nav__link">
-    digits
+  <a href="#digit" title="digit" class="md-nav__link">
+    digit
   </a>
   
 </li>
@@ -929,21 +915,55 @@ In this case, validation will only verify the rules for the field if it is not e
 <p>Input value must only contain alphabetic and numeric characters.</p>
 <p><code class="codehilite"><span class="s1">&#39;alpha_num&#39;</span></code></p>
 <hr />
-<h3 id="alpha_num_dash"><strong>alpha_num_dash</strong><a class="headerlink" href="#alpha_num_dash" title="Permanent link">&para;</a></h3>
-<p>Input value must only contain alphabetic and numeric characters, dashes, and underscores.</p>
-<p><code class="codehilite"><span class="s1">&#39;alpha_num_dash&#39;</span></code></p>
-<hr />
-<h3 id="array"><strong>array</strong><a class="headerlink" href="#array" title="Permanent link">&para;</a></h3>
-<p><code class="codehilite"><span class="s1">&#39;array&#39;</span></code></p>
+<h3 id="array_type"><strong>array_type</strong><a class="headerlink" href="#array_type" title="Permanent link">&para;</a></h3>
+<p>Input value must be a PHP array.</p>
+<p><code class="codehilite"><span class="s1">&#39;array_type&#39;</span></code></p>
 <hr />
 <h3 id="between"><strong>between</strong><a class="headerlink" href="#between" title="Permanent link">&para;</a></h3>
-<p><code class="codehilite"><span class="s1">&#39;between:10,20&#39;</span></code></p>
+<p>Input value must be between a range.</p>
+<p>Accepted ranges:</p>
+<ul>
+<li>Numeric <code class="codehilite"><span class="s1">&#39;between:10,20&#39;</span></code></li>
+<li>Alphabetic <code class="codehilite"><span class="s1">&#39;between:a,f&#39;</span></code></li>
+<li>Date <code class="codehilite"><span class="s1">&#39;between:2010-01-01,2017-01-01&#39;</span></code></li>
+<li>strtotime <code class="codehilite"><span class="s1">&#39;between:yesterday,tomorrow&#39;</span></code></li>
+</ul>
+<p><code class="codehilite"><span class="s1">&#39;between:&lt;start&gt;,&lt;end&gt;&#39;</span></code></p>
 <hr />
 <h3 id="boolean"><strong>boolean</strong><a class="headerlink" href="#boolean" title="Permanent link">&para;</a></h3>
+<p>Input value must be a boolean.</p>
+<p>Accepted values:</p>
+<ul>
+<li><code class="codehilite">true</code></li>
+<li><code class="codehilite">false</code></li>
+<li><code class="codehilite">&#39;true&#39;</code></li>
+<li><code class="codehilite">&#39;false&#39;</code></li>
+<li><code class="codehilite">0</code></li>
+<li><code class="codehilite">1</code></li>
+<li><code class="codehilite">&#39;0&#39;</code></li>
+<li><code class="codehilite">&#39;1&#39;</code></li>
+<li><code class="codehilite">&#39;on&#39;</code></li>
+<li><code class="codehilite">&#39;off&#39;</code></li>
+<li><code class="codehilite">&#39;yes&#39;</code></li>
+<li><code class="codehilite">&#39;no&#39;</code></li>
+</ul>
 <p><code class="codehilite"><span class="s1">&#39;boolean&#39;</span></code></p>
 <hr />
 <h3 id="callback"><strong>callback</strong><a class="headerlink" href="#callback" title="Permanent link">&para;</a></h3>
-<p><code class="codehilite"><span class="s1">&#39;callback:my_function&#39;</span></code></p>
+<p>Validate the input value using a callback.</p>
+<p>The callback must return boolean.</p>
+<p><code class="codehilite"><span class="s1">&#39;callback:some_function&#39;</span></code>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
+
+<span class="k">function</span> <span class="nf">some_function</span><span class="p">(</span> <span class="nv">$input</span> <span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span> <span class="s1">&#39;whatever&#39;</span> <span class="o">===</span> <span class="nv">$input</span> <span class="p">)</span> <span class="o">?</span> <span class="k">true</span> <span class="o">:</span> <span class="k">false</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></p>
 <hr />
 <h3 id="date"><strong>date</strong><a class="headerlink" href="#date" title="Permanent link">&para;</a></h3>
 <p>Input value must be a date.</p>
@@ -952,8 +972,8 @@ In this case, validation will only verify the rules for the field if it is not e
 <h3 id="different"><strong>different</strong><a class="headerlink" href="#different" title="Permanent link">&para;</a></h3>
 <p><code class="codehilite"><span class="s1">&#39;different&#39;</span></code></p>
 <hr />
-<h3 id="digits"><strong>digits</strong><a class="headerlink" href="#digits" title="Permanent link">&para;</a></h3>
-<p><code class="codehilite"><span class="s1">&#39;digits&#39;</span></code></p>
+<h3 id="digit"><strong>digit</strong><a class="headerlink" href="#digit" title="Permanent link">&para;</a></h3>
+<p><code class="codehilite"><span class="s1">&#39;digit&#39;</span></code></p>
 <hr />
 <h3 id="email"><strong>email</strong><a class="headerlink" href="#email" title="Permanent link">&para;</a></h3>
 <p>Input value must be formatted like an email address.</p>
@@ -966,6 +986,7 @@ In this case, validation will only verify the rules for the field if it is not e
 <p><code class="codehilite"><span class="s1">&#39;integer&#39;</span></code></p>
 <hr />
 <h3 id="ip"><strong>ip</strong><a class="headerlink" href="#ip" title="Permanent link">&para;</a></h3>
+<p>Input value must be an IP address.</p>
 <p><code class="codehilite"><span class="s1">&#39;ip&#39;</span></code></p>
 <hr />
 <h3 id="max"><strong>max</strong><a class="headerlink" href="#max" title="Permanent link">&para;</a></h3>
