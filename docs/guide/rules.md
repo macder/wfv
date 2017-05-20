@@ -138,7 +138,17 @@ function some_function( $input ) {
 ### **date**
 Input value must be a date.
 
+Accepted values:
+
+* valid [strtotime](http://php.net/manual/en/function.strtotime.php)
+* `instanceof DateTimeInterface`
+* `instanceof DateTime`
+
 `#!js 'date'`
+
+You can also specify a format using [date format characters](http://php.net/manual/en/function.date.php),
+eg:`#!js 'date:Y-m-d'`
+
 
 ---
 
@@ -149,6 +159,9 @@ Input value must be a date.
 ---
 
 ### **digit**
+Input value must be a [digit](https://en.wikipedia.org/wiki/Numerical_digit)
+
+Accepts only `0` through `9`
 
 `#!js 'digit'`
 
