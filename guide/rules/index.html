@@ -967,12 +967,22 @@ In this case, validation will only verify the rules for the field if it is not e
 <hr />
 <h3 id="date"><strong>date</strong><a class="headerlink" href="#date" title="Permanent link">&para;</a></h3>
 <p>Input value must be a date.</p>
+<p>Accepted values:</p>
+<ul>
+<li>valid <a href="http://php.net/manual/en/function.strtotime.php">strtotime</a></li>
+<li><code class="codehilite">instanceof DateTimeInterface</code></li>
+<li><code class="codehilite">instanceof DateTime</code></li>
+</ul>
 <p><code class="codehilite"><span class="s1">&#39;date&#39;</span></code></p>
+<p>You can also specify a format using <a href="http://php.net/manual/en/function.date.php">date format characters</a>,
+eg:<code class="codehilite"><span class="s1">&#39;date:Y-m-d&#39;</span></code></p>
 <hr />
 <h3 id="different"><strong>different</strong><a class="headerlink" href="#different" title="Permanent link">&para;</a></h3>
 <p><code class="codehilite"><span class="s1">&#39;different&#39;</span></code></p>
 <hr />
 <h3 id="digit"><strong>digit</strong><a class="headerlink" href="#digit" title="Permanent link">&para;</a></h3>
+<p>Input value must be a <a href="https://en.wikipedia.org/wiki/Numerical_digit">digit</a></p>
+<p>Accepts only <code class="codehilite">0</code> through <code class="codehilite">9</code></p>
 <p><code class="codehilite"><span class="s1">&#39;digit&#39;</span></code></p>
 <hr />
 <h3 id="email"><strong>email</strong><a class="headerlink" href="#email" title="Permanent link">&para;</a></h3>
