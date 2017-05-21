@@ -49,12 +49,7 @@ In this case, validation will only verify the rules for the field if it is not e
 ---
 
 ## Built-in
-Rules          |                |              |             |
----------------| ---------------|--------------|-------------|
-[`#!js alpha`](#alpha)       | [`#!js lorem`](#)       | [`#!js lorem`](#)      | [`#!js lorem`](#)     | [`#!js lorem`](#)  
-[`#!js alpha_dash`](#alpha_dash)       | [`#!js lorem`](#)        | [`#!js lorem`](#)      | [`#!js lorem`](#)     | [`#!js lorem`](#)
-[`#!js alpha_num`](#alpha_num)        | [`#!js lorem`](#)        | [`#!js lorem`](#)      | [`#!js lorem`](#)     | [`#!js lorem`](#)
-[`#!js lorem`](#)        | [`#!js lorem`](#)       | [`#!js lorem`](#)      | [`#!js lorem`](#)     | [`#!js lorem`](#)
+
 
 ### **alpha**
 Input value must only contain alphabetic characters.
@@ -181,6 +176,9 @@ Input value must be formatted like an email address.
 ---
 
 ### **integer**
+Input value must be an integer.
+
+Accepts only positive/negative whole numbers.
 
 `#!js 'integer'`
 
