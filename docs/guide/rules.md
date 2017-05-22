@@ -6,7 +6,7 @@ Rules are defined in a field's rules attribute in the config array:
 array(
     'first_name' => [
         'label' => 'First Name',
-        'rules' => 'required|max:30'
+        'rules' => 'required|alpha_dash'
     ]
 );
 ~~~
@@ -170,8 +170,9 @@ Input value must be formatted like an email address.
 ---
 
 ### **equals**
+Input value must be equal to given value.
 
-`#!js 'equals'`
+`#!js 'equals:value'`
 
 ---
 
@@ -192,8 +193,16 @@ Input value must be an IP address.
 ---
 
 ### **max**
+Input must not exceed the maximum value.
 
-`#!js 'max:20'`
+Numeric:
+`#!js 'max:20'` 15 pass, 25 fail
+
+Alphabetic:
+`#!js 'max:c'` a pass, d fail
+
+Date:
+`#!js 'max:2017-06-30'` 2017-06-29 pass, 2017-07-29 fail
 
 ---
 
