@@ -12,7 +12,7 @@ A simple fluid and concise API to manage user input, validation, feedback, and s
     Documentation is a work in progress.
 
 !!! attention
-    Pre-alpha stage - Moderate risk of change.
+    Approaching alpha stage - Low risk of breaking changes.
 
 
 ### Features
@@ -24,7 +24,5 @@ A simple fluid and concise API to manage user input, validation, feedback, and s
 * Multiple forms
 * [Validation Hooks](/guide/hooks/)
 * Self POST - no redirects, no GET vars, no sessions, no cookies
-* Lightweight - Only one dependency (WordPress aside)
-* [Unit tested core](https://github.com/macder/wp-form-validation/tree/master/tests) - More stable, quicker fixes, less bugs, more happy
 * No rendered markup
 * Developer freedom
