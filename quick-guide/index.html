@@ -565,7 +565,7 @@
 <span class="nv">$my_form</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
     <span class="s1">&#39;first_name&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
         <span class="s1">&#39;label&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;First Name&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;rules&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;required|alpha_dash|max:30&#39;</span>
+        <span class="s1">&#39;rules&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;required|alpha_dash|length_max:30&#39;</span>
     <span class="p">],</span>
     <span class="s1">&#39;email&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
         <span class="s1">&#39;label&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Email&#39;</span><span class="p">,</span>
@@ -594,7 +594,7 @@ You can use <a href="../guide/rules/#built-in-rules">built-in</a> ones and <a hr
 <span class="nv">$my_form</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
     <span class="s1">&#39;first_name&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
         <span class="s1">&#39;label&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;First Name&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;rules&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;required|alpha_dash|max:30&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;rules&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;required|alpha_dash|length_max:30&#39;</span><span class="p">,</span>
         <span class="s1">&#39;messages&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
             <span class="s1">&#39;required&#39;</span>      <span class="o">=&gt;</span> <span class="s1">&#39;Please enter your first name&#39;</span><span class="p">,</span>
             <span class="s1">&#39;alpha_dash&#39;</span>    <span class="o">=&gt;</span> <span class="s1">&#39;First name can only contain alphabetic characters, dashes, and underscores&#39;</span><span class="p">,</span>
