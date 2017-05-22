@@ -148,8 +148,9 @@ eg:`#!js 'date:Y-m-d'`
 ---
 
 ### **different**
+Input value must be different than the value of another field.
 
-`#!js 'different'`
+`#!js 'different:other_field'`
 
 ---
 
@@ -192,6 +193,20 @@ Input value must be an IP address.
 
 ---
 
+### **length_max**
+Input value length must be less than given value
+
+`#!js 'length_max:value'`
+
+---
+
+### **length_min**
+Input value length must be greater than given value
+
+`#!js 'length_min:value'`
+
+---
+
 ### **max**
 Input must not exceed the maximum value.
 
@@ -226,6 +241,13 @@ The field is optional. Any other defined rules will only be validated if field i
 
 ---
 
+### **phone**
+Input value must be formatted as a phone number.
+
+`#!js 'phone'`
+
+---
+
 ### **required**
 The field is required and must not be empty.
 
@@ -244,6 +266,20 @@ The field is required only if another field has a specific value.
 The field is required only if another field is not empty.
 
 `#!js 'required_with:other_field'`
+
+---
+
+### **same**
+Input value must be the same as the value of another field.
+
+`#!js 'same:other_field'`
+
+---
+
+### **url**
+Input value must be formatted as a url.
+
+`#!js 'url'`
 
 ---
 
