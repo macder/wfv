@@ -413,6 +413,96 @@
                 
                 
                 <h1 id="basic-example">Basic example<a class="headerlink" href="#basic-example" title="Permanent link">&para;</a></h1>
+<p><strong>functions.php</strong>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
+
+<span class="nv">$my_form</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+  <span class="s1">&#39;first_name&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
+    <span class="s1">&#39;label&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;First name&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;rules&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;required&#39;</span><span class="p">,</span>
+  <span class="p">],</span>
+  <span class="s1">&#39;email&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
+    <span class="s1">&#39;label&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Email&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;rules&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;required|email&#39;</span><span class="p">,</span>
+  <span class="p">],</span>
+<span class="p">);</span>
+
+<span class="nx">add_action</span><span class="p">(</span> <span class="s1">&#39;my_form&#39;</span><span class="p">,</span> <span class="s1">&#39;valid_my_form&#39;</span> <span class="p">);</span>
+<span class="k">function</span> <span class="nf">valid_my_form</span><span class="p">(</span> <span class="nv">$form</span> <span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// Validation passed.</span>
+    <span class="k">echo</span> <span class="s1">&#39;Thank you &#39;</span><span class="o">.</span> <span class="nv">$form</span><span class="o">-&gt;</span><span class="na">input</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">escape</span><span class="p">(</span><span class="s1">&#39;first_name&#39;</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nx">add_action</span><span class="p">(</span> <span class="s1">&#39;my_form_fail&#39;</span><span class="p">,</span> <span class="s1">&#39;invalid_my_form&#39;</span> <span class="p">);</span>
+<span class="k">function</span> <span class="nf">invalid_my_form</span><span class="p">(</span> <span class="nv">$form</span> <span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// Validation failed.</span>
+    <span class="c1">// This is mainly for edge cases that require some code after a fail.</span>
+    <span class="c1">// Most cases will not need this hook.</span>
+<span class="p">}</span>
+
+<span class="c1">// Turn $my_form into an instance of FormComposite</span>
+<span class="nx">wfv_create</span><span class="p">(</span> <span class="s1">&#39;my_form&#39;</span><span class="p">,</span> <span class="nv">$my_form</span> <span class="p">);</span>
+
+<span class="c1">// Don&#39;t believe the magic?</span>
+<span class="nb">print_r</span><span class="p">(</span> <span class="nv">$my_form</span> <span class="p">);</span>
+</pre></div>
+</td></tr></table></p>
+<p><strong>Theme template</strong>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">form</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;post&quot;</span><span class="p">&gt;</span>
+
+  <span class="p">&lt;</span><span class="nt">input</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;first_name&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;&lt;?php $my_form-&gt;display(&#39;first_name&#39;); ?&gt;&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">small</span><span class="p">&gt;</span><span class="cp">&lt;?php echo $my_form-&gt;errors()-&gt;first(&#39;first_name&#39;); ?&gt;</span><span class="p">&lt;/</span><span class="nt">small</span><span class="p">&gt;</span>
+
+  <span class="p">&lt;</span><span class="nt">input</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;email&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;&lt;?php $my_form-&gt;display(&#39;email&#39;); ?&gt;&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">small</span><span class="p">&gt;</span><span class="cp">&lt;?php echo $my_form-&gt;errors()-&gt;first(&#39;email&#39;); ?&gt;</span><span class="p">&lt;/</span><span class="nt">small</span><span class="p">&gt;</span>
+
+  <span class="cp">&lt;?php $my_form-&gt;get_token_fields(); ?&gt;</span>
+  <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;Send&quot;</span><span class="p">&gt;</span>
+
+<span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</pre></div>
+</td></tr></table></p>
                 
                   
                 

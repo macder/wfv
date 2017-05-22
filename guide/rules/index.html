@@ -811,7 +811,7 @@
 <span class="k">array</span><span class="p">(</span>
     <span class="s1">&#39;first_name&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
         <span class="s1">&#39;label&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;First Name&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;rules&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;required|max:30&#39;</span>
+        <span class="s1">&#39;rules&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;required|alpha_dash&#39;</span>
     <span class="p">]</span>
 <span class="p">);</span>
 </pre></div>
@@ -949,7 +949,8 @@ eg:<code class="codehilite"><span class="s1">&#39;date:Y-m-d&#39;</span></code><
 <p><code class="codehilite"><span class="s1">&#39;email&#39;</span></code></p>
 <hr />
 <h3 id="equals"><strong>equals</strong><a class="headerlink" href="#equals" title="Permanent link">&para;</a></h3>
-<p><code class="codehilite"><span class="s1">&#39;equals&#39;</span></code></p>
+<p>Input value must be equal to given value.</p>
+<p><code class="codehilite"><span class="s1">&#39;equals:value&#39;</span></code></p>
 <hr />
 <h3 id="integer"><strong>integer</strong><a class="headerlink" href="#integer" title="Permanent link">&para;</a></h3>
 <p>Input value must be an integer.</p>
@@ -961,7 +962,13 @@ eg:<code class="codehilite"><span class="s1">&#39;date:Y-m-d&#39;</span></code><
 <p><code class="codehilite"><span class="s1">&#39;ip&#39;</span></code></p>
 <hr />
 <h3 id="max"><strong>max</strong><a class="headerlink" href="#max" title="Permanent link">&para;</a></h3>
-<p><code class="codehilite"><span class="s1">&#39;max:20&#39;</span></code></p>
+<p>Input must not exceed the maximum value.</p>
+<p>Numeric:
+<code class="codehilite"><span class="s1">&#39;max:20&#39;</span></code> 15 pass, 25 fail</p>
+<p>Alphabetic:
+<code class="codehilite"><span class="s1">&#39;max:c&#39;</span></code> a pass, d fail</p>
+<p>Date:
+<code class="codehilite"><span class="s1">&#39;max:2017-06-30&#39;</span></code> 2017-06-29 pass, 2017-07-29 fail</p>
 <hr />
 <h3 id="min"><strong>min</strong><a class="headerlink" href="#min" title="Permanent link">&para;</a></h3>
 <p><code class="codehilite"><span class="s1">&#39;min:5&#39;</span></code></p>
