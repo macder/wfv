@@ -399,6 +399,20 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#length_max" title="length_max" class="md-nav__link">
+    length_max
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#length_min" title="length_min" class="md-nav__link">
+    length_min
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#max" title="max" class="md-nav__link">
     max
   </a>
@@ -427,6 +441,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#phone" title="phone" class="md-nav__link">
+    phone
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#required" title="required" class="md-nav__link">
     required
   </a>
@@ -443,6 +464,20 @@
           <li class="md-nav__item">
   <a href="#required_with" title="required_with" class="md-nav__link">
     required_with
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#same" title="same" class="md-nav__link">
+    same
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#url" title="url" class="md-nav__link">
+    url
   </a>
   
 </li>
@@ -720,6 +755,20 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#length_max" title="length_max" class="md-nav__link">
+    length_max
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#length_min" title="length_min" class="md-nav__link">
+    length_min
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#max" title="max" class="md-nav__link">
     max
   </a>
@@ -748,6 +797,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#phone" title="phone" class="md-nav__link">
+    phone
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#required" title="required" class="md-nav__link">
     required
   </a>
@@ -764,6 +820,20 @@
           <li class="md-nav__item">
   <a href="#required_with" title="required_with" class="md-nav__link">
     required_with
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#same" title="same" class="md-nav__link">
+    same
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#url" title="url" class="md-nav__link">
+    url
   </a>
   
 </li>
@@ -937,7 +1007,8 @@ In this case, validation will only verify the rules for the field if it is not e
 eg:<code class="codehilite"><span class="s1">&#39;date:Y-m-d&#39;</span></code></p>
 <hr />
 <h3 id="different"><strong>different</strong><a class="headerlink" href="#different" title="Permanent link">&para;</a></h3>
-<p><code class="codehilite"><span class="s1">&#39;different&#39;</span></code></p>
+<p>Input value must be different than the value of another field.</p>
+<p><code class="codehilite"><span class="s1">&#39;different:other_field&#39;</span></code></p>
 <hr />
 <h3 id="digit"><strong>digit</strong><a class="headerlink" href="#digit" title="Permanent link">&para;</a></h3>
 <p>Input value must be a <a href="https://en.wikipedia.org/wiki/Numerical_digit">digit</a></p>
@@ -961,6 +1032,14 @@ eg:<code class="codehilite"><span class="s1">&#39;date:Y-m-d&#39;</span></code><
 <p>Input value must be an IP address.</p>
 <p><code class="codehilite"><span class="s1">&#39;ip&#39;</span></code></p>
 <hr />
+<h3 id="length_max"><strong>length_max</strong><a class="headerlink" href="#length_max" title="Permanent link">&para;</a></h3>
+<p>Input value length must be less than given value</p>
+<p><code class="codehilite"><span class="s1">&#39;length_max:value&#39;</span></code></p>
+<hr />
+<h3 id="length_min"><strong>length_min</strong><a class="headerlink" href="#length_min" title="Permanent link">&para;</a></h3>
+<p>Input value length must be greater than given value</p>
+<p><code class="codehilite"><span class="s1">&#39;length_min:value&#39;</span></code></p>
+<hr />
 <h3 id="max"><strong>max</strong><a class="headerlink" href="#max" title="Permanent link">&para;</a></h3>
 <p>Input must not exceed the maximum value.</p>
 <p>Numeric:
@@ -981,6 +1060,10 @@ eg:<code class="codehilite"><span class="s1">&#39;date:Y-m-d&#39;</span></code><
 <p>The field is optional. Any other defined rules will only be validated if field is not empty.</p>
 <p><code class="codehilite"><span class="s1">&#39;optional&#39;</span></code></p>
 <hr />
+<h3 id="phone"><strong>phone</strong><a class="headerlink" href="#phone" title="Permanent link">&para;</a></h3>
+<p>Input value must be formatted as a phone number.</p>
+<p><code class="codehilite"><span class="s1">&#39;phone&#39;</span></code></p>
+<hr />
 <h3 id="required"><strong>required</strong><a class="headerlink" href="#required" title="Permanent link">&para;</a></h3>
 <p>The field is required and must not be empty.</p>
 <p><code class="codehilite"><span class="s1">&#39;required&#39;</span></code></p>
@@ -992,6 +1075,14 @@ eg:<code class="codehilite"><span class="s1">&#39;date:Y-m-d&#39;</span></code><
 <h3 id="required_with"><strong>required_with</strong><a class="headerlink" href="#required_with" title="Permanent link">&para;</a></h3>
 <p>The field is required only if another field is not empty.</p>
 <p><code class="codehilite"><span class="s1">&#39;required_with:other_field&#39;</span></code></p>
+<hr />
+<h3 id="same"><strong>same</strong><a class="headerlink" href="#same" title="Permanent link">&para;</a></h3>
+<p>Input value must be the same as the value of another field.</p>
+<p><code class="codehilite"><span class="s1">&#39;same:other_field&#39;</span></code></p>
+<hr />
+<h3 id="url"><strong>url</strong><a class="headerlink" href="#url" title="Permanent link">&para;</a></h3>
+<p>Input value must be formatted as a url.</p>
+<p><code class="codehilite"><span class="s1">&#39;url&#39;</span></code></p>
 <hr />
 <h2 id="custom">Custom<a class="headerlink" href="#custom" title="Permanent link">&para;</a></h2>
 <p>Custom rules can be defined and validated with a callback function.</p>
