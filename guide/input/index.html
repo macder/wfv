@@ -600,7 +600,8 @@
 </td></tr></table></p>
 <hr />
 <h3 id="display"><strong>display()</strong><a class="headerlink" href="#display" title="Permanent link">&para;</a></h3>
-<p>Print an encoded input value to the screen
+<p>Displays (echo) an encoded input value.</p>
+<p>If you need to assign the value, use <a href="#escape">escape()</a> instead.
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nx">display</span><span class="p">(</span> <span class="nx">$field</span> <span class="o">=</span> <span class="kc">null</span><span class="p">,</span> <span class="nx">callable</span> <span class="nx">$callback</span> <span class="o">=</span> <span class="kc">null</span> <span class="p">)</span>
 </pre></div>
 </td></tr></table></p>
@@ -636,38 +637,14 @@
 </table>
 <p><strong>Examples</strong></p>
 <p>Basic:
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span> <span class="c1">// eg. user entered &lt;h1&gt;Bar&lt;/h1&gt;</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span> <span class="c1">// eg. user entered &lt;h1&gt;Bar&lt;/h1&gt;</span>
 
 <span class="nv">$form</span><span class="o">-&gt;</span><span class="na">display</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">);</span>
-
-<span class="nv">$form</span><span class="o">-&gt;</span><span class="na">display</span><span class="p">(</span><span class="s1">&#39;input&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">);</span>
-
-<span class="nv">$form</span><span class="o">-&gt;</span><span class="na">input</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">display</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">);</span>
-
-<span class="nv">$form</span><span class="o">-&gt;</span><span class="na">display</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">input</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">);</span>
-
-<span class="nv">$form</span><span class="o">-&gt;</span><span class="na">display</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">input</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;strip_tags&#39;</span><span class="p">);</span>
-
-<span class="nv">$name</span> <span class="o">=</span> <span class="nv">$form</span><span class="o">-&gt;</span><span class="na">encode</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">input</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">);</span>
-
-<span class="nv">$name</span> <span class="o">=</span> <span class="nv">$form</span><span class="o">-&gt;</span><span class="na">escape</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">input</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">);</span>
 </pre></div>
 </td></tr></table>
-&lt;h1&gt;Bar&lt;/h1&gt;</p>
+The output: &lt;h1&gt;Bar&lt;/h1&gt;</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The default callback is <a href="https://codex.wordpress.org/Function_Reference/esc_html">esc_html()</a> when none is provided.</p>
