@@ -40,7 +40,7 @@ You can define multiple rules for a single field by separating each field with a
 $my_form = array(
     'first_name' => [
         'label' => 'First Name',
-        'rules' => 'required|alpha_dash|max:30'
+        'rules' => 'required|alpha_dash|length_max:30'
     ],
     'email' => [
         'label' => 'Email',
@@ -60,7 +60,7 @@ Each rule has a default error message, but you may override them with custom one
 $my_form = array(
     'first_name' => [
         'label' => 'First Name',
-        'rules' => 'required|alpha_dash|max:30',
+        'rules' => 'required|alpha_dash|length_max:30',
         'messages' => [
             'required'      => 'Please enter your first name',
             'alpha_dash'    => 'First name can only contain alphabetic characters, dashes, and underscores',
