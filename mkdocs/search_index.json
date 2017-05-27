@@ -12,23 +12,8 @@
         }, 
         {
             "location": "/overview/", 
-            "text": "Problem\n\n\nWorking with custom forms in WordPress involves either using some rich WYSIWYG plugin, or writing custom code.\n\n\nNeither approach is wrong, but sometimes less overhead or no awkward code blocks is more ideal.\n\n\nSuppose you are creating a custom form and decide to follow the \nWordPress way\n as a best practice. You create an action that triggers after a http request to /wp-admin/admin-post.php. So far so good, but that form is posting to \nhttp://yoursite.com/wp-admin/admin-post.php\n\n\nWhy is this a problem?\n\n\nAfter submitting, the user is no longer on the form. To send them back (i.e a required field was missed), we need to do a HTTP redirect. At this point the \n$_POST\n with the input is gone... which would have been useful to repopulate the form. In order to persist that input, it needs to be stored in \nGET\n, or in the browser as a session or cookie.\n\n\nNeither is elegant, and both are clunky.\n\n\nSolution\n\n\nWFV gives you the ability to declare form validation constraints in way that is similar to many MVC frameworks.\n\n\nMarkup a form in a template and define its constraints in functions.php or a plugin.\n\n\nYou get a simple but powerful API that makes coding forms more pleasant.\n\n\n\n\nWFV - WordPress Form Validation\n\n\nSafe:\n\n\n1\n$form\n-\nescape\n(\nemail\n);\n\n\n\n\n\n\nAdaptable:\n\n\n1\n$form\n-\ndisplay\n(\nemail\n,\n \nstrip_tags\n)\n\n\n\n\n\n\nFlexible:\n\n\n1\n2\n3\n$form\n-\nescape\n(\nemail\n,\n \nfunction\n(\n \n$input\n \n)\n \n{\n\n  \nreturn\n \nstrip_tags\n(\n \n$input\n \n);\n\n\n});\n\n\n\n\n\n\nAware:\n\n\n1\n$form\n-\ninput\n()\n-\ncontains\n(\n \nemail\n,\n \nfoo@bar.com\n \n);\n\n\n\n\n\n\nHelpful:\n\n\n1\n$form\n-\nerrors\n()\n-\nfirst\n(\nemail\n);\n\n\n\n\n\n\nPragmatic:\n\n\n1\n$form\n-\nselected_if\n(\ncolor\n,\n \ngreen\n);\n\n\n\n\n\n\nSimple:\n\n\n1\n$form\n-\ninput\n()\n-\nhas\n(\nemail\n);\n\n\n\n\n\n\nPowerful:\n\n\n1\n$form\n-\nconstrain\n()\n-\nvalidate\n();\n\n\n\n\n\n\nEnjoy.", 
+            "text": "WFV gives you the ability to declare form validation constraints in way that is similar to many MVC frameworks.\n\n\nMarkup a form in a template and define its constraints in functions.php or a plugin.\n\n\nA simple concrete API that makes coding and validating custom forms in WordPress more pleasant.", 
             "title": "Overview"
-        }, 
-        {
-            "location": "/overview/#problem", 
-            "text": "Working with custom forms in WordPress involves either using some rich WYSIWYG plugin, or writing custom code.  Neither approach is wrong, but sometimes less overhead or no awkward code blocks is more ideal.  Suppose you are creating a custom form and decide to follow the  WordPress way  as a best practice. You create an action that triggers after a http request to /wp-admin/admin-post.php. So far so good, but that form is posting to  http://yoursite.com/wp-admin/admin-post.php  Why is this a problem?  After submitting, the user is no longer on the form. To send them back (i.e a required field was missed), we need to do a HTTP redirect. At this point the  $_POST  with the input is gone... which would have been useful to repopulate the form. In order to persist that input, it needs to be stored in  GET , or in the browser as a session or cookie.  Neither is elegant, and both are clunky.", 
-            "title": "Problem"
-        }, 
-        {
-            "location": "/overview/#solution", 
-            "text": "WFV gives you the ability to declare form validation constraints in way that is similar to many MVC frameworks.  Markup a form in a template and define its constraints in functions.php or a plugin.  You get a simple but powerful API that makes coding forms more pleasant.", 
-            "title": "Solution"
-        }, 
-        {
-            "location": "/overview/#wfv-wordpress-form-validation", 
-            "text": "Safe:  1 $form - escape ( email );    Adaptable:  1 $form - display ( email ,   strip_tags )    Flexible:  1\n2\n3 $form - escape ( email ,   function (   $input   )   { \n   return   strip_tags (   $input   );  });    Aware:  1 $form - input () - contains (   email ,   foo@bar.com   );    Helpful:  1 $form - errors () - first ( email );    Pragmatic:  1 $form - selected_if ( color ,   green );    Simple:  1 $form - input () - has ( email );    Powerful:  1 $form - constrain () - validate ();    Enjoy.", 
-            "title": "WFV - WordPress Form Validation"
         }, 
         {
             "location": "/start/", 
@@ -241,16 +226,6 @@
             "title": "Custom"
         }, 
         {
-            "location": "/guide/messages/", 
-            "text": "Configure", 
-            "title": "Messages"
-        }, 
-        {
-            "location": "/guide/messages/#configure", 
-            "text": "", 
-            "title": "Configure"
-        }, 
-        {
             "location": "/guide/hooks/", 
             "text": "Validation will trigger either a pass or fail action. Hook into them using standard WordPress \nadd_action()\n and process any logic in a callback.\n\n\n\n\nNote\n\n\nActions are named using the alias provided when the instance was created:\n\n\nwfv_create\n(\n \ncontact_form\n,\n \n$form\n \n);\n\n\nPass\n:\n \ncontact_form\n\n\nFail\n:\n \ncontact_form_fail\n\n\n\n\nThe \nFormComposite\n instance is automatically passed into the callback. Ensure that the first parameter is reserved for this.\n\n\nPass\n\n\n1\n2\n3\n4\n5\n6\n?php\n \n// action hook and callback for validation pass\n\n\n\nadd_action\n(\n \ncontact_form\n,\n \ncontact_form_valid\n \n);\n\n\nfunction\n \ncontact_form_valid\n(\n \n$form\n \n)\n \n{\n\n  \n// form input valid, do something...\n\n\n}\n\n\n\n\n\n\n\nFail\n\n\n1\n2\n3\n4\n5\n6\n?php\n \n// action hook and callback for validation fail\n\n\n\nadd_action\n(\n \ncontact_form_fail\n,\n \ncontact_form_invalid\n \n);\n\n\nfunction\n \ncontact_form_invalid\n(\n \n$form\n \n)\n \n{\n\n  \n// form input NOT valid, do something...\n\n\n}", 
             "title": "Hooks"
@@ -331,9 +306,19 @@
             "title": "is_populated()"
         }, 
         {
+            "location": "/guide/messages/", 
+            "text": "Override\n\n\nCustom error messages are defined in a field's messages attribute in the config array:\n\n 1\n 2\n 3\n 4\n 5\n 6\n 7\n 8\n 9\n10\n11\n?php\n\n\n\narray\n(\n\n    \nfirst_name\n \n=\n \n[\n\n        \nlabel\n \n=\n \nFirst Name\n,\n\n        \nrules\n \n=\n \nrequired\n,\n\n        \nmessages\n \n=\n \n[\n\n            \nrequired\n    \n=\n \nYour first name cannot be empty\n,\n\n        \n],\n\n    \n]\n\n\n);", 
+            "title": "Custom Messages"
+        }, 
+        {
+            "location": "/guide/messages/#override", 
+            "text": "Custom error messages are defined in a field's messages attribute in the config array:  1\n 2\n 3\n 4\n 5\n 6\n 7\n 8\n 9\n10\n11 ?php  array ( \n     first_name   =   [ \n         label   =   First Name , \n         rules   =   required , \n         messages   =   [ \n             required      =   Your first name cannot be empty , \n         ], \n     ]  );", 
+            "title": "Override"
+        }, 
+        {
             "location": "/guide/errors/", 
             "text": "Methods\n\n\nhas()\n\n\nCheck if a field has a validation error. This can be useful to display error states.\n\n1\nhas\n \n(\n \n$field\n \n=\n \nnull\n \n)\n\n\n\n\n\n\n\n\n\n\n\n\nParameter\n\n\nType\n\n\nDefault\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\n$field\n\n\nstring\n\n\nnull\n\n\nName of the field\n\n\n\n\n\n\n@return\n \nbool\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExamples\n\n\nBasic:\n\n1\n2\n3\n?php\n\n\n\n$form\n-\nerrors\n()\n-\nhas\n(\nemail\n);\n\n\n\n\n\n\nConditional:\n\n1\n2\n3\n4\n5\n6\n7\n?php\n\n\n$errors = $form-\nerrors();\n\n\n?\n\n\n\ndiv\n \nclass\n=\n?php echo ( $errors-\nhas(\nemail\n) ) ? \nerror\n : \n\n  \ninput\n \nname\n=\nemail\n \ntype\n=\ntext\n\n\n/\ndiv\n\n\n\n\n\n\n\n\nfirst()\n\n\nGet the first error message for a given field.\n\n\nThis is useful for displaying inline error messages.\n\n1\nfirst\n(\n \n$field\n \n)\n\n\n\n\n\n\n\n\n\n\n\n\nParameter\n\n\nType\n\n\nDefault\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\n$field\n\n\nstring\n\n\n\n\nName of the field\n\n\n\n\n\n\n@return\n \nstring\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExamples\n\n\nBasic:\n\n1\n2\n3\n?php\n\n\n\necho\n \n$form\n-\nerrors\n()\n-\nfirst\n(\nemail\n);\n\n\n\n\n\n\nIn a template:\n\n1\n2\n3\n4\ndiv\n\n  \ninput\n \nname\n=\nemail\n \ntype\n=\ntext\n\n  \nsmall\n \nclass\n=\nerror\n?php echo $form-\nerrors()-\nfirst(\nemail\n); ?\n/\nsmall\n\n\n/\ndiv", 
-            "title": "Errors"
+            "title": "Retrieve Errors"
         }, 
         {
             "location": "/guide/errors/#methods", 

@@ -117,7 +117,7 @@
   
 
 
-  <a href="https://github.com/macder/wp-form-validation" title="Go to repository" class="md-source" data-md-source="github">
+  <a href="https://github.com/macder/wfv-validation" title="Go to repository" class="md-source" data-md-source="github">
     
       <div class="md-source__icon">
         <svg viewBox="0 0 24 24" width="24" height="24">
@@ -126,7 +126,7 @@
       </div>
     
     <div class="md-source__repository">
-      macder/wp-form-validation
+      macder/wfv-validation
     </div>
   </a>
 
@@ -162,7 +162,7 @@
   
 
 
-  <a href="https://github.com/macder/wp-form-validation" title="Go to repository" class="md-source" data-md-source="github">
+  <a href="https://github.com/macder/wfv-validation" title="Go to repository" class="md-source" data-md-source="github">
     
       <div class="md-source__icon">
         <svg viewBox="0 0 24 24" width="24" height="24">
@@ -171,7 +171,7 @@
       </div>
     
     <div class="md-source__repository">
-      macder/wp-form-validation
+      macder/wfv-validation
     </div>
   </a>
 
@@ -203,48 +203,9 @@
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
     
     
-      <label class="md-nav__link md-nav__link--active" for="toc">
-        Overview
-      </label>
-    
     <a href="./" title="Overview" class="md-nav__link md-nav__link--active">
       Overview
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-  
-    <label class="md-nav__title" for="toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#problem" title="Problem" class="md-nav__link">
-    Problem
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#solution" title="Solution" class="md-nav__link">
-    Solution
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#wfv-wordpress-form-validation" title="WFV - WordPress Form Validation" class="md-nav__link">
-    WFV - WordPress Form Validation
-  </a>
-  
-</li>
-      
-      
-      
-    </ul>
-  
-</nav>
     
   </li>
 
@@ -310,18 +271,6 @@
 
 
   <li class="md-nav__item">
-    <a href="../guide/messages/" title="Messages" class="md-nav__link">
-      Messages
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
     <a href="../guide/hooks/" title="Hooks" class="md-nav__link">
       Hooks
     </a>
@@ -369,10 +318,46 @@
           
 
 
-  <li class="md-nav__item">
-    <a href="../guide/errors/" title="Errors" class="md-nav__link">
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-6" type="checkbox" id="nav-5-6">
+    
+    <label class="md-nav__link" for="nav-5-6">
       Errors
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-5-6">
+        Errors
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../guide/messages/" title="Custom Messages" class="md-nav__link">
+      Custom Messages
     </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../guide/errors/" title="Retrieve Errors" class="md-nav__link">
+      Retrieve Errors
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
         
@@ -432,34 +417,6 @@
   
   
   
-    <label class="md-nav__title" for="toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#problem" title="Problem" class="md-nav__link">
-    Problem
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#solution" title="Solution" class="md-nav__link">
-    Solution
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#wfv-wordpress-form-validation" title="WFV - WordPress Form Validation" class="md-nav__link">
-    WFV - WordPress Form Validation
-  </a>
-  
-</li>
-      
-      
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -473,56 +430,37 @@
                 
                   <h1>Overview</h1>
                 
-                <h2 id="problem">Problem<a class="headerlink" href="#problem" title="Permanent link">&para;</a></h2>
-<p>Working with custom forms in WordPress involves either using some rich WYSIWYG plugin, or writing custom code.</p>
-<p>Neither approach is wrong, but sometimes less overhead or no awkward code blocks is more ideal.</p>
-<p>Suppose you are creating a custom form and decide to follow the <a href="https://codex.wordpress.org/Plugin_API/Action_Reference/admin_post_%28action%29">WordPress way</a> as a best practice. You create an action that triggers after a http request to /wp-admin/admin-post.php. So far so good, but that form is posting to <code class="codehilite">http://yoursite.com/wp-admin/admin-post.php</code></p>
-<p>Why is this a problem?</p>
-<p>After submitting, the user is no longer on the form. To send them back (i.e a required field was missed), we need to do a HTTP redirect. At this point the <code class="codehilite">$_POST</code> with the input is gone... which would have been useful to repopulate the form. In order to persist that input, it needs to be stored in <code class="codehilite">GET</code>, or in the browser as a session or cookie.</p>
-<p>Neither is elegant, and both are clunky.</p>
-<h2 id="solution">Solution<a class="headerlink" href="#solution" title="Permanent link">&para;</a></h2>
-<p>WFV gives you the ability to declare form validation constraints in way that is similar to many MVC frameworks.</p>
+                <p>WFV gives you the ability to declare form validation constraints in way that is similar to many MVC frameworks.</p>
 <p>Markup a form in a template and define its constraints in functions.php or a plugin.</p>
-<p>You get a simple but powerful API that makes coding forms more pleasant.</p>
+<p>A simple concrete API that makes coding and validating custom forms in WordPress more pleasant.</p>
 <hr />
-<h2 id="wfv-wordpress-form-validation">WFV - WordPress Form Validation<a class="headerlink" href="#wfv-wordpress-form-validation" title="Permanent link">&para;</a></h2>
-<p><strong>Safe:</strong><br>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nx">$form</span><span class="o">-&gt;</span><span class="nx">escape</span><span class="p">(</span><span class="s1">&#39;email&#39;</span><span class="p">);</span>
-</pre></div>
-</td></tr></table></p>
-<p><strong>Adaptable:</strong><br>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nx">$form</span><span class="o">-&gt;</span><span class="nx">display</span><span class="p">(</span><span class="s1">&#39;email&#39;</span><span class="p">,</span> <span class="s1">&#39;strip_tags&#39;</span><span class="p">)</span>
-</pre></div>
-</td></tr></table></p>
-<p><strong>Flexible:</strong><br>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nx">$form</span><span class="o">-&gt;</span><span class="nx">escape</span><span class="p">(</span><span class="s1">&#39;email&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span> <span class="nx">$input</span> <span class="p">)</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="nx">strip_tags</span><span class="p">(</span> <span class="nx">$input</span> <span class="p">);</span>
-<span class="p">});</span>
-</pre></div>
-</td></tr></table></p>
-<p><strong>Aware:</strong><br>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nx">$form</span><span class="o">-&gt;</span><span class="nx">input</span><span class="p">()</span><span class="o">-&gt;</span><span class="nx">contains</span><span class="p">(</span> <span class="s1">&#39;email&#39;</span><span class="p">,</span> <span class="s1">&#39;foo@bar.com&#39;</span> <span class="p">);</span>
-</pre></div>
-</td></tr></table></p>
-<p><strong>Helpful:</strong><br>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nx">$form</span><span class="o">-&gt;</span><span class="nx">errors</span><span class="p">()</span><span class="o">-&gt;</span><span class="nx">first</span><span class="p">(</span><span class="s1">&#39;email&#39;</span><span class="p">);</span>
-</pre></div>
-</td></tr></table></p>
-<p><strong>Pragmatic:</strong><br>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nx">$form</span><span class="o">-&gt;</span><span class="nx">selected_if</span><span class="p">(</span><span class="s1">&#39;color&#39;</span><span class="p">,</span> <span class="s1">&#39;green&#39;</span><span class="p">);</span>
-</pre></div>
-</td></tr></table></p>
-<p><strong>Simple:</strong><br>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nx">$form</span><span class="o">-&gt;</span><span class="nx">input</span><span class="p">()</span><span class="o">-&gt;</span><span class="nx">has</span><span class="p">(</span><span class="s1">&#39;email&#39;</span><span class="p">);</span>
-</pre></div>
-</td></tr></table></p>
-<p><strong>Powerful:</strong><br>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nx">$form</span><span class="o">-&gt;</span><span class="nx">constrain</span><span class="p">()</span><span class="o">-&gt;</span><span class="nx">validate</span><span class="p">();</span>
-</pre></div>
-</td></tr></table></p>
-<p>Enjoy.</p>
+<!-- ## WFV
+
+**Safe:**<br>
+wzxhzdk:0
+
+**Adaptable:**<br>
+wzxhzdk:1
+
+**Flexible:**<br>
+wzxhzdk:2
+
+**Aware:**<br>
+wzxhzdk:3
+
+**Helpful:**<br>
+wzxhzdk:4
+
+**Pragmatic:**<br>
+wzxhzdk:5
+
+**Simple:**<br>
+wzxhzdk:6
+
+**Powerful:**<br>
+wzxhzdk:7
+
+Enjoy. -->
                 
                   
                 

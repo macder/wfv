@@ -15,7 +15,7 @@
     
     
       
-        <title>Messages - WFV Documentation</title>
+        <title>Custom Messages - WFV Documentation</title>
       
     
     
@@ -79,8 +79,12 @@
                   User Guide
                 </span>
               
+                <span class="md-header-nav__parent">
+                  Errors
+                </span>
+              
             
-            Messages
+            Custom Messages
           
         </span>
       </div>
@@ -119,7 +123,7 @@
   
 
 
-  <a href="https://github.com/macder/wp-form-validation" title="Go to repository" class="md-source" data-md-source="github">
+  <a href="https://github.com/macder/wfv-validation" title="Go to repository" class="md-source" data-md-source="github">
     
       <div class="md-source__icon">
         <svg viewBox="0 0 24 24" width="24" height="24">
@@ -128,7 +132,7 @@
       </div>
     
     <div class="md-source__repository">
-      macder/wp-form-validation
+      macder/wfv-validation
     </div>
   </a>
 
@@ -164,7 +168,7 @@
   
 
 
-  <a href="https://github.com/macder/wp-form-validation" title="Go to repository" class="md-source" data-md-source="github">
+  <a href="https://github.com/macder/wfv-validation" title="Go to repository" class="md-source" data-md-source="github">
     
       <div class="md-source__icon">
         <svg viewBox="0 0 24 24" width="24" height="24">
@@ -173,7 +177,7 @@
       </div>
     
     <div class="md-source__repository">
-      macder/wp-form-validation
+      macder/wfv-validation
     </div>
   </a>
 
@@ -266,50 +270,6 @@
           
           
 
-  
-
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="toc">
-        Messages
-      </label>
-    
-    <a href="./" title="Messages" class="md-nav__link md-nav__link--active">
-      Messages
-    </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-  
-    <label class="md-nav__title" for="toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#configure" title="Configure" class="md-nav__link">
-    Configure
-  </a>
-  
-</li>
-      
-      
-      
-    </ul>
-  
-</nav>
-    
-  </li>
-
-        
-          
-          
-          
-
 
   <li class="md-nav__item">
     <a href="../hooks/" title="Hooks" class="md-nav__link">
@@ -358,11 +318,81 @@
           
           
 
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-6" type="checkbox" id="nav-5-6" checked>
+    
+    <label class="md-nav__link" for="nav-5-6">
+      Errors
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-5-6">
+        Errors
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Custom Messages
+      </label>
+    
+    <a href="./" title="Custom Messages" class="md-nav__link md-nav__link--active">
+      Custom Messages
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#override" title="Override" class="md-nav__link">
+    Override
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
 
   <li class="md-nav__item">
-    <a href="../errors/" title="Errors" class="md-nav__link">
-      Errors
+    <a href="../errors/" title="Retrieve Errors" class="md-nav__link">
+      Retrieve Errors
     </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
         
@@ -426,8 +456,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#configure" title="Configure" class="md-nav__link">
-    Configure
+  <a href="#override" title="Override" class="md-nav__link">
+    Override
   </a>
   
 </li>
@@ -447,9 +477,33 @@
               
                 
                 
-                  <h1>Messages</h1>
+                  <h1>Custom Messages</h1>
                 
-                <h2 id="configure">Configure<a class="headerlink" href="#configure" title="Permanent link">&para;</a></h2>
+                <h2 id="override">Override<a class="headerlink" href="#override" title="Permanent link">&para;</a></h2>
+<p>Custom error messages are defined in a field's messages attribute in the config array:
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
+
+<span class="k">array</span><span class="p">(</span>
+    <span class="s1">&#39;first_name&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
+        <span class="s1">&#39;label&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;First Name&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;rules&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;required&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;messages&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
+            <span class="s1">&#39;required&#39;</span>    <span class="o">=&gt;</span> <span class="s1">&#39;Your first name cannot be empty&#39;</span><span class="p">,</span>
+        <span class="p">],</span>
+    <span class="p">]</span>
+<span class="p">);</span>
+</pre></div>
+</td></tr></table></p>
                 
                   
                 
@@ -468,7 +522,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../rules/" title="Rules" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../input/" title="Input" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -477,19 +531,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Rules
+                Input
               </span>
             </div>
           </a>
         
         
-          <a href="../hooks/" title="Hooks" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../errors/" title="Retrieve Errors" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Hooks
+                Retrieve Errors
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
