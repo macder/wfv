@@ -598,7 +598,7 @@
 <span class="p">);</span>
 </pre></div>
 </td></tr></table>
-You can use <a href="../guide/rules/#built-in-rules">built-in</a> ones and <a href="../guide/rules/#custom-rules">create your own</a>.</p>
+You can use <a href="../guide/rules/#built-in">built-in</a> ones and <a href="../guide/rules/#custom">create your own</a>.</p>
 <hr />
 <h3 id="error-messages"><strong>Error Messages</strong><a class="headerlink" href="#error-messages" title="Permanent link">&para;</a></h3>
 <p>Each rule has a default error message, but you may override them with custom ones.
@@ -627,7 +627,7 @@ You can use <a href="../guide/rules/#built-in-rules">built-in</a> ones and <a hr
 <span class="p">);</span>
 </pre></div>
 </td></tr></table>
-More details about <a href="">error messages</a>.</p>
+More details about <a href="../guide/messages">error messages</a>.</p>
 <hr />
 <h3 id="activate"><strong>Activate</strong><a class="headerlink" href="#activate" title="Permanent link">&para;</a></h3>
 <p>Pass the array of arguments into the <a href="../guide/create">wfv_create()</a> function to get an instance of <code class="codehilite">WFV\FormComposite</code>.</p>
@@ -642,10 +642,8 @@ More details about <a href="">error messages</a>.</p>
  7
  8
  9
-10
-11</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
+10</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 
-<span class="nv">$form</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span> <span class="nv">$rules</span><span class="p">,</span> <span class="nv">$messages</span> <span class="p">);</span>
 <span class="nx">wfv_create</span><span class="p">(</span> <span class="s1">&#39;my_form&#39;</span><span class="p">,</span> <span class="nv">$my_form</span> <span class="p">);</span>
 
 <span class="c1">// $my_form is now an instance of FormComposite</span>

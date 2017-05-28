@@ -1016,7 +1016,8 @@ In this case, validation will only verify the rules for the field if it is not e
     <span class="k">return</span> <span class="p">(</span> <span class="s1">&#39;whatever&#39;</span> <span class="o">===</span> <span class="nv">$input</span> <span class="p">)</span> <span class="o">?</span> <span class="k">true</span> <span class="o">:</span> <span class="k">false</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
-</td></tr></table></p>
+</td></tr></table>
+<a href="../../guide/rules/#custom">More details</a></p>
 <hr />
 <h3 id="date"><strong>date</strong><a class="headerlink" href="#date" title="Permanent link">&para;</a></h3>
 <p>Input value must be a date.</p>
@@ -1065,27 +1066,44 @@ eg:<code class="codehilite"><span class="s1">&#39;date:Y-m-d&#39;</span></code><
 <p><code class="codehilite"><span class="s1">&#39;length_min:value&#39;</span></code></p>
 <hr />
 <h3 id="max"><strong>max</strong><a class="headerlink" href="#max" title="Permanent link">&para;</a></h3>
-<p>Input must not exceed the maximum value.</p>
+<p>Input value must be less than the maximum.</p>
 <p>Numeric:
-<code class="codehilite"><span class="s1">&#39;max:20&#39;</span></code> 15 pass, 25 fail</p>
+<code class="codehilite"><span class="s1">&#39;max:20&#39;</span></code></p>
 <p>Alphabetic:
-<code class="codehilite"><span class="s1">&#39;max:c&#39;</span></code> a pass, d fail</p>
+<code class="codehilite"><span class="s1">&#39;max:c&#39;</span></code></p>
 <p>Date:
-<code class="codehilite"><span class="s1">&#39;max:2017-06-30&#39;</span></code> 2017-06-29 pass, 2017-07-29 fail</p>
+<code class="codehilite"><span class="s1">&#39;max:2017-06-30&#39;</span></code></p>
 <hr />
 <h3 id="min"><strong>min</strong><a class="headerlink" href="#min" title="Permanent link">&para;</a></h3>
-<p><code class="codehilite"><span class="s1">&#39;min:5&#39;</span></code></p>
+<p>Input value must be greater than the minimum.</p>
+<p>Numeric:
+<code class="codehilite"><span class="s1">&#39;min:20&#39;</span></code></p>
+<p>Alphabetic:
+<code class="codehilite"><span class="s1">&#39;min:c&#39;</span></code></p>
+<p>Date:
+<code class="codehilite"><span class="s1">&#39;min:2017-06-30&#39;</span></code></p>
 <hr />
 <h3 id="numeric"><strong>numeric</strong><a class="headerlink" href="#numeric" title="Permanent link">&para;</a></h3>
 <p>Input value must be numeric.</p>
+<p>Accepts whole, decimal, positive, and negative numbers</p>
 <p><code class="codehilite"><span class="s1">&#39;numeric&#39;</span></code></p>
 <hr />
 <h3 id="optional"><strong>optional</strong><a class="headerlink" href="#optional" title="Permanent link">&para;</a></h3>
-<p>The field is optional. Any other defined rules will only be validated if field is not empty.</p>
+<p>The field is optional. All rules for the field will only be validated if field is not empty.</p>
 <p><code class="codehilite"><span class="s1">&#39;optional&#39;</span></code></p>
 <hr />
 <h3 id="phone"><strong>phone</strong><a class="headerlink" href="#phone" title="Permanent link">&para;</a></h3>
 <p>Input value must be formatted as a phone number.</p>
+<p>Valid formats:</p>
+<ul>
+<li><code class="codehilite">(555)555-5555</code></li>
+<li><code class="codehilite">555 555 5555</code></li>
+<li><code class="codehilite">+5(555)555.5555</code></li>
+<li><code class="codehilite">33(1)22 22 22 22</code></li>
+<li><code class="codehilite">+33(1)22 22 22 22</code></li>
+<li><code class="codehilite">+33(020)7777 7777</code></li>
+<li><code class="codehilite">03-6106666</code></li>
+</ul>
 <p><code class="codehilite"><span class="s1">&#39;phone&#39;</span></code></p>
 <hr />
 <h3 id="required"><strong>required</strong><a class="headerlink" href="#required" title="Permanent link">&para;</a></h3>
@@ -1102,6 +1120,7 @@ eg:<code class="codehilite"><span class="s1">&#39;date:Y-m-d&#39;</span></code><
 <hr />
 <h3 id="same"><strong>same</strong><a class="headerlink" href="#same" title="Permanent link">&para;</a></h3>
 <p>Input value must be the same as the value of another field.</p>
+<p>This is useful for password and email confirmation fields.</p>
 <p><code class="codehilite"><span class="s1">&#39;same:other_field&#39;</span></code></p>
 <hr />
 <h3 id="url"><strong>url</strong><a class="headerlink" href="#url" title="Permanent link">&para;</a></h3>

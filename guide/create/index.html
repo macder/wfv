@@ -476,7 +476,7 @@
                 <h3 id="wfv_create"><strong>wfv_create</strong><a class="headerlink" href="#wfv_create" title="Permanent link">&para;</a></h3>
 <p>This method will pass by reference an instance of <code class="codehilite">FormComposite</code> as described by the $array arguments.</p>
 <p>You must call this method to actualize a validation. It takes the boring array of arguments and gives you a rich composite.
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nx">wfv_create</span><span class="p">(</span> <span class="nx">string</span> <span class="nx">$action</span><span class="p">,</span> <span class="nx">array</span> <span class="o">&amp;</span><span class="nx">$form</span> <span class="p">)</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nx">wfv_create</span><span class="p">(</span> <span class="nx">string</span> <span class="nx">$action</span><span class="p">,</span> <span class="nx">array</span> <span class="o">&amp;</span><span class="nx">$form</span><span class="p">,</span> <span class="nx">bool</span> <span class="nx">$trim</span> <span class="o">=</span> <span class="kc">true</span> <span class="p">)</span>
 </pre></div>
 </td></tr></table></p>
 <table>
@@ -493,27 +493,39 @@
 <td><code class="codehilite"><span class="nx">$action</span></code></td>
 <td>string</td>
 <td></td>
-<td></td>
+<td>Unique identifier for the form</td>
 </tr>
 <tr>
 <td><code class="codehilite"><span class="nx">$form</span></code></td>
 <td>array</td>
 <td></td>
-<td></td>
+<td>Configuration array</td>
+</tr>
+<tr>
+<td><code class="codehilite"><span class="nx">$trim</span></code></td>
+<td>bool</td>
+<td>true</td>
+<td>Strip whitespace from beginning and end of input values</td>
 </tr>
 </tbody>
 </table>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>When using validation hooks, this method must be called after they have been registered.</p>
-<p>Place <code class="codehilite">wfv_create()</code> below the hooks.</p>
-</div>
 <p><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 <span class="nx">wfv_create</span><span class="p">(</span> <span class="s1">&#39;contact_form&#39;</span><span class="p">,</span> <span class="nv">$form</span> <span class="p">);</span>
 </pre></div>
 </td></tr></table>
 <code class="codehilite">$form</code> is now an instance of <code class="codehilite">WFV\FormComposite</code></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>By default, WFV will trim leading and trailing whitespace from each input value.</p>
+<p>If you do not desire this behavior, pass <code class="codehilite">false</code> as a third parameter when calling <code class="codehilite">wfv_create()</code></p>
+<p>eg:
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="nx">wfv_create</span><span class="p">(</span> <span class="s1">&#39;my_form&#39;</span><span class="p">,</span> <span class="nv">$my_form</span><span class="p">,</span> <span class="k">false</span> <span class="p">);</span>
+</pre></div>
+</td></tr></table></p>
+</div>
                 
                   
                 
