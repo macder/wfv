@@ -25,9 +25,9 @@ Have a working instance of WordPress
 ```sh
 $ cd ./wp-content/plugins
 
-$ git clone https://github.com/macder/wp-form-validation.git
+$ git clone https://github.com/macder/wfv-validation.git
 
-$ cd wp-form-validation
+$ cd wfv-validation
 
 $ composer install
 ```

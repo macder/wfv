@@ -48,7 +48,7 @@ $my_form = array(
     ],
 );
 ~~~~
-You can use [built-in](/guide/rules/#built-in-rules) ones and [create your own](/guide/rules/#custom-rules).
+You can use [built-in](/guide/rules/#built-in) ones and [create your own](/guide/rules/#custom).
 
 ---
 
@@ -68,7 +68,7 @@ $my_form = array(
     ]
 );
 ~~~~
-More details about [error messages]().
+More details about [error messages](/guide/messages).
 
 ---
 
@@ -81,7 +81,6 @@ Example:
 ~~~~{.php}
 <?php
 
-$form = array( $rules, $messages );
 wfv_create( 'my_form', $my_form );
 
 // $my_form is now an instance of FormComposite
