@@ -128,6 +128,8 @@ function some_function( $input ) {
     return ( 'whatever' === $input ) ? true : false;
 }
 ~~~~
+[More details](/guide/rules/#custom)
+
 ---
 
 ### **date**
@@ -208,34 +210,44 @@ Input value length must be greater than given value
 ---
 
 ### **max**
-Input must not exceed the maximum value.
+Input value must be less than the maximum.
 
 Numeric:
-`#!js 'max:20'` 15 pass, 25 fail
+`#!js 'max:20'`
 
 Alphabetic:
-`#!js 'max:c'` a pass, d fail
+`#!js 'max:c'`
 
 Date:
-`#!js 'max:2017-06-30'` 2017-06-29 pass, 2017-07-29 fail
+`#!js 'max:2017-06-30'`
 
 ---
 
 ### **min**
+Input value must be greater than the minimum.
 
-`#!js 'min:5'`
+Numeric:
+`#!js 'min:20'`
+
+Alphabetic:
+`#!js 'min:c'`
+
+Date:
+`#!js 'min:2017-06-30'`
 
 ---
 
 ### **numeric**
 Input value must be numeric.
 
+Accepts whole, decimal, positive, and negative numbers
+
 `#!js 'numeric'`
 
 ---
 
 ### **optional**
-The field is optional. Any other defined rules will only be validated if field is not empty.
+The field is optional. All rules for the field will only be validated if field is not empty.
 
 `#!js 'optional'`
 
@@ -243,6 +255,16 @@ The field is optional. Any other defined rules will only be validated if field i
 
 ### **phone**
 Input value must be formatted as a phone number.
+
+Valid formats:
+
+* `(555)555-5555`
+* `555 555 5555`
+* `+5(555)555.5555`
+* `33(1)22 22 22 22`
+* `+33(1)22 22 22 22`
+* `+33(020)7777 7777`
+* `03-6106666`
 
 `#!js 'phone'`
 
@@ -271,6 +293,8 @@ The field is required only if another field is not empty.
 
 ### **same**
 Input value must be the same as the value of another field.
+
+This is useful for password and email confirmation fields.
 
 `#!js 'same:other_field'`
 
