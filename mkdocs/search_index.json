@@ -306,6 +306,21 @@
             "title": "is_populated()"
         }, 
         {
+            "location": "/guide/state/", 
+            "text": "is_valid()\n\n\nConvenience method to check if validation passed\n\n\n1\nis_valid\n()\n\n\n\n\n\n\n\n@return\n \nbool\n\n\nExample\n\n\nUseful for displaying a general success message in a template\n\n1\n2\n3\n?php\n \nif\n \n(\n \n$form\n-\nis_valid\n()\n \n)\n \n:\n \n?\n\n\n  \np\nSuccess!\n/p\n\n\n?php\n \nendif\n;\n \n?\n\n\n\n\n\n\n\n\nhas_errors()\n\n\nConvenience method to check if form has input errors\n\n\n1\nhas_errors\n()\n\n\n\n\n\n\n\n@return\n \nbool\n\n\nThis is a shorthand for \n$form-\nerrors()-\nis_populated()\n\n\nExample\n\n\nUseful for displaying a general error message in a template\n\n1\n2\n3\n?php\n \nif\n \n(\n \n$form\n-\nhas_errors\n()\n \n)\n \n:\n \n?\n\n\n  \np\nWhoops, some field(s) are not valid\n/p\n\n\n?php\n \nendif\n;\n \n?", 
+            "title": "State"
+        }, 
+        {
+            "location": "/guide/state/#is_valid", 
+            "text": "Convenience method to check if validation passed  1 is_valid ()    @return   bool  Example  Useful for displaying a general success message in a template 1\n2\n3 ?php   if   (   $form - is_valid ()   )   :   ?     p Success! /p  ?php   endif ;   ?", 
+            "title": "is_valid()"
+        }, 
+        {
+            "location": "/guide/state/#has_errors", 
+            "text": "Convenience method to check if form has input errors  1 has_errors ()    @return   bool  This is a shorthand for  $form- errors()- is_populated()  Example  Useful for displaying a general error message in a template 1\n2\n3 ?php   if   (   $form - has_errors ()   )   :   ?     p Whoops, some field(s) are not valid /p  ?php   endif ;   ?", 
+            "title": "has_errors()"
+        }, 
+        {
             "location": "/guide/messages/", 
             "text": "Override\n\n\nCustom error messages are defined in a field's messages attribute in the config array:\n\n 1\n 2\n 3\n 4\n 5\n 6\n 7\n 8\n 9\n10\n11\n?php\n\n\n\narray\n(\n\n    \nfirst_name\n \n=\n \n[\n\n        \nlabel\n \n=\n \nFirst Name\n,\n\n        \nrules\n \n=\n \nrequired\n,\n\n        \nmessages\n \n=\n \n[\n\n            \nrequired\n    \n=\n \nYour first name cannot be empty\n,\n\n        \n],\n\n    \n]\n\n\n);", 
             "title": "Custom Messages"

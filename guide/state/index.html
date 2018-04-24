@@ -15,7 +15,7 @@
     
     
       
-        <title>Populate - WFV Documentation</title>
+        <title>State - WFV Documentation</title>
       
     
     
@@ -80,7 +80,7 @@
                 </span>
               
             
-            Populate
+            State
           
         </span>
       </div>
@@ -290,57 +290,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="toc">
-        Populate
-      </label>
-    
-    <a href="./" title="Populate" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../populate/" title="Populate" class="md-nav__link">
       Populate
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-  
-    <label class="md-nav__title" for="toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#text-fields" title="Text Fields" class="md-nav__link">
-    Text Fields
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#checkboxes-and-radio" title="Checkboxes and Radio" class="md-nav__link">
-    Checkboxes and Radio
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#select-and-multi-select" title="Select and Multi-select" class="md-nav__link">
-    Select and Multi-select
-  </a>
-  
-</li>
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -360,11 +314,50 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../state/" title="State" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        State
+      </label>
+    
+    <a href="./" title="State" class="md-nav__link md-nav__link--active">
       State
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#is_valid" title="is_valid()" class="md-nav__link">
+    is_valid()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#has_errors" title="has_errors()" class="md-nav__link">
+    has_errors()
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -476,22 +469,15 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#text-fields" title="Text Fields" class="md-nav__link">
-    Text Fields
+  <a href="#is_valid" title="is_valid()" class="md-nav__link">
+    is_valid()
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#checkboxes-and-radio" title="Checkboxes and Radio" class="md-nav__link">
-    Checkboxes and Radio
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#select-and-multi-select" title="Select and Multi-select" class="md-nav__link">
-    Select and Multi-select
+  <a href="#has_errors" title="has_errors()" class="md-nav__link">
+    has_errors()
   </a>
   
 </li>
@@ -511,160 +497,40 @@
               
                 
                 
-                  <h1>Populate</h1>
+                  <h1>State</h1>
                 
-                <h2 id="text-fields">Text Fields<a class="headerlink" href="#text-fields" title="Permanent link">&para;</a></h2>
-<p>If validation fails, these fields would populate using the submitted values:
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">input</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;name&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;&lt;?php $form-&gt;display(&#39;name&#39;); ?&gt;&quot;</span><span class="p">&gt;</span>
-</pre></div>
-</td></tr></table></p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">textarea</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;msg&quot;</span><span class="p">&gt;</span><span class="cp">&lt;?php $form-&gt;display(&#39;msg&#39;); ?&gt;</span><span class="p">&lt;/</span><span class="nt">textarea</span><span class="p">&gt;</span>
+                <h3 id="is_valid"><strong>is_valid()</strong><a class="headerlink" href="#is_valid" title="Permanent link">&para;</a></h3>
+<p>Convenience method to check if validation passed</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nx">is_valid</span><span class="p">()</span>
 </pre></div>
 </td></tr></table>
 
-<p><a href="../../guide/input/#display">More options using <code class="codehilite">display()</code></a></p>
-<hr />
-<h2 id="checkboxes-and-radio">Checkboxes and Radio<a class="headerlink" href="#checkboxes-and-radio" title="Permanent link">&para;</a></h2>
-<p>Convenience method to repopulate checkbox input
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nx">checked_if</span><span class="p">(</span> <span class="nx">string</span> <span class="nx">$field</span><span class="p">,</span> <span class="nx">string</span> <span class="nx">$value</span> <span class="p">)</span>
-</pre></div>
-</td></tr></table></p>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code class="codehilite"><span class="nx">$field</span></code></td>
-<td>string</td>
-<td><code class="codehilite"><span class="kc">null</span></code></td>
-<td></td>
-</tr>
-<tr>
-<td><code class="codehilite"><span class="nx">$value</span></code></td>
-<td>string</td>
-<td><code class="codehilite"><span class="kc">null</span></code></td>
-<td></td>
-</tr>
-<tr>
-<td><code class="codehilite"><span class="nd">@return</span> <span class="n">string</span><span class="o">|</span><span class="n">null</span></code></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<p>Examples:
+<p><code class="codehilite"><span class="nd">@return</span> <span class="nb">bool</span></code></p>
+<p><strong>Example</strong></p>
+<p>Useful for displaying a general success message in a template
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
-3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span> <span class="c1">// will echo &#39;checked&#39; if user checked &#39;green&#39; checkbox</span>
-
-<span class="k">echo</span> <span class="nv">$form</span><span class="o">-&gt;</span><span class="na">checked_if</span><span class="p">(</span><span class="s1">&#39;color&#39;</span><span class="p">,</span> <span class="s1">&#39;green&#39;</span><span class="p">);</span> <span class="c1">// checked</span>
-</pre></div>
-</td></tr></table></p>
-<p>Checkbox:
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">input</span>
-  <span class="na">name</span><span class="o">=</span><span class="s">&quot;color[]&quot;</span>
-  <span class="na">type</span><span class="o">=</span><span class="s">&quot;checkbox&quot;</span>
-  <span class="na">value</span><span class="o">=</span><span class="s">&quot;green&quot;</span>
-  <span class="err">&lt;?=</span> <span class="err">$</span><span class="na">form-</span><span class="p">&gt;</span>checked_if(&#39;color&#39;, &#39;green&#39;); ?&gt;
-&gt;
-</pre></div>
-</td></tr></table></p>
-<p>Radio:
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">input</span>
-  <span class="na">name</span><span class="o">=</span><span class="s">&quot;agree&quot;</span>
-  <span class="na">type</span><span class="o">=</span><span class="s">&quot;radio&quot;</span>
-  <span class="na">value</span><span class="o">=</span><span class="s">&quot;yes&quot;</span>
-  <span class="err">&lt;?=</span> <span class="err">$</span><span class="na">form-</span><span class="p">&gt;</span>checked_if(&#39;agree&#39;, &#39;yes&#39;); ?&gt;
-&gt;
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span> <span class="k">if</span> <span class="p">(</span> <span class="nv">$form</span><span class="o">-&gt;</span><span class="na">is_valid</span><span class="p">()</span> <span class="p">)</span> <span class="o">:</span> <span class="cp">?&gt;</span><span class="x"></span>
+<span class="x">  &lt;p&gt;Success!&lt;/p&gt;&#39;</span>
+<span class="cp">&lt;?php</span> <span class="k">endif</span><span class="p">;</span> <span class="cp">?&gt;</span><span class="x"></span>
 </pre></div>
 </td></tr></table></p>
 <hr />
-<h2 id="select-and-multi-select">Select and Multi-select<a class="headerlink" href="#select-and-multi-select" title="Permanent link">&para;</a></h2>
-<p>Convenience method to repopulate select input
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nx">selected_if</span><span class="p">(</span> <span class="nx">string</span> <span class="nx">$field</span><span class="p">,</span> <span class="nx">string</span> <span class="nx">$value</span> <span class="p">)</span>
+<h3 id="has_errors"><strong>has_errors()</strong><a class="headerlink" href="#has_errors" title="Permanent link">&para;</a></h3>
+<p>Convenience method to check if form has input errors</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nx">has_errors</span><span class="p">()</span>
 </pre></div>
-</td></tr></table></p>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code class="codehilite"><span class="nx">$field</span></code></td>
-<td>string</td>
-<td><code class="codehilite"><span class="kc">null</span></code></td>
-<td></td>
-</tr>
-<tr>
-<td><code class="codehilite"><span class="nx">$value</span></code></td>
-<td>string</td>
-<td><code class="codehilite"><span class="kc">null</span></code></td>
-<td></td>
-</tr>
-<tr>
-<td><code class="codehilite"><span class="nd">@return</span> <span class="n">string</span><span class="o">|</span><span class="n">null</span></code></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<p>Examples:
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span> <span class="c1">// will echo &#39;selected&#39; if user selected &#39;green&#39; in select input</span>
+</td></tr></table>
 
-<span class="k">echo</span> <span class="nv">$my_form</span><span class="o">-&gt;</span><span class="na">selected_if</span><span class="p">(</span><span class="s1">&#39;color&#39;</span><span class="p">,</span> <span class="s1">&#39;green&#39;</span><span class="p">);</span> <span class="c1">// selected</span>
-</pre></div>
-</td></tr></table></p>
-<p>Select:
+<p><code class="codehilite"><span class="nd">@return</span> <span class="nb">bool</span></code></p>
+<p>This is a shorthand for <code class="codehilite">$form-&gt;errors()-&gt;is_populated()</code></p>
+<p><strong>Example</strong></p>
+<p>Useful for displaying a general error message in a template
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
-3
-4
-5
-6
-7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">select</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;title&quot;</span><span class="p">&gt;</span>
-  <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">&gt;</span>Select...<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
-  <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;Mr&quot;</span> <span class="err">&lt;?=</span> <span class="err">$</span><span class="na">form-</span><span class="p">&gt;</span>selected_if(&#39;title&#39;, &#39;Mr&#39;); ?&gt;&gt;Mr<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
-  <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;Dr&quot;</span> <span class="err">&lt;?=</span> <span class="err">$</span><span class="na">form-</span><span class="p">&gt;</span>selected_if(&#39;title&#39;, &#39;Dr&#39;); ?&gt;&gt;Dr<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
-  <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;Miss&quot;</span> <span class="err">&lt;?=</span> <span class="err">$</span><span class="na">form-</span><span class="p">&gt;</span>selected_if(&#39;title&#39;, &#39;Miss&#39;); ?&gt;&gt;Miss<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
-  <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;Mrs&quot;</span> <span class="err">&lt;?=</span> <span class="err">$</span><span class="na">form-</span><span class="p">&gt;</span>selected_if(&#39;title&#39;, &#39;Mrs&#39;); ?&gt;&gt;Mrs<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">select</span><span class="p">&gt;</span>
-</pre></div>
-</td></tr></table></p>
-<p>Multi-select:
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">select</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;color[]&quot;</span> <span class="na">multiple</span><span class="p">&gt;</span>
-  <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;red&quot;</span><span class="err">&lt;?=</span> <span class="err">$</span><span class="na">form-</span><span class="p">&gt;</span>selected_if(&#39;color&#39;, &#39;red&#39;); ?&gt;&gt;Red<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
-  <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;blue&quot;</span><span class="err">&lt;?=</span> <span class="err">$</span><span class="na">form-</span><span class="p">&gt;</span>selected_if(&#39;color&#39;, &#39;blue&#39;); ?&gt;&gt;Blue<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
-  <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;green&quot;</span><span class="err">&lt;?=</span> <span class="err">$</span><span class="na">form-</span><span class="p">&gt;</span>selected_if(&#39;color&#39;, &#39;green&#39;); ?&gt;&gt;Green<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">select</span><span class="p">&gt;</span>
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span> <span class="k">if</span> <span class="p">(</span> <span class="nv">$form</span><span class="o">-&gt;</span><span class="na">has_errors</span><span class="p">()</span> <span class="p">)</span> <span class="o">:</span> <span class="cp">?&gt;</span><span class="x"></span>
+<span class="x">  &lt;p&gt;Whoops, some field(s) are not valid&lt;/p&gt;&#39;</span>
+<span class="cp">&lt;?php</span> <span class="k">endif</span><span class="p">;</span> <span class="cp">?&gt;</span><span class="x"></span>
 </pre></div>
 </td></tr></table></p>
                 
@@ -685,7 +551,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../create/" title="Create" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../input/" title="Input" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -694,19 +560,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Create
+                Input
               </span>
             </div>
           </a>
         
         
-          <a href="../input/" title="Input" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../messages/" title="Custom Messages" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Input
+                Custom Messages
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
